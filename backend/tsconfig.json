@@ -1,6 +1,9 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
@@ -39,6 +42,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

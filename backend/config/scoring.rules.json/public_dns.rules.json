@@ -1,0 +1,10 @@
+{
+  "ips": ["8.8.8.8", "1.1.1.1"],
+  "scores": {
+    "laptop": 3,
+    "desktop": 3,
+    "phone": 2,
+    "smart_tv": 1,
+    "iot": 1
+  }
+}

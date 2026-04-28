@@ -1,18 +1,10 @@
-import fastify from "fastify";
+import app from "./app.js";
+import trafficRoutes from "./routes/traffic.routes.js";
 
-const app = fastify({
-    logger:true
-});
-
-app.get ('/', (req, res) => {
-    return {
-        "name": "user",
-    }
-});
+app.register(trafficRoutes, { prefix: "/traffic" });
 
 try {
-    app.listen({ port:3000 });
+  app.listen({ port: 3000 });
 } catch (error) {
-    process.exit(1);
+  process.exit(1);
 }
-

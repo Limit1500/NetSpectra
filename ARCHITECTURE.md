@@ -9,10 +9,14 @@ This section provides a high-level overview of the project's directory and file 
 [Project Root]/
 ├── backend/ # Contains all server-side code and APIs
 │ ├── src/ # Main source code for backend services
-│ │ ├── api/ # API endpoints and controllers
-│ │ ├── client/ # Business logic and service implementations
-│ │ ├── models/ # Database models/schemas
-│ │ └── utils/ # Backend utility functions
+│ │ ├── routes/ # API endpoints
+│ │ ├── controllers/ # HTTP logic
+│ │ ├── services/ # business logic
+│ │ ├── models/ # DB layer
+│ │ ├── schemas/ # validation
+│ │ ├── plugins/ # fastify plugins
+│ │ ├── utils/ # helper functions
+│ │ └── types/ # TypeScript types
 │ ├── config/ # Backend configuration files
 │ ├── tests/ # Backend unit and integration tests
 │ └── Dockerfile # Dockerfile for backend deployment

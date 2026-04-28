@@ -1,0 +1,12 @@
+{
+  "private_network": {
+    "pattern": "192.168.*",
+    "scores": {
+      "laptop": 2,
+      "desktop": 2,
+      "phone": 3,
+      "smart_tv": 1,
+      "iot": 2
+    }
+  }
+}

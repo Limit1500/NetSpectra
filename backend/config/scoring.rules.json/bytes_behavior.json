@@ -1,0 +1,18 @@
+{
+  "high_dns_usage": {
+    "condition": "dst_port == 53 && bytes < 300",
+    "scores": {
+      "iot": 4,
+      "smart_tv": 3
+    }
+  },
+
+  "streaming_like": {
+    "condition": "dst_port == 443 && bytes > 5000",
+    "scores": {
+      "smart_tv": 4,
+      "phone": 3,
+      "laptop": 2
+    }
+  }
+}

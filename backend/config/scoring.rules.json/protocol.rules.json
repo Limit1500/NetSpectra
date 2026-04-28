@@ -1,0 +1,27 @@
+{
+  "TCP": {
+    "scores": {
+      "laptop": 3,
+      "desktop": 3,
+      "phone": 2,
+      "smart_tv": 1
+    }
+  },
+
+  "UDP": {
+    "scores": {
+      "iot": 3,
+      "smart_tv": 3,
+      "phone": 2,
+      "laptop": 1
+    }
+  },
+
+  "ICMP": {
+    "scores": {
+      "laptop": 2,
+      "desktop": 2,
+      "iot": 1
+    }
+  }
+}

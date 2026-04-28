@@ -1,0 +1,31 @@
+{
+  "53": {
+    "description": "DNS",
+    "scores": {
+      "laptop": 2,
+      "phone": 2,
+      "iot": 3,
+      "smart_tv": 2
+    }
+  },
+
+  "80": {
+    "description": "HTTP",
+    "scores": {
+      "laptop": 3,
+      "desktop": 3,
+      "phone": 2,
+      "smart_tv": 1
+    }
+  },
+
+  "443": {
+    "description": "HTTPS",
+    "scores": {
+      "laptop": 4,
+      "desktop": 4,
+      "phone": 3,
+      "smart_tv": 2
+    }
+  }
+}

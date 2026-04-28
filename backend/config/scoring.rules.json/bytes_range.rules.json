@@ -1,0 +1,27 @@
+{
+  "ranges": [
+    {
+      "max": 200,
+      "scores": {
+        "phone": 3,
+        "iot": 4,
+        "smart_tv": 2
+      }
+    },
+    {
+      "max": 2000,
+      "scores": {
+        "laptop": 3,
+        "desktop": 2,
+        "phone": 2
+      }
+    },
+    {
+      "max": 100000,
+      "scores": {
+        "laptop": 4,
+        "desktop": 4
+      }
+    }
+  ]
+}
