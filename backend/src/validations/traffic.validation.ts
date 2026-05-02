@@ -1,21 +1,21 @@
 const trafficValidation = {
   body: {
     type: "object",
-    required: ["src_ip", "src_mac", "dst_ip", "dst_port", "protocol", "bytes"],
+    required: ["srcIp", "srcMac", "dstIp", "dstPort", "protocol", "bytes"],
     properties: {
-      src_ip: {
+      srcIp: {
         type: "string",
         format: "ipv4",
       },
-      src_mac: {
+      srcMac: {
         type: "string",
         pattern: "^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$",
       },
-      dst_ip: {
+      dstIp: {
         type: "string",
         format: "ipv4",
       },
-      dst_port: {
+      dstPort: {
         type: "integer",
         minimum: 1,
         maximum: 65535,

@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model TrafficDevices {
+  id         Int @id @default(autoincrement())
+  macAddress String @unique
+  vendor     String @unique
+
+  scores     Score[]
+}
+
+model Score {
+  id              Int @id @default(autoincrement())
+  iotScore    Int
+  mobileScore Int
+  desktopScore Int
+  tvScore     Int
+
+  deviceTrafficId Int
+
+  deviceTraffic TrafficDevices @relation(fields: [deviceTrafficId], references: [id])
+}
