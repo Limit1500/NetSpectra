@@ -18,17 +18,20 @@
       }
     },
     {
+      "id": "lab_test_devices",
+      "enabled": true,
+      "type": "mac_prefix",
+      "conditions": {
+        "prefixes": ["AA:BB:CC"]
+      }
+    },
+    {
       "id": "intel_network_cards",
       "enabled": true,
       "type": "mac_prefix",
       "conditions": {
         "prefixes": ["00:1B:21", "00:1C:C0"]
-      },
-      "score": {
-        "desktop": 5,
-        "laptop": 4
-      },
-      "weight": 2
+      }
     },
     {
       "id": "raspberry_pi",
@@ -36,11 +39,7 @@
       "type": "mac_prefix",
       "conditions": {
         "prefixes": ["B8:27:EB", "DC:A6:32"]
-      },
-      "score": {
-        "iot": 6
-      },
-      "weight": 3
+      }
     },
     {
       "id": "generic_wifi_chipset",
@@ -48,12 +47,7 @@
       "type": "mac_prefix",
       "conditions": {
         "prefixes": ["AC:12:03", "BC:EE:7B"]
-      },
-      "score": {
-        "iot": 3,
-        "smart_tv": 2
-      },
-      "weight": 1
+      }
     },
     {
       "id": "randomized_mac",
@@ -61,12 +55,7 @@
       "type": "mac_randomized",
       "conditions": {
         "local_bit": true
-      },
-      "score": {
-        "phone": 3,
-        "laptop": 2
-      },
-      "weight": 1.5
+      }
     }
   ]
 }

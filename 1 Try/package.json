@@ -2,20 +2,26 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "tsx --watch src/server.ts"
+  "directories": {
+    "test": "tests"
   },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "npx tsx src/server.ts"
+  },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "fastify": "^5.8.5",
+    "prisma": "^6.19.3"
+  },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "fastify": "^5.8.5"
-  },
-  "type": "module"
+  }
 }

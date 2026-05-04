@@ -1,0 +1,57 @@
+{
+  "privateIpRules": [
+    {
+      "name": "home_network",
+      "match": {
+        "type": "prefix",
+        "value": "192.168.1."
+      },
+      "scores": {
+        "desktopScore": 2,
+        "mobileScore": 1
+      }
+    },
+    {
+      "name": "home_default_range",
+      "match": {
+        "type": "prefix",
+        "value": "192.168.0."
+      },
+      "scores": {
+        "desktopScore": 2,
+        "mobileScore": 1
+      }
+    },
+    {
+      "name": "iot_subnet",
+      "match": {
+        "type": "prefix",
+        "value": "192.168.100."
+      },
+      "scores": {
+        "iotScore": 3
+      }
+    },
+    {
+      "name": "tv_subnet",
+      "match": {
+        "type": "prefix",
+        "value": "192.168.50."
+      },
+      "scores": {
+        "tvScore": 3
+      }
+    },
+    {
+      "name": "enterprise_network",
+      "match": {
+        "type": "prefix",
+        "value": "10."
+      },
+      "scores": {
+        "desktopScore": 2,
+        "tvScore": 1
+      }
+    }
+  ]
+}
