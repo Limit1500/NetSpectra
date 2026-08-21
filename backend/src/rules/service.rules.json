@@ -1,0 +1,164 @@
+{
+  "googlecast": {
+    "StreamingDevice": 80,
+    "SmartTV": 60,
+    "SmartSpeaker": 30
+  },
+
+  "airplay": {
+    "Phone": 20,
+    "Tablet": 20,
+    "Laptop": 20,
+    "Desktop": 20,
+    "SmartTV": 35,
+    "StreamingDevice": 50,
+    "SmartSpeaker": 25
+  },
+
+  "raop": {
+    "Phone": 15,
+    "Tablet": 15,
+    "Laptop": 15,
+    "Desktop": 15,
+    "SmartTV": 20,
+    "StreamingDevice": 40,
+    "SmartSpeaker": 60
+  },
+
+  "ipp": {
+    "Printer": 90
+  },
+
+  "ipps": {
+    "Printer": 90
+  },
+
+  "printer": {
+    "Printer": 90
+  },
+
+  "scanner": {
+    "Scanner": 90,
+    "Printer": 20
+  },
+
+  "ssh": {
+    "Laptop": 15,
+    "Desktop": 20,
+    "Server": 50,
+    "Nas": 40,
+    "Router": 30,
+    "AccessPoint": 20,
+    "Iot": 10
+  },
+
+  "http": {
+    "Router": 20,
+    "AccessPoint": 20,
+    "Printer": 15,
+    "Camera": 20,
+    "Iot": 15,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "https": {
+    "Router": 20,
+    "AccessPoint": 20,
+    "Printer": 15,
+    "Camera": 20,
+    "Iot": 15,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "homekit": {
+    "Iot": 60,
+    "SmartSpeaker": 40,
+    "SmartTV": 30
+  },
+
+  "hap": {
+    "Iot": 60,
+    "SmartSpeaker": 40,
+    "SmartTV": 30
+  },
+
+  "sonos": {
+    "SmartSpeaker": 90
+  },
+
+  "spotify-connect": {
+    "SmartSpeaker": 60,
+    "StreamingDevice": 40,
+    "SmartTV": 30
+  },
+
+  "smb": {
+    "Nas": 60,
+    "Server": 50,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+
+  "nfs": {
+    "Nas": 70,
+    "Server": 60
+  },
+
+  "afp": {
+    "Nas": 50,
+    "Server": 30,
+    "Desktop": 20
+  },
+
+  "rdp": {
+    "Desktop": 60,
+    "Laptop": 50,
+    "Server": 40
+  },
+
+  "ippusb": {
+    "Printer": 90
+  },
+
+  "rtsp": {
+    "Camera": 70,
+    "SmartTV": 20,
+    "Iot": 20
+  },
+
+  "onvif": {
+    "Camera": 90
+  },
+
+  "dlna": {
+    "SmartTV": 60,
+    "StreamingDevice": 50,
+    "SmartSpeaker": 30
+  },
+
+  "mediaserver": {
+    "Nas": 50,
+    "Server": 40
+  },
+
+  "mediarenderer": {
+    "SmartTV": 60,
+    "StreamingDevice": 60,
+    "SmartSpeaker": 30
+  },
+
+  "upnp": {
+    "SmartTV": 30,
+    "StreamingDevice": 30,
+    "Router": 20,
+    "Iot": 20
+  },
+
+  "device-info": {
+    "Iot": 30,
+    "SmartTV": 20,
+    "StreamingDevice": 20
+  }
+}

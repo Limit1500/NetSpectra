@@ -1,21 +1,33 @@
 import Fastify from "fastify";
-import vendorsJson from "../src/vendors.json";
+import vendorService from "./services/vendor.service";
+import ScoreService from "./services/score.service";
 
 export const app = Fastify({
   logger: true,
 });
 
-app.post<{ Body: { macAddress: string } }>("/", (req, reply) => {
+app.post<{
+  Body: {
+    macAddress: string;
+    hostname: string;
+    service: string;
+    protocol: string;
+    port: string;
+  };
+}>("/", (req, reply) => {
   try {
-    const macAddress: string = req.body.macAddress;
-    const vendors: Record<string, string> = vendorsJson;
-    const prefix: string = macAddress
-      .toUpperCase()
-      .replace(/[^A-F0-9]/g, "")
-      .slice(0, 6);
-    const vendor = vendors[prefix] !== undefined ? vendors[prefix] : "unknown";
+    const { macAddress, hostname, service, protocol, port } = req.body;
 
-    reply.code(200).send({ vendor: vendor });
+    const vendor = vendorService.getVendorByMac(macAddress);
+    const device = ScoreService.getDeviceType(
+      vendor,
+      hostname,
+      service,
+      protocol,
+      port,
+    );
+
+    reply.code(200).send({ vendor: vendor, device: device });
   } catch (error) {
     reply.code(500).send(error);
   }

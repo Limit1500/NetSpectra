@@ -1,0 +1,26 @@
+{
+  "tcp": {
+    "Phone": 5,
+    "Tablet": 5,
+    "Laptop": 5,
+    "Desktop": 5,
+    "SmartTV": 5,
+    "StreamingDevice": 5,
+    "Router": 5,
+    "Server": 10,
+    "Iot": 5
+  },
+
+  "udp": {
+    "Phone": 5,
+    "Tablet": 5,
+    "Laptop": 5,
+    "Desktop": 5,
+    "SmartTV": 5,
+    "StreamingDevice": 5,
+    "SmartSpeaker": 5,
+    "Router": 10,
+    "AccessPoint": 10,
+    "Iot": 10
+  }
+}

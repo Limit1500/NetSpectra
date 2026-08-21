@@ -1,0 +1,175 @@
+{
+  "20": {
+    "Server": 30,
+    "Nas": 20
+  },
+
+  "21": {
+    "Server": 30,
+    "Nas": 25,
+    "Iot": 10
+  },
+
+  "22": {
+    "Router": 30,
+    "AccessPoint": 25,
+    "Nas": 40,
+    "Server": 50,
+    "Desktop": 20,
+    "Laptop": 20,
+    "Iot": 15
+  },
+
+  "23": {
+    "Router": 50,
+    "AccessPoint": 40,
+    "Switch": 40,
+    "Gateway": 40,
+    "Iot": 15
+  },
+
+  "25": {
+    "Server": 40,
+    "Nas": 20
+  },
+
+  "53": {
+    "Router": 50,
+    "AccessPoint": 40,
+    "Gateway": 40,
+    "Server": 20,
+    "Iot": 15
+  },
+
+  "80": {
+    "Router": 35,
+    "AccessPoint": 30,
+    "Switch": 25,
+    "Printer": 30,
+    "Camera": 35,
+    "Nas": 30,
+    "Server": 30,
+    "SmartTV": 20,
+    "Iot": 20
+  },
+
+  "110": {
+    "Server": 30
+  },
+
+  "123": {
+    "Router": 30,
+    "Server": 25,
+    "Iot": 20
+  },
+
+  "135": {
+    "Desktop": 30,
+    "Laptop": 30,
+    "Server": 35
+  },
+
+  "139": {
+    "Desktop": 35,
+    "Laptop": 35,
+    "Server": 40,
+    "Nas": 30
+  },
+
+  "143": {
+    "Server": 30
+  },
+
+  "443": {
+    "Router": 30,
+    "AccessPoint": 25,
+    "Printer": 20,
+    "Camera": 30,
+    "Nas": 30,
+    "Server": 30,
+    "SmartTV": 20,
+    "Iot": 20
+  },
+
+  "445": {
+    "Desktop": 45,
+    "Laptop": 45,
+    "Server": 50,
+    "Nas": 60
+  },
+
+  "515": {
+    "Printer": 80
+  },
+
+  "631": {
+    "Printer": 90,
+    "Scanner": 20
+  },
+
+  "3389": {
+    "Desktop": 50,
+    "Laptop": 45,
+    "Server": 40
+  },
+
+  "5000": {
+    "Nas": 50,
+    "Server": 30,
+    "Iot": 20
+  },
+
+  "5001": {
+    "Nas": 50,
+    "Server": 30
+  },
+
+  "5353": {
+    "Phone": 10,
+    "Tablet": 10,
+    "Laptop": 10,
+    "Desktop": 10,
+    "SmartTV": 15,
+    "StreamingDevice": 15,
+    "SmartSpeaker": 15,
+    "Iot": 20
+  },
+
+  "5900": {
+    "Desktop": 45,
+    "Laptop": 40,
+    "Server": 35
+  },
+
+  "8000": {
+    "Camera": 40,
+    "Iot": 25,
+    "Nas": 25,
+    "Server": 25
+  },
+
+  "8080": {
+    "Router": 25,
+    "Camera": 30,
+    "Nas": 25,
+    "Server": 30,
+    "Iot": 20
+  },
+
+  "8443": {
+    "Router": 30,
+    "Camera": 30,
+    "Nas": 25,
+    "Server": 25
+  },
+
+  "9100": {
+    "Printer": 90
+  },
+
+  "32400": {
+    "Nas": 60,
+    "Server": 40,
+    "StreamingDevice": 30
+  }
+}

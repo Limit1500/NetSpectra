@@ -1,0 +1,612 @@
+{
+  "Apple": {
+    "Phone": 40,
+    "Tablet": 35,
+    "Laptop": 30,
+    "Desktop": 10,
+    "StreamingDevice": 25,
+    "SmartSpeaker": 20
+  },
+
+  "Samsung": {
+    "Phone": 45,
+    "Tablet": 25,
+    "SmartTV": 90,
+    "StreamingDevice": 15,
+    "SmartSpeaker": 10,
+    "Iot": 15
+  },
+
+  "Xiaomi": {
+    "Phone": 45,
+    "Tablet": 25,
+    "SmartTV": 40,
+    "StreamingDevice": 50,
+    "Iot": 35,
+    "SmartSpeaker": 20,
+    "Router": 20
+  },
+
+  "Huawei": {
+    "Phone": 40,
+    "Tablet": 30,
+    "Router": 45,
+    "AccessPoint": 40,
+    "Iot": 20
+  },
+
+  "Honor": {
+    "Phone": 50,
+    "Tablet": 25
+  },
+
+  "Google": {
+    "Phone": 45,
+    "StreamingDevice": 80,
+    "SmartSpeaker": 50,
+    "Iot": 15
+  },
+
+  "Intel": {
+    "Desktop": 45,
+    "Laptop": 45,
+    "Server": 35
+  },
+
+  "AMD": {
+    "Desktop": 50,
+    "Laptop": 35,
+    "Server": 30
+  },
+
+  "Dell": {
+    "Desktop": 45,
+    "Laptop": 50,
+    "Server": 35
+  },
+
+  "HP": {
+    "Desktop": 40,
+    "Laptop": 45,
+    "Printer": 45,
+    "Server": 25
+  },
+
+  "Lenovo": {
+    "Laptop": 50,
+    "Desktop": 40,
+    "Tablet": 30,
+    "Server": 20
+  },
+
+  "ASUS": {
+    "Laptop": 45,
+    "Desktop": 40,
+    "Router": 35,
+    "AccessPoint": 30
+  },
+
+  "Acer": {
+    "Laptop": 50,
+    "Desktop": 40
+  },
+
+  "Microsoft": {
+    "Desktop": 45,
+    "Laptop": 40,
+    "GameConsole": 50,
+    "StreamingDevice": 15
+  },
+
+  "Sony": {
+    "SmartTV": 80,
+    "GameConsole": 50,
+    "Camera": 30,
+    "Phone": 20
+  },
+
+  "LG": {
+    "SmartTV": 95,
+    "Iot": 20,
+    "Phone": 15
+  },
+
+  "Nintendo": {
+    "GameConsole": 90
+  },
+
+  "PlayStation": {
+    "GameConsole": 90
+  },
+
+  "Xbox": {
+    "GameConsole": 90
+  },
+
+  "Cisco": {
+    "Router": 70,
+    "Switch": 80,
+    "AccessPoint": 70
+  },
+
+  "TP-Link": {
+    "Router": 70,
+    "AccessPoint": 60,
+    "Iot": 25
+  },
+
+  "Netgear": {
+    "Router": 75,
+    "Switch": 50,
+    "AccessPoint": 60
+  },
+
+  "Ubiquiti": {
+    "Router": 60,
+    "AccessPoint": 90,
+    "Switch": 60
+  },
+
+  "MikroTik": {
+    "Router": 90,
+    "Switch": 50,
+    "AccessPoint": 60
+  },
+  "Canon": {
+    "Printer": 90,
+    "Camera": 20
+  },
+
+  "Epson": {
+    "Printer": 95
+  },
+
+  "Brother": {
+    "Printer": 95
+  },
+
+  "Xerox": {
+    "Printer": 100
+  },
+
+  "Ricoh": {
+    "Printer": 95
+  },
+
+  "Konica Minolta": {
+    "Printer": 95
+  },
+
+  "Kyocera": {
+    "Printer": 95
+  },
+
+  "Lexmark": {
+    "Printer": 95
+  },
+
+  "Pantum": {
+    "Printer": 95
+  },
+
+  "Sharp": {
+    "Printer": 80,
+    "SmartTV": 80
+  },
+
+  "OKI": {
+    "Printer": 95
+  },
+
+  "Toshiba": {
+    "Printer": 80,
+    "Laptop": 15,
+    "Desktop": 15
+  },
+
+  "Fujitsu": {
+    "Printer": 60,
+    "Desktop": 20
+  },
+
+  "Hikvision": {
+    "Camera": 100,
+    "Iot": 30
+  },
+
+  "Dahua": {
+    "Camera": 100,
+    "Iot": 30
+  },
+
+  "Reolink": {
+    "Camera": 100,
+    "Iot": 35
+  },
+
+  "Axis": {
+    "Camera": 100
+  },
+
+  "Arlo": {
+    "Camera": 90,
+    "Iot": 40
+  },
+
+  "Ring": {
+    "Camera": 90,
+    "Iot": 50,
+    "SmartSpeaker": 20
+  },
+
+  "Nest": {
+    "Camera": 90,
+    "Iot": 50,
+    "SmartSpeaker": 30
+  },
+
+  "Wyze": {
+    "Camera": 90,
+    "Iot": 50
+  },
+
+  "Amcrest": {
+    "Camera": 95,
+    "Iot": 30
+  },
+
+  "Vivotek": {
+    "Camera": 100
+  },
+
+  "Hanwha Techwin": {
+    "Camera": 100
+  },
+
+  "Bosch": {
+    "Camera": 30,
+    "Iot": 60,
+    "SmartSpeaker": 10
+  },
+
+  "Bosch Security": {
+    "Camera": 90,
+    "Iot": 40
+  },
+
+  "Pelco": {
+    "Camera": 95
+  },
+
+  "Mobotix": {
+    "Camera": 100
+  },
+
+  "Tiandy": {
+    "Camera": 100
+  },
+
+  "Uniview": {
+    "Camera": 100,
+    "Iot": 30
+  },
+
+  "Ezviz": {
+    "Camera": 95,
+    "Iot": 40
+  },
+
+  "Imou": {
+    "Camera": 95,
+    "Iot": 40
+  },
+
+  "Synology": {
+    "Nas": 100,
+    "Server": 40
+  },
+
+  "QNAP": {
+    "Nas": 100,
+    "Server": 40
+  },
+
+  "Western Digital": {
+    "Nas": 70,
+    "Server": 30
+  },
+
+  "Seagate": {
+    "Nas": 60,
+    "Server": 40
+  },
+
+  "TerraMaster": {
+    "Nas": 100,
+    "Server": 30
+  },
+
+  "Asustor": {
+    "Nas": 100,
+    "Server": 30
+  },
+
+  "Thecus": {
+    "Nas": 100,
+    "Server": 30
+  },
+
+  "Buffalo": {
+    "Nas": 90,
+    "Router": 20,
+    "Iot": 15
+  },
+
+  "Drobo": {
+    "Nas": 100
+  },
+
+  "TrueNAS": {
+    "Nas": 80,
+    "Server": 50
+  },
+
+  "iXsystems": {
+    "Nas": 80,
+    "Server": 60
+  },
+
+  "Promise Technology": {
+    "Nas": 70,
+    "Server": 50
+  },
+  "Tuya": {
+    "Iot": 95
+  },
+
+  "Shelly": {
+    "Iot": 100
+  },
+
+  "Aqara": {
+    "Iot": 100,
+    "SmartSpeaker": 20
+  },
+
+  "Espressif": {
+    "Iot": 95,
+    "AccessPoint": 20
+  },
+
+  "Sonoff": {
+    "Iot": 100
+  },
+
+  "eWeLink": {
+    "Iot": 90
+  },
+
+  "Tasmota": {
+    "Iot": 95
+  },
+
+  "Home Assistant": {
+    "Iot": 80,
+    "Server": 40
+  },
+
+  "Philips Hue": {
+    "Iot": 90,
+    "SmartSpeaker": 20
+  },
+
+  "Signify": {
+    "Iot": 90
+  },
+
+  "LIFX": {
+    "Iot": 90
+  },
+
+  "Nanoleaf": {
+    "Iot": 90
+  },
+
+  "Meross": {
+    "Iot": 95
+  },
+
+  "Govee": {
+    "Iot": 95
+  },
+
+  "Yeelight": {
+    "Iot": 90
+  },
+
+  "Ecobee": {
+    "Iot": 90
+  },
+
+  "Somfy": {
+    "Iot": 90
+  },
+
+  "Legrand": {
+    "Iot": 80
+  },
+
+  "Schneider Electric": {
+    "Iot": 80,
+    "Router": 20,
+    "Switch": 40
+  },
+
+  "Siemens": {
+    "Iot": 70,
+    "Switch": 40,
+    "AccessPoint": 30,
+    "Server": 20
+  },
+
+  "Rockwell Automation": {
+    "Iot": 90,
+    "Switch": 30
+  },
+
+  "Mitsubishi Electric": {
+    "Iot": 80,
+    "Switch": 30
+  },
+
+  "Omron": {
+    "Iot": 80
+  },
+
+  "ABB": {
+    "Iot": 85,
+    "Switch": 30
+  },
+
+  "Eaton": {
+    "Iot": 70
+  },
+
+  "Delta Electronics": {
+    "Iot": 80,
+    "Router": 20,
+    "Switch": 30
+  },
+
+  "Advantech": {
+    "Iot": 80,
+    "Server": 40,
+    "Desktop": 20
+  },
+
+  "Beckhoff Automation": {
+    "Iot": 90,
+    "Server": 20
+  },
+
+  "Phoenix Contact": {
+    "Iot": 90,
+    "Switch": 40
+  },
+
+  "WAGO": {
+    "Iot": 90,
+    "Switch": 30
+  },
+
+  "Moxa": {
+    "Iot": 70,
+    "Switch": 80,
+    "Router": 40
+  },
+
+  "Hirschmann": {
+    "Switch": 90,
+    "Router": 30
+  },
+
+  "Belden": {
+    "Switch": 80
+  },
+
+  "Kepware": {
+    "Iot": 70,
+    "Server": 50
+  },
+
+  "National Instruments": {
+    "Iot": 70,
+    "Desktop": 30,
+    "Server": 30
+  },
+
+  "Realtek": {
+    "Desktop": 30,
+    "Laptop": 30,
+    "Router": 25,
+    "Iot": 40
+  },
+
+  "MediaTek": {
+    "Phone": 40,
+    "Tablet": 25,
+    "Router": 40,
+    "SmartTV": 20,
+    "Iot": 30
+  },
+
+  "Qualcomm": {
+    "Phone": 45,
+    "Tablet": 25,
+    "Router": 30,
+    "Iot": 20
+  },
+
+  "Broadcom": {
+    "Router": 40,
+    "Phone": 30,
+    "SmartTV": 20,
+    "Iot": 20
+  },
+
+  "Marvell": {
+    "Router": 40,
+    "Nas": 30,
+    "Switch": 30
+  },
+
+  "NXP": {
+    "Iot": 80
+  },
+
+  "Texas Instruments": {
+    "Iot": 80
+  },
+
+  "Nordic Semiconductor": {
+    "Iot": 90
+  },
+
+  "STMicroelectronics": {
+    "Iot": 80
+  },
+
+  "Microchip": {
+    "Iot": 80
+  },
+
+  "Silicon Labs": {
+    "Iot": 90
+  },
+
+  "Infineon": {
+    "Iot": 80
+  },
+
+  "Renesas": {
+    "Iot": 70
+  },
+
+  "Cypress Semiconductor": {
+    "Iot": 80
+  },
+
+  "Atmel": {
+    "Iot": 70
+  },
+
+  "Arduino": {
+    "Iot": 90
+  },
+
+  "Raspberry Pi": {
+    "Iot": 50,
+    "Server": 40,
+    "Desktop": 30
+  }
+}
