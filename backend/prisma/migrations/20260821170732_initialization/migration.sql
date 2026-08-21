@@ -1,0 +1,35 @@
+-- CreateTable
+CREATE TABLE "devices" (
+    "id" SERIAL NOT NULL,
+    "macAddress" TEXT NOT NULL,
+    "vendor" TEXT NOT NULL DEFAULT 'Unknown',
+    "deviceType" TEXT NOT NULL DEFAULT 'Unknown',
+    "updates" INTEGER NOT NULL DEFAULT 0,
+    "lastSeen" TIMESTAMP(3) NOT NULL,
+    "firstSeen" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "Phone" INTEGER NOT NULL DEFAULT 0,
+    "Tablet" INTEGER NOT NULL DEFAULT 0,
+    "Laptop" INTEGER NOT NULL DEFAULT 0,
+    "Desktop" INTEGER NOT NULL DEFAULT 0,
+    "SmartTV" INTEGER NOT NULL DEFAULT 0,
+    "StreamingDevice" INTEGER NOT NULL DEFAULT 0,
+    "GameConsole" INTEGER NOT NULL DEFAULT 0,
+    "Router" INTEGER NOT NULL DEFAULT 0,
+    "AccessPoint" INTEGER NOT NULL DEFAULT 0,
+    "Switch" INTEGER NOT NULL DEFAULT 0,
+    "Printer" INTEGER NOT NULL DEFAULT 0,
+    "Scanner" INTEGER NOT NULL DEFAULT 0,
+    "Camera" INTEGER NOT NULL DEFAULT 0,
+    "SmartSpeaker" INTEGER NOT NULL DEFAULT 0,
+    "Iot" INTEGER NOT NULL DEFAULT 0,
+    "Nas" INTEGER NOT NULL DEFAULT 0,
+    "Server" INTEGER NOT NULL DEFAULT 0,
+    "Industrial" INTEGER NOT NULL DEFAULT 0,
+    "Gateway" INTEGER NOT NULL DEFAULT 0,
+    "Unknown" INTEGER NOT NULL DEFAULT 0,
+
+    CONSTRAINT "devices_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "devices_macAddress_key" ON "devices"("macAddress");

@@ -1,6 +1,5 @@
 import Fastify from "fastify";
-import vendorService from "./services/vendor.service";
-import ScoreService from "./services/score.service";
+import processData from "./services/processData.service";
 
 export const app = Fastify({
   logger: true,
@@ -17,17 +16,9 @@ app.post<{
 }>("/", (req, reply) => {
   try {
     const { macAddress, hostname, service, protocol, port } = req.body;
+    processData(macAddress, hostname, service, protocol, port);
 
-    const vendor = vendorService.getVendorByMac(macAddress);
-    const device = ScoreService.getDeviceType(
-      vendor,
-      hostname,
-      service,
-      protocol,
-      port,
-    );
-
-    reply.code(200).send({ vendor: vendor, device: device });
+    reply.code(200);
   } catch (error) {
     reply.code(500).send(error);
   }

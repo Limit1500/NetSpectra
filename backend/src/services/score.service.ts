@@ -1,83 +1,54 @@
-import { DeviceType, MatchOperator } from "../types";
 import vendorRules from "../rules/vendor.rules.json";
 import hostnameRules from "../rules/hostname.rules.json";
 import serviceRules from "../rules/service.rules.json";
 import protocolRules from "../rules/protocol.rules.json";
 import portRules from "../rules/port.rules.json";
-import { matchString, normalizeString } from "../utils";
+import { matchString } from "../utils";
+import { DeviceType, MatchOperator } from "../types";
 
 class ScoreService {
-  private scores: Record<DeviceType, number>;
-
-  private vendor: string;
-  private hostname: string;
-  private service: string;
-  private protocol: string;
-  private port: string;
-
-  private addScores(
-    savedScores: Record<string, Record<string, number>>,
+  private static applyRules(
+    savedScores: Record<string, Partial<Record<DeviceType, number>>>,
     operator: MatchOperator,
     reqData: string,
+    scores: Record<DeviceType, number>,
   ) {
     for (const [key, value] of Object.entries(savedScores)) {
       if (matchString(reqData, operator, key)) {
         for (const [key, score] of Object.entries(value)) {
-          this.scores[key as DeviceType] += score;
+          scores[key as DeviceType] += score;
         }
       }
     }
+    return scores;
   }
 
-  private getDeviceByScore() {
-    let device = "Unknown";
-    for (const [key, number] of Object.entries(this.scores)) {
-      if (this.scores[device as DeviceType] < number) {
-        device = key;
+  static getDeviceByScore(scores: Record<DeviceType, number>): DeviceType {
+    let device = "Unknown" as DeviceType;
+    for (const [key, number] of Object.entries(scores)) {
+      if (scores[device as DeviceType] < number) {
+        device = key as DeviceType;
       }
     }
     return device;
   }
 
-  private applyRules() {
-    this.addScores(vendorRules, "CONTAINS", this.vendor);
-    this.addScores(hostnameRules, "CONTAINS", this.hostname);
-    this.addScores(serviceRules, "EQUALS", this.service);
-    this.addScores(protocolRules, "EQUALS", this.protocol);
-    this.addScores(portRules, "EQUALS", this.port);
-  }
-
-  public static getDeviceType(
+  static getScores(
     vendor: string,
     hostname: string,
     service: string,
     protocol: string,
     port: string,
   ) {
-    const scores = new ScoreService(vendor, hostname, service, protocol, port);
-    scores.applyRules();
-    return scores.getDeviceByScore();
-  }
-
-  constructor(
-    vendor: string,
-    hostname: string,
-    service: string,
-    protocol: string,
-    port: string,
-  ) {
-    this.scores = {} as Record<DeviceType, number>;
-    this.vendor = vendor;
-    this.hostname = normalizeString(hostname);
-    this.service = normalizeString(service).split("._")[0];
-    this.protocol = normalizeString(protocol);
-    this.port = port;
-
-    for (const value of Object.values(DeviceType)) {
-      if (typeof value === "string") {
-        this.scores[value] = 0;
-      }
-    }
+    let scores = Object.fromEntries(
+      Object.entries(DeviceType).map(([key]) => [key, 0]),
+    ) as Record<DeviceType, number>;
+    ScoreService.applyRules(vendorRules, "CONTAINS", vendor, scores);
+    ScoreService.applyRules(hostnameRules, "CONTAINS", hostname, scores);
+    ScoreService.applyRules(serviceRules, "EQUALS", service, scores);
+    ScoreService.applyRules(protocolRules, "EQUALS", protocol, scores);
+    ScoreService.applyRules(portRules, "EQUALS", port, scores);
+    return scores;
   }
 }
 

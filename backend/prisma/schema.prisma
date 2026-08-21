@@ -11,3 +11,35 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model devices {
+  id Int @id @default(autoincrement())
+  macAddress String @unique
+  vendor String @default("Unknown")
+  deviceType String @default("Unknown")
+
+  updates Int @default(0)
+  lastSeen DateTime @updatedAt
+  firstSeen DateTime @default(now())
+
+  Phone Int @default(0)
+  Tablet Int @default(0)
+  Laptop Int @default(0)
+  Desktop Int @default(0)
+  SmartTV Int @default(0)
+  StreamingDevice Int @default(0)
+  GameConsole Int @default(0)
+  Router Int @default(0)
+  AccessPoint Int @default(0)
+  Switch Int @default(0)
+  Printer Int @default(0)
+  Scanner Int @default(0)
+  Camera Int @default(0)
+  SmartSpeaker Int @default(0)
+  Iot Int @default(0)
+  Nas Int @default(0)
+  Server Int @default(0)
+  Industrial Int @default(0)
+  Gateway Int @default(0)
+  Unknown Int @default(0)
+}
