@@ -11,26 +11,17 @@ class ScoreService {
     savedScores: Record<string, Partial<Record<DeviceType, number>>>,
     operator: MatchOperator,
     reqData: string,
-    scores: Record<DeviceType, number>,
-  ) {
+    scores: Record<DeviceType, number>
+  ): Record<DeviceType, number> {
     for (const [key, value] of Object.entries(savedScores)) {
       if (matchString(reqData, operator, key)) {
-        for (const [key, score] of Object.entries(value)) {
-          scores[key as DeviceType] += score;
+        for (const [deviceType, score] of Object.entries(value)) {
+          scores[deviceType as DeviceType] += score;
         }
       }
     }
-    return scores;
-  }
 
-  static getDeviceByScore(scores: Record<DeviceType, number>): DeviceType {
-    let device = "Unknown" as DeviceType;
-    for (const [key, number] of Object.entries(scores)) {
-      if (scores[device as DeviceType] < number) {
-        device = key as DeviceType;
-      }
-    }
-    return device;
+    return scores;
   }
 
   static getScores(
@@ -38,16 +29,52 @@ class ScoreService {
     hostname: string,
     service: string,
     protocol: string,
-    port: string,
-  ) {
-    let scores = Object.fromEntries(
-      Object.entries(DeviceType).map(([key]) => [key, 0]),
+    port: string
+  ): Record<DeviceType, number> {
+    const scores = Object.fromEntries(
+      Object.values(DeviceType).map((deviceType) => [deviceType, 0])
     ) as Record<DeviceType, number>;
-    ScoreService.applyRules(vendorRules, "CONTAINS", vendor, scores);
-    ScoreService.applyRules(hostnameRules, "CONTAINS", hostname, scores);
-    ScoreService.applyRules(serviceRules, "EQUALS", service, scores);
-    ScoreService.applyRules(protocolRules, "EQUALS", protocol, scores);
-    ScoreService.applyRules(portRules, "EQUALS", port, scores);
+
+    this.applyRules(vendorRules, "CONTAINS", vendor, scores);
+    this.applyRules(hostnameRules, "CONTAINS", hostname, scores);
+    this.applyRules(serviceRules, "EQUALS", service, scores);
+    this.applyRules(protocolRules, "EQUALS", protocol, scores);
+    this.applyRules(portRules, "EQUALS", port, scores);
+
+    return scores;
+  }
+
+  static getDeviceByScore(scores: Record<DeviceType, number>): DeviceType {
+    let device = DeviceType.Unknown;
+
+    for (const [key, score] of Object.entries(scores)) {
+      const deviceType = key as DeviceType;
+
+      if (scores[device] < score) {
+        device = deviceType;
+      }
+    }
+
+    return device;
+  }
+
+  static getSumScores(
+    newScores: Record<DeviceType, number>,
+    oldScores: Record<DeviceType, number>
+  ): Record<DeviceType, number> {
+    const updatedScores = {} as Record<DeviceType, number>;
+    for (const key of Object.values(DeviceType)) {
+      updatedScores[key] = newScores[key] + oldScores[key];
+    }
+    return updatedScores;
+  }
+
+  static decayScores(
+    scores: Record<DeviceType, number>
+  ): Record<DeviceType, number> {
+    for (const key of Object.values(DeviceType)) {
+      scores[key] *= Number(process.env.UPDATES_MULTIPLIER);
+    }
     return scores;
   }
 }

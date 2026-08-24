@@ -1,28 +1,21 @@
+import cookie from "@fastify/cookie";
+import "dotenv/config";
 import Fastify from "fastify";
-import processData from "./services/processData.service";
+import authRoutes from "./routes/auth.routes";
+import trafficDataRoutes from "./routes/trafficData.routes";
+import jwt from "@fastify/jwt";
 
 export const app = Fastify({
   logger: true,
 });
 
-app.post<{
-  Body: {
-    macAddress: string;
-    hostname: string;
-    service: string;
-    protocol: string;
-    port: string;
-  };
-}>("/", (req, reply) => {
-  try {
-    const { macAddress, hostname, service, protocol, port } = req.body;
-    processData(macAddress, hostname, service, protocol, port);
-
-    reply.code(200);
-  } catch (error) {
-    reply.code(500).send(error);
-  }
+app.register(jwt, {
+  secret: process.env.JWT_SECRET!,
 });
+app.register(cookie);
+
+app.register(authRoutes, { prefix: "/auth" });
+app.register(trafficDataRoutes, { prefix: "/traffic" });
 
 try {
   app.listen({ port: 3000 });

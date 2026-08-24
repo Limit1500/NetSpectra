@@ -1,4 +1,4 @@
-import DatabaseService from "./database.service";
+import DeviceDatabaseService from "./deviceDatabase.service";
 import ScoreService from "./score.service";
 import VendorService from "./vendor.service";
 
@@ -7,12 +7,12 @@ async function processData(
   hostname: string,
   service: string,
   protocol: string,
-  port: string,
+  port: string
 ) {
   const vendor = VendorService.getVendorByMac(macAddress);
 
-  if (!(await DatabaseService.getDeviceByMac(macAddress))) {
-    await DatabaseService.createDevice(macAddress, vendor);
+  if (!(await DeviceDatabaseService.getDeviceByMac(macAddress))) {
+    await DeviceDatabaseService.createDevice(macAddress, vendor);
   }
 
   const newScores = ScoreService.getScores(
@@ -20,18 +20,29 @@ async function processData(
     hostname,
     service,
     protocol,
-    port,
+    port
   );
 
-  const updatedData = await DatabaseService.getUpdatedData(
+  const deviceData = await DeviceDatabaseService.getOldScoresAndUpdatesNumber(
+    macAddress
+  );
+
+  const updatesNumber = deviceData.updates;
+  let oldScores = deviceData.oldScores;
+
+  if (updatesNumber % Number(process.env.UPDATES_LIMIT) == 0) {
+    oldScores = ScoreService.decayScores(oldScores);
+  }
+
+  const updatedScores = ScoreService.getSumScores(newScores, oldScores);
+
+  const deviceType = ScoreService.getDeviceByScore(updatedScores);
+
+  await DeviceDatabaseService.postUpdatedData(
     macAddress,
-    newScores!,
+    updatedScores,
+    deviceType
   );
-
-  const deviceType = ScoreService.getDeviceByScore(updatedData!);
-  updatedData!.deviceType = deviceType;
-
-  await DatabaseService.postUpdatedData(macAddress, updatedData!);
 }
 
 export default processData;
