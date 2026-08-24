@@ -29,32 +29,3 @@ export enum DeviceType {
 }
 
 export type MatchOperator = "EQUALS" | "CONTAINS" | "STARTS_WITH" | "ENDS_WITH";
-
-export interface LoginBody {
-  username: string;
-  password: string;
-}
-
-export interface UserType {
-  username: string;
-  password: string;
-  email: string;
-
-  id: number;
-
-  isActive: boolean;
-
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface SigninBody {
-  username: string;
-  password: string;
-  email: string;
-}
-
-export interface LoginBody {
-  username: string;
-  password: string;
-}
