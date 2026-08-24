@@ -1,10 +1,10 @@
-import vendorRules from "../rules/vendor.rules.json";
-import hostnameRules from "../rules/hostname.rules.json";
-import serviceRules from "../rules/service.rules.json";
-import protocolRules from "../rules/protocol.rules.json";
-import portRules from "../rules/port.rules.json";
-import { matchString } from "../utils";
-import { DeviceType, MatchOperator } from "../types";
+import vendorRules from "../scoringRules/vendor.rules.json";
+import hostnameRules from "../scoringRules/hostname.rules.json";
+import serviceRules from "../scoringRules/service.rules.json";
+import protocolRules from "../scoringRules/protocol.rules.json";
+import portRules from "../scoringRules/port.rules.json";
+import { matchString } from "../utils/string.utils";
+import { DeviceType, MatchOperator } from "../types/device.types";
 
 class ScoreService {
   private static applyRules(

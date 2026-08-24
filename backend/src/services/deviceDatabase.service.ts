@@ -1,5 +1,5 @@
 import prisma from "../db";
-import { DeviceType } from "../types";
+import { DeviceType } from "../types/device.types";
 
 class DeviceDatabaseService {
   static async getDeviceByMac(macAddress: string) {

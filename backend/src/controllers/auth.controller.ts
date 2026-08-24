@@ -1,8 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import JwtService from "../services/jwt.service";
 import AuthService from "../services/auth.service";
-import { LoginBody, SigninBody } from "../types";
-import { UserType } from "../types";
+import { DbUserType, LoginBody, SigninBody } from "../types/auth.types";
 
 class AuthController {
   static async signin(req: FastifyRequest, reply: FastifyReply) {
@@ -26,7 +25,7 @@ class AuthController {
       const user = (await AuthService.login(
         req.body.username,
         req.body.password
-      )) as UserType;
+      )) as DbUserType;
 
       const token = JwtService.generateToken(user.id, password);
 

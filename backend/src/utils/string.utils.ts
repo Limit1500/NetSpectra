@@ -1,9 +1,9 @@
-import { MatchOperator } from "./types";
+import { MatchOperator } from "../types/device.types";
 
 export function matchString(
   sourceText: string,
   operator: MatchOperator,
-  target: string,
+  target: string
 ) {
   if (operator === "EQUALS") {
     return sourceText === target;
