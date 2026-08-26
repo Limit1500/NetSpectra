@@ -171,5 +171,494 @@
     "Nas": 60,
     "Server": 40,
     "StreamingDevice": 30
+  },
+  "67": {
+    "Router": 50,
+    "Gateway": 40,
+    "Server": 20,
+    "Iot": 15
+  },
+
+  "68": {
+    "Router": 50,
+    "Gateway": 40,
+    "Iot": 15
+  },
+
+  "69": {
+    "Server": 35,
+    "Nas": 25,
+    "Iot": 20
+  },
+
+  "88": {
+    "Server": 25,
+    "Router": 15
+  },
+
+  "161": {
+    "Router": 40,
+    "Switch": 40,
+    "AccessPoint": 35,
+    "Printer": 20,
+    "Iot": 20,
+    "Server": 20
+  },
+
+  "162": {
+    "Router": 40,
+    "Switch": 35,
+    "AccessPoint": 30,
+    "Server": 20
+  },
+
+  "427": {
+    "Printer": 30,
+    "Scanner": 25,
+    "Iot": 20
+  },
+
+  "500": {
+    "Router": 30,
+    "Gateway": 30,
+    "Server": 15
+  },
+
+  "514": {
+    "Router": 35,
+    "Switch": 35,
+    "Server": 30,
+    "Iot": 20
+  },
+
+  "548": {
+    "Nas": 50,
+    "Server": 35,
+    "Desktop": 25,
+    "Laptop": 20
+  },
+
+  "554": {
+    "Camera": 65,
+    "SmartTV": 30,
+    "StreamingDevice": 30,
+    "Iot": 25
+  },
+
+  "587": {
+    "Server": 35,
+    "Nas": 15
+  },
+
+  "853": {
+    "Router": 35,
+    "Gateway": 30,
+    "Server": 15,
+    "Iot": 10
+  },
+
+  "993": {
+    "Server": 35,
+    "Nas": 20
+  },
+
+  "995": {
+    "Server": 35,
+    "Nas": 20
+  },
+
+  "1194": {
+    "Router": 30,
+    "Gateway": 30,
+    "Server": 20,
+    "Laptop": 10,
+    "Desktop": 10
+  },
+
+  "1701": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 15
+  },
+
+  "1723": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 15
+  },
+
+  "4500": {
+    "Router": 35,
+    "Gateway": 35,
+    "Server": 15
+  },
+
+  "5002": {
+    "Nas": 40,
+    "Server": 25,
+    "Iot": 15
+  },
+
+  "5355": {
+    "Desktop": 20,
+    "Laptop": 20,
+    "Printer": 10,
+    "Iot": 20
+  },
+
+  "7000": {
+    "SmartTV": 35,
+    "StreamingDevice": 35,
+    "SmartSpeaker": 25,
+    "Iot": 20
+  },
+
+  "7001": {
+    "SmartTV": 30,
+    "StreamingDevice": 35,
+    "SmartSpeaker": 25,
+    "Iot": 20
+  },
+
+  "9090": {
+    "Nas": 30,
+    "Server": 30,
+    "Iot": 20
+  },
+  "179": {
+    "Router": 35,
+    "Gateway": 30,
+    "Server": 15
+  },
+
+  "389": {
+    "Server": 45
+  },
+
+  "636": {
+    "Server": 35,
+    "Nas": 20
+  },
+
+  "749": {
+    "Server": 35
+  },
+
+  "873": {
+    "Nas": 45,
+    "Server": 35
+  },
+
+  "989": {
+    "Server": 30,
+    "Nas": 20
+  },
+
+  "990": {
+    "Server": 30,
+    "Nas": 20
+  },
+
+  "1080": {
+    "Desktop": 15,
+    "Laptop": 15,
+    "Server": 20,
+    "Router": 15,
+    "Iot": 10
+  },
+
+  "1812": {
+    "Router": 30,
+    "AccessPoint": 25,
+    "Gateway": 25,
+    "Server": 20
+  },
+
+  "1813": {
+    "Router": 30,
+    "AccessPoint": 25,
+    "Gateway": 25,
+    "Server": 20
+  },
+
+  "2049": {
+    "Nas": 70,
+    "Server": 50,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "3128": {
+    "Router": 20,
+    "Server": 25,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+
+  "3268": {
+    "Server": 40
+  },
+
+  "3269": {
+    "Server": 40
+  },
+
+  "5357": {
+    "Desktop": 20,
+    "Laptop": 20,
+    "Printer": 15,
+    "Iot": 10
+  },
+
+  "8008": {
+    "StreamingDevice": 60,
+    "SmartTV": 40,
+    "SmartSpeaker": 20,
+    "Iot": 15
+  },
+
+  "8009": {
+    "StreamingDevice": 70,
+    "SmartTV": 40,
+    "SmartSpeaker": 20
+  },
+
+  "8888": {
+    "Router": 25,
+    "Iot": 20,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "10000": {
+    "Nas": 40,
+    "Server": 30,
+    "Router": 20
+  },
+
+  "1900": {
+    "SmartTV": 30,
+    "StreamingDevice": 35,
+    "SmartSpeaker": 30,
+    "Iot": 25,
+    "Router": 15
+  },
+
+  "5350": {
+    "Phone": 15,
+    "Tablet": 15,
+    "SmartTV": 20,
+    "StreamingDevice": 25,
+    "SmartSpeaker": 20,
+    "Iot": 20
+  },
+  "1433": {
+    "Server": 40,
+    "Desktop": 20,
+    "Laptop": 15
+  },
+
+  "1434": {
+    "Server": 35,
+    "Desktop": 15,
+    "Laptop": 10
+  },
+
+  "1521": {
+    "Server": 40,
+    "Nas": 25
+  },
+
+  "3306": {
+    "Server": 45,
+    "Nas": 25,
+    "Desktop": 15,
+    "Laptop": 10
+  },
+
+  "5432": {
+    "Server": 45,
+    "Nas": 30,
+    "Desktop": 15,
+    "Laptop": 10
+  },
+
+  "6379": {
+    "Server": 40,
+    "Nas": 25,
+    "Iot": 15
+  },
+
+  "6443": {
+    "Server": 40,
+    "Nas": 20,
+    "Router": 15
+  },
+
+  "8081": {
+    "Camera": 30,
+    "Iot": 25,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "8082": {
+    "Camera": 30,
+    "Iot": 25,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "8088": {
+    "Camera": 30,
+    "Iot": 25,
+    "Nas": 20,
+    "Server": 20
+  },
+
+  "8883": {
+    "Iot": 35,
+    "SmartTV": 15,
+    "SmartSpeaker": 15,
+    "Camera": 15
+  },
+
+  "9091": {
+    "Nas": 35,
+    "Server": 25,
+    "Iot": 15
+  },
+
+  "9200": {
+    "Server": 40,
+    "Nas": 30
+  },
+
+  "9300": {
+    "Server": 35,
+    "Nas": 25
+  },
+
+  "10001": {
+    "Nas": 35,
+    "Server": 25,
+    "Iot": 15
+  },
+
+  "49152": {
+    "Desktop": 10,
+    "Laptop": 10,
+    "Server": 15,
+    "Iot": 15
+  },
+
+  "49153": {
+    "Desktop": 10,
+    "Laptop": 10,
+    "Server": 15,
+    "Iot": 15
+  },
+
+  "49154": {
+    "Desktop": 10,
+    "Laptop": 10,
+    "Server": 15,
+    "Iot": 15
+  },
+
+  "49155": {
+    "Desktop": 10,
+    "Laptop": 10,
+    "Server": 15,
+    "Iot": 15
+  },
+  "113": {
+    "Server": 20,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "1352": {
+    "Server": 30,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+
+  "17500": {
+    "Desktop": 20,
+    "Laptop": 20,
+    "Phone": 10,
+    "Tablet": 10
+  },
+
+  "1883": {
+    "Iot": 50,
+    "SmartTV": 15,
+    "SmartSpeaker": 15,
+    "Camera": 15
+  },
+
+  "8884": {
+    "Iot": 35,
+    "SmartTV": 15,
+    "SmartSpeaker": 15
+  },
+
+  "9001": {
+    "Nas": 30,
+    "Server": 25,
+    "Iot": 15
+  },
+
+  "10050": {
+    "Server": 30,
+    "Nas": 20
+  },
+
+  "10051": {
+    "Server": 30,
+    "Nas": 20
+  },
+
+  "11211": {
+    "Server": 35,
+    "Nas": 25
+  },
+
+  "27017": {
+    "Server": 40,
+    "Nas": 30
+  },
+
+  "27018": {
+    "Server": 35,
+    "Nas": 25
+  },
+
+  "50000": {
+    "Server": 30,
+    "Nas": 20,
+    "Iot": 15
+  },
+
+  "50001": {
+    "Server": 30,
+    "Nas": 20,
+    "Iot": 15
+  },
+
+  "50070": {
+    "Nas": 40,
+    "Server": 30
+  },
+
+  "50075": {
+    "Nas": 35,
+    "Server": 30
+  },
+
+  "61616": {
+    "Server": 30,
+    "Iot": 20
   }
 }

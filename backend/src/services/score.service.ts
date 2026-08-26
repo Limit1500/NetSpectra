@@ -24,6 +24,14 @@ class ScoreService {
     return scores;
   }
 
+  static getScoresSum(scores: Record<DeviceType, number>): number {
+    let sum = 0;
+    for (const key of Object.values(DeviceType)) {
+      sum += scores[key];
+    }
+    return sum;
+  }
+
   static getScores(
     vendor: string,
     hostname: string,
@@ -44,21 +52,22 @@ class ScoreService {
     return scores;
   }
 
-  static getDeviceByScore(scores: Record<DeviceType, number>): DeviceType {
+  static getDeviceByScore(scores: Record<DeviceType, number>) {
     let device = DeviceType.Unknown;
-
+    let maxScore = 0;
     for (const [key, score] of Object.entries(scores)) {
       const deviceType = key as DeviceType;
 
-      if (scores[device] < score) {
+      if (maxScore < score) {
         device = deviceType;
+        maxScore = score;
       }
     }
 
-    return device;
+    return { device, maxScore };
   }
 
-  static getSumScores(
+  static sumScoresSets(
     newScores: Record<DeviceType, number>,
     oldScores: Record<DeviceType, number>
   ): Record<DeviceType, number> {
@@ -73,7 +82,7 @@ class ScoreService {
     scores: Record<DeviceType, number>
   ): Record<DeviceType, number> {
     for (const key of Object.values(DeviceType)) {
-      scores[key] *= Number(process.env.UPDATES_MULTIPLIER);
+      scores[key] *= Number(process.env.DECAY_MULTIPLIER);
     }
     return scores;
   }

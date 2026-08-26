@@ -325,5 +325,2289 @@
 
   "sonos": {
     "SmartSpeaker": 100
+  },
+  "iphone15": {
+    "Phone": 100
+  },
+  "iphone14": {
+    "Phone": 100
+  },
+  "iphone13": {
+    "Phone": 100
+  },
+  "iphone12": {
+    "Phone": 100
+  },
+  "ipadpro": {
+    "Tablet": 100
+  },
+  "ipadair": {
+    "Tablet": 100
+  },
+  "ipadmini": {
+    "Tablet": 100
+  },
+  "macstudio": {
+    "Desktop": 100
+  },
+  "macpro": {
+    "Desktop": 100
+  },
+  "applewatch": {
+    "Phone": 30,
+    "Iot": 60
+  },
+  "watch": {
+    "Iot": 50
+  },
+  "galaxys": {
+    "Phone": 80
+  },
+  "galaxynote": {
+    "Phone": 80
+  },
+  "galaxytab": {
+    "Tablet": 90
+  },
+  "galaxytablet": {
+    "Tablet": 90
+  },
+  "galaxybook": {
+    "Laptop": 90
+  },
+  "surface": {
+    "Laptop": 80,
+    "Tablet": 40
+  },
+  "surfacelaptop": {
+    "Laptop": 100
+  },
+  "surfacetablet": {
+    "Tablet": 100
+  },
+  "surfacepro": {
+    "Tablet": 80,
+    "Laptop": 40
+  },
+  "rog": {
+    "Laptop": 70,
+    "Desktop": 30
+  },
+  "tuf": {
+    "Laptop": 70,
+    "Desktop": 30
+  },
+  "yoga": {
+    "Laptop": 80
+  },
+  "notebook": {
+    "Laptop": 80
+  },
+  "desktoppc": {
+    "Desktop": 90
+  },
+  "gamingpc": {
+    "Desktop": 90
+  },
+  "gamingdesktop": {
+    "Desktop": 90
+  },
+  "htpc": {
+    "Desktop": 70,
+    "StreamingDevice": 20
+  },
+  "smarttv": {
+    "SmartTV": 100
+  },
+  "androidtv": {
+    "SmartTV": 90,
+    "StreamingDevice": 50
+  },
+  "googletv": {
+    "SmartTV": 90,
+    "StreamingDevice": 60
+  },
+  "braviatv": {
+    "SmartTV": 100
+  },
+  "bravia": {
+    "SmartTV": 90
+  },
+  "tizen": {
+    "SmartTV": 90
+  },
+  "webostv": {
+    "SmartTV": 90
+  },
+  "webos": {
+    "SmartTV": 80
+  },
+  "rokuplayer": {
+    "StreamingDevice": 100
+  },
+  "firetvstick": {
+    "StreamingDevice": 100
+  },
+  "firetvcube": {
+    "StreamingDevice": 100
+  },
+  "appletv4k": {
+    "StreamingDevice": 100
+  },
+  "miabox": {
+    "StreamingDevice": 90,
+    "SmartTV": 40
+  },
+  "mibox": {
+    "StreamingDevice": 90,
+    "SmartTV": 40
+  },
+  "nvidiashield": {
+    "StreamingDevice": 100
+  },
+  "shieldtv": {
+    "StreamingDevice": 100
+  },
+  "playstation4": {
+    "GameConsole": 100
+  },
+  "playstation5": {
+    "GameConsole": 100
+  },
+  "ps3": {
+    "GameConsole": 100
+  },
+  "xboxone": {
+    "GameConsole": 100
+  },
+  "xboxseries": {
+    "GameConsole": 100
+  },
+  "xboxseriesx": {
+    "GameConsole": 100
+  },
+  "xboxseriess": {
+    "GameConsole": 100
+  },
+  "switchconsole": {
+    "GameConsole": 100
+  },
+  "switchlite": {
+    "GameConsole": 100
+  },
+  "steamdeck": {
+    "GameConsole": 80,
+    "Laptop": 30
+  },
+  "rogally": {
+    "GameConsole": 80,
+    "Laptop": 30
+  },
+  "retropie": {
+    "GameConsole": 80
+  },
+  "homeserver": {
+    "Server": 90
+  },
+  "database": {
+    "Server": 90
+  },
+  "dbserver": {
+    "Server": 90
+  },
+  "mailserver": {
+    "Server": 90
+  },
+  "proxyserver": {
+    "Server": 80,
+    "Gateway": 30
+  },
+  "dhcpserver": {
+    "Server": 70,
+    "Router": 40
+  },
+  "dnsserver": {
+    "Server": 70,
+    "Router": 40
+  },
+  "vpnserver": {
+    "Server": 70,
+    "Gateway": 50
+  },
+  "plexserver": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "mediaserver": {
+    "Nas": 70,
+    "Server": 50
+  },
+  "freenas": {
+    "Nas": 100
+  },
+  "truenas": {
+    "Nas": 100
+  },
+  "diskstation": {
+    "Nas": 100
+  },
+  "storage": {
+    "Nas": 70,
+    "Server": 40
+  },
+  "backupserver": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "cameras": {
+    "Camera": 90
+  },
+  "ipcamera": {
+    "Camera": 100
+  },
+  "webcam": {
+    "Camera": 80,
+    "Desktop": 20
+  },
+  "securitycamera": {
+    "Camera": 100
+  },
+  "doorbellcamera": {
+    "Camera": 100
+  },
+  "printerserver": {
+    "Printer": 70,
+    "Server": 40
+  },
+  "laserprinter": {
+    "Printer": 100
+  },
+  "multifunction": {
+    "Printer": 70,
+    "Scanner": 60
+  },
+  "smartlight": {
+    "Iot": 100
+  },
+  "plug": {
+    "Iot": 70
+  },
+  "smartthermostat": {
+    "Iot": 100
+  },
+  "sensor": {
+    "Iot": 90
+  },
+  "temperature": {
+    "Iot": 80
+  },
+  "humidity": {
+    "Iot": 80
+  },
+  "motionsensor": {
+    "Iot": 100
+  },
+  "smokesensor": {
+    "Iot": 100
+  },
+  "smokealarm": {
+    "Iot": 100
+  },
+  "alarmsystem": {
+    "Iot": 90,
+    "Gateway": 20
+  },
+  "smartlock": {
+    "Iot": 100
+  },
+  "lock": {
+    "Iot": 70
+  },
+  "vacuum": {
+    "Iot": 70
+  },
+  "roomba": {
+    "Iot": 100
+  },
+  "airconditioner": {
+    "Iot": 90
+  },
+  "airconditioning": {
+    "Iot": 80
+  },
+  "washingmachine": {
+    "Iot": 100
+  },
+  "dishwasher": {
+    "Iot": 100
+  },
+  "refrigerator": {
+    "Iot": 100
+  },
+  "fridge": {
+    "Iot": 90
+  },
+  "smartfridge": {
+    "Iot": 100
+  },
+  "smartoven": {
+    "Iot": 100
+  },
+  "smarthome": {
+    "Iot": 80
+  },
+  "homeassistantserver": {
+    "Server": 60,
+    "Iot": 50
+  },
+  "zigbee": {
+    "Iot": 90
+  },
+  "zwave": {
+    "Iot": 90
+  },
+  "hub": {
+    "Iot": 50,
+    "Gateway": 30
+  },
+  "smarthub": {
+    "Iot": 90,
+    "Gateway": 30
+  },
+  "iotgateway": {
+    "Gateway": 80,
+    "Iot": 60
+  },
+  "mqtt": {
+    "Iot": 70,
+    "Server": 30
+  },
+  "speaker": {
+    "SmartSpeaker": 80
+  },
+  "smartspeaker": {
+    "SmartSpeaker": 100
+  },
+  "soundbar": {
+    "SmartSpeaker": 90
+  },
+  "audio": {
+    "SmartSpeaker": 60
+  },
+  "sonosplay": {
+    "SmartSpeaker": 100
+  },
+  "echo dot": {
+    "SmartSpeaker": 100
+  },
+  "echodot": {
+    "SmartSpeaker": 100
+  },
+  "echoshow": {
+    "SmartSpeaker": 100,
+    "SmartTV": 30
+  },
+  "googlehome": {
+    "SmartSpeaker": 100
+  },
+  "nestmini": {
+    "SmartSpeaker": 100
+  },
+  "nestaudio": {
+    "SmartSpeaker": 100
+  },
+  "iphone16": {
+    "Phone": 100
+  },
+  "iphone17": {
+    "Phone": 100
+  },
+  "ipad2024": {
+    "Tablet": 90
+  },
+  "ipad2025": {
+    "Tablet": 90
+  },
+  "macbookm1": {
+    "Laptop": 100
+  },
+  "macbookm2": {
+    "Laptop": 100
+  },
+  "macbookm3": {
+    "Laptop": 100
+  },
+  "macbookm4": {
+    "Laptop": 100
+  },
+  "macpro2019": {
+    "Desktop": 100
+  },
+  "imacpro": {
+    "Desktop": 100
+  },
+  "galaxys21": {
+    "Phone": 100
+  },
+  "galaxys22": {
+    "Phone": 100
+  },
+  "galaxys23": {
+    "Phone": 100
+  },
+  "galaxys24": {
+    "Phone": 100
+  },
+  "galaxys25": {
+    "Phone": 100
+  },
+  "galaxys26": {
+    "Phone": 100
+  },
+  "galaxya": {
+    "Phone": 70,
+    "Tablet": 20
+  },
+  "galaxym": {
+    "Phone": 70
+  },
+  "galaxyz": {
+    "Phone": 80
+  },
+  "galaxyfold": {
+    "Phone": 90
+  },
+  "galaxyflip": {
+    "Phone": 90
+  },
+  "galaxywatch": {
+    "Iot": 70,
+    "Phone": 20
+  },
+  "redmiphone": {
+    "Phone": 90
+  },
+  "redmitablet": {
+    "Tablet": 90
+  },
+  "pocophone": {
+    "Phone": 90
+  },
+  "oneplusphone": {
+    "Phone": 90
+  },
+  "opporeno": {
+    "Phone": 90
+  },
+  "oppoa": {
+    "Phone": 80
+  },
+  "realmegt": {
+    "Phone": 90
+  },
+  "realmenarzo": {
+    "Phone": 90
+  },
+  "honorphone": {
+    "Phone": 85
+  },
+  "honortablet": {
+    "Tablet": 85
+  },
+  "huaweiphone": {
+    "Phone": 85
+  },
+  "huaweitab": {
+    "Tablet": 85
+  },
+  "matebook": {
+    "Laptop": 95
+  },
+  "matepad": {
+    "Tablet": 95
+  },
+  "surfacebook": {
+    "Laptop": 90
+  },
+  "surfacego": {
+    "Tablet": 85,
+    "Laptop": 30
+  },
+  "surfacepro9": {
+    "Tablet": 85,
+    "Laptop": 40
+  },
+  "surfacepro10": {
+    "Tablet": 85,
+    "Laptop": 40
+  },
+  "surfacepro11": {
+    "Tablet": 85,
+    "Laptop": 40
+  },
+  "yogatablet": {
+    "Tablet": 90
+  },
+  "precision": {
+    "Laptop": 70,
+    "Desktop": 60
+  },
+  "optiplex": {
+    "Desktop": 95
+  },
+  "envy": {
+    "Laptop": 80
+  },
+  "spectre": {
+    "Laptop": 90
+  },
+  "victus": {
+    "Laptop": 80
+  },
+  "chromecastultra": {
+    "StreamingDevice": 100
+  },
+  "chromecastaudio": {
+    "StreamingDevice": 90,
+    "SmartSpeaker": 40
+  },
+  "googletvstreamer": {
+    "StreamingDevice": 100
+  },
+  "firestick4k": {
+    "StreamingDevice": 100
+  },
+  "firestickmax": {
+    "StreamingDevice": 100
+  },
+  "rokuultra": {
+    "StreamingDevice": 100
+  },
+  "rokuexpress": {
+    "StreamingDevice": 100
+  },
+  "rokustick": {
+    "StreamingDevice": 100
+  },
+  "appletvhd": {
+    "StreamingDevice": 100
+  },
+  "miostick": {
+    "StreamingDevice": 100
+  },
+  "nintendoswitch": {
+    "GameConsole": 100
+  },
+  "nintendoswitch2": {
+    "GameConsole": 100
+  },
+  "nintendowii": {
+    "GameConsole": 100
+  },
+  "nintendowiiu": {
+    "GameConsole": 100
+  },
+  "nintendo3ds": {
+    "GameConsole": 100
+  },
+  "xbox360": {
+    "GameConsole": 100
+  },
+  "ps5pro": {
+    "GameConsole": 100
+  },
+  "playstationportal": {
+    "GameConsole": 90
+  },
+  "steamdeckoled": {
+    "GameConsole": 90,
+    "Laptop": 20
+  },
+  "printer1": {
+    "Printer": 70
+  },
+  "printer2": {
+    "Printer": 70
+  },
+  "officeprinter": {
+    "Printer": 90
+  },
+  "networkprinter": {
+    "Printer": 90
+  },
+  "copier": {
+    "Printer": 70,
+    "Scanner": 60
+  },
+  "photocopier": {
+    "Printer": 80,
+    "Scanner": 70
+  },
+  "scanner1": {
+    "Scanner": 90
+  },
+  "scanneroffice": {
+    "Scanner": 90
+  },
+  "ipcam": {
+    "Camera": 100
+  },
+  "ipcam1": {
+    "Camera": 100
+  },
+  "ipcam2": {
+    "Camera": 100
+  },
+  "securitycam1": {
+    "Camera": 100
+  },
+  "frontdoor": {
+    "Camera": 70,
+    "Iot": 50
+  },
+  "backdoor": {
+    "Camera": 70,
+    "Iot": 50
+  },
+  "garagecam": {
+    "Camera": 100
+  },
+  "babycam": {
+    "Camera": 100
+  },
+  "petcam": {
+    "Camera": 100
+  },
+  "nas1": {
+    "Nas": 100
+  },
+  "nas2": {
+    "Nas": 100
+  },
+  "nasbackup": {
+    "Nas": 100
+  },
+  "nasstorage": {
+    "Nas": 100
+  },
+  "fileserver1": {
+    "Server": 90,
+    "Nas": 50
+  },
+  "webserver1": {
+    "Server": 90
+  },
+  "dbserver1": {
+    "Server": 90
+  },
+  "homeserver1": {
+    "Server": 90
+  },
+  "dockerhost": {
+    "Server": 80,
+    "Nas": 30
+  },
+  "proxmox": {
+    "Server": 90
+  },
+  "hypervisor": {
+    "Server": 90
+  },
+  "virtualmachine": {
+    "Server": 70,
+    "Desktop": 30
+  },
+  "vmhost": {
+    "Server": 90
+  },
+  "esxi": {
+    "Server": 90
+  },
+  "unraid": {
+    "Nas": 90,
+    "Server": 50
+  },
+  "mikrotik": {
+    "Router": 100
+  },
+  "ubiquiti": {
+    "Router": 70,
+    "AccessPoint": 60,
+    "Switch": 40
+  },
+  "unifiap": {
+    "AccessPoint": 100
+  },
+  "unifiswitch": {
+    "Switch": 100
+  },
+  "unifigateway": {
+    "Gateway": 100,
+    "Router": 60
+  },
+  "tp-link": {
+    "Router": 70,
+    "AccessPoint": 60
+  },
+  "tplinkrouter": {
+    "Router": 100
+  },
+  "tplinkap": {
+    "AccessPoint": 100
+  },
+  "tplinkswitch": {
+    "Switch": 100
+  },
+  "netgearrouter": {
+    "Router": 100
+  },
+  "netgearap": {
+    "AccessPoint": 100
+  },
+  "netgearswitch": {
+    "Switch": 100
+  },
+  "switch01": {
+    "Switch": 90
+  },
+  "switch02": {
+    "Switch": 90
+  },
+  "core-switch": {
+    "Switch": 100
+  },
+  "coreswitch": {
+    "Switch": 100
+  },
+  "managedswitch": {
+    "Switch": 100
+  },
+  "wifiap": {
+    "AccessPoint": 100
+  },
+  "wirelessap": {
+    "AccessPoint": 100
+  },
+  "wirelessrouter": {
+    "Router": 90,
+    "AccessPoint": 40
+  },
+  "wlanap": {
+    "AccessPoint": 100
+  },
+  "meshnode": {
+    "AccessPoint": 80,
+    "Router": 50
+  },
+  "meshrouter": {
+    "Router": 90,
+    "AccessPoint": 50
+  },
+  "iphone8": {
+    "Phone": 100
+  },
+  "iphone9": {
+    "Phone": 100
+  },
+  "iphone10": {
+    "Phone": 100
+  },
+  "iphone11": {
+    "Phone": 100
+  },
+  "iphone16pro": {
+    "Phone": 100
+  },
+  "iphone16promax": {
+    "Phone": 100
+  },
+  "iphone17pro": {
+    "Phone": 100
+  },
+  "iphone17promax": {
+    "Phone": 100
+  },
+  "ipadmini6": {
+    "Tablet": 100
+  },
+  "ipadmini7": {
+    "Tablet": 100
+  },
+  "ipadpro11": {
+    "Tablet": 100
+  },
+  "ipadpro12": {
+    "Tablet": 100
+  },
+  "ipadpro13": {
+    "Tablet": 100
+  },
+  "macbookairm1": {
+    "Laptop": 100
+  },
+  "macbookairm2": {
+    "Laptop": 100
+  },
+  "macbookairm3": {
+    "Laptop": 100
+  },
+  "macbookprom1": {
+    "Laptop": 100
+  },
+  "macbookprom2": {
+    "Laptop": 100
+  },
+  "macbookprom3": {
+    "Laptop": 100
+  },
+  "macbookprom4": {
+    "Laptop": 100
+  },
+  "galaxynote20": {
+    "Phone": 100
+  },
+  "galaxynote10": {
+    "Phone": 100
+  },
+  "galaxys20": {
+    "Phone": 100
+  },
+  "galaxys10": {
+    "Phone": 100
+  },
+  "galaxys9": {
+    "Phone": 100
+  },
+  "galaxys8": {
+    "Phone": 100
+  },
+  "galaxya52": {
+    "Phone": 100
+  },
+  "galaxya54": {
+    "Phone": 100
+  },
+  "galaxya55": {
+    "Phone": 100
+  },
+  "galaxytabs8": {
+    "Tablet": 100
+  },
+  "galaxytabs9": {
+    "Tablet": 100
+  },
+  "galaxytabs10": {
+    "Tablet": 100
+  },
+  "pixel6": {
+    "Phone": 100
+  },
+  "pixel7": {
+    "Phone": 100
+  },
+  "pixel8": {
+    "Phone": 100
+  },
+  "pixel9": {
+    "Phone": 100
+  },
+  "pixel10": {
+    "Phone": 100
+  },
+  "pixelpro": {
+    "Phone": 90
+  },
+  "pixelxl": {
+    "Phone": 90
+  },
+  "pixelfold": {
+    "Phone": 100
+  },
+  "oneplus9": {
+    "Phone": 100
+  },
+  "oneplus10": {
+    "Phone": 100
+  },
+  "oneplus11": {
+    "Phone": 100
+  },
+  "oneplus12": {
+    "Phone": 100
+  },
+  "oneplus13": {
+    "Phone": 100
+  },
+  "oppoa5": {
+    "Phone": 90
+  },
+  "oppoa7": {
+    "Phone": 90
+  },
+  "oppoa9": {
+    "Phone": 90
+  },
+  "opporeno5": {
+    "Phone": 100
+  },
+  "opporeno6": {
+    "Phone": 100
+  },
+  "opporeno7": {
+    "Phone": 100
+  },
+  "opporeno8": {
+    "Phone": 100
+  },
+  "opporeno9": {
+    "Phone": 100
+  },
+  "opporeno10": {
+    "Phone": 100
+  },
+  "opporeno11": {
+    "Phone": 100
+  },
+  "opporeno12": {
+    "Phone": 100
+  },
+  "realme8": {
+    "Phone": 100
+  },
+  "realme9": {
+    "Phone": 100
+  },
+  "realme10": {
+    "Phone": 100
+  },
+  "realme11": {
+    "Phone": 100
+  },
+  "realme12": {
+    "Phone": 100
+  },
+  "realme13": {
+    "Phone": 100
+  },
+  "redmi9": {
+    "Phone": 100
+  },
+  "redmi10": {
+    "Phone": 100
+  },
+  "redmi11": {
+    "Phone": 100
+  },
+  "redmi12": {
+    "Phone": 100
+  },
+  "redmi13": {
+    "Phone": 100
+  },
+  "redminote9": {
+    "Phone": 100
+  },
+  "redminote10": {
+    "Phone": 100
+  },
+  "redminote11": {
+    "Phone": 100
+  },
+  "redminote12": {
+    "Phone": 100
+  },
+  "redminote13": {
+    "Phone": 100
+  },
+  "thinkpadx1": {
+    "Laptop": 100
+  },
+  "thinkpadx13": {
+    "Laptop": 100
+  },
+  "thinkpadt14": {
+    "Laptop": 100
+  },
+  "thinkpadp1": {
+    "Laptop": 100
+  },
+  "ideapad3": {
+    "Laptop": 100
+  },
+  "ideapad5": {
+    "Laptop": 100
+  },
+  "legion5": {
+    "Laptop": 100
+  },
+  "legion7": {
+    "Laptop": 100
+  },
+  "rogstrix": {
+    "Laptop": 90
+  },
+  "rogzephyrus": {
+    "Laptop": 100
+  },
+  "tufgaming": {
+    "Laptop": 90
+  },
+  "zenbook14": {
+    "Laptop": 100
+  },
+  "zenbook15": {
+    "Laptop": 100
+  },
+  "vivobook15": {
+    "Laptop": 100
+  },
+  "vivobook16": {
+    "Laptop": 100
+  },
+  "macdesktop": {
+    "Desktop": 80
+  },
+  "windowsdesktop": {
+    "Desktop": 80
+  },
+  "windowslaptop": {
+    "Laptop": 80
+  },
+  "winpc": {
+    "Desktop": 60,
+    "Laptop": 40
+  },
+  "officepc": {
+    "Desktop": 90
+  },
+  "officecomputer": {
+    "Desktop": 80
+  },
+  "gamingrig": {
+    "Desktop": 90
+  },
+  "gamingpc01": {
+    "Desktop": 90
+  },
+  "desktop01": {
+    "Desktop": 90
+  },
+  "desktop02": {
+    "Desktop": 90
+  },
+  "laptop01": {
+    "Laptop": 90
+  },
+  "laptop02": {
+    "Laptop": 90
+  },
+  "workpc": {
+    "Desktop": 80
+  },
+  "worklaptop": {
+    "Laptop": 80
+  },
+  "office-laptop": {
+    "Laptop": 90
+  },
+  "office-laptop01": {
+    "Laptop": 90
+  },
+  "tv": {
+    "SmartTV": 70
+  },
+  "tv01": {
+    "SmartTV": 80
+  },
+  "tv02": {
+    "SmartTV": 80
+  },
+  "livingroomtv": {
+    "SmartTV": 100
+  },
+  "kitchentv": {
+    "SmartTV": 100
+  },
+  "familytv": {
+    "SmartTV": 90
+  },
+  "oledtv": {
+    "SmartTV": 100
+  },
+  "ledtv": {
+    "SmartTV": 90
+  },
+  "qledtv": {
+    "SmartTV": 100
+  },
+  "androidtvbox": {
+    "StreamingDevice": 90,
+    "SmartTV": 50
+  },
+  "tvbox": {
+    "StreamingDevice": 80,
+    "SmartTV": 30
+  },
+  "mediabox": {
+    "StreamingDevice": 80
+  },
+  "settopbox": {
+    "StreamingDevice": 90
+  },
+  "settop": {
+    "StreamingDevice": 70
+  },
+  "streamingbox": {
+    "StreamingDevice": 90
+  },
+  "console": {
+    "GameConsole": 80
+  },
+  "gamingconsole": {
+    "GameConsole": 100
+  },
+  "gameconsole": {
+    "GameConsole": 100
+  },
+  "gameserver": {
+    "Server": 80,
+    "GameConsole": 20
+  },
+  "nasbackup01": {
+    "Nas": 100
+  },
+  "nasbackup02": {
+    "Nas": 100
+  },
+  "nasmedia": {
+    "Nas": 100
+  },
+  "nas01": {
+    "Nas": 100
+  },
+  "nas02": {
+    "Nas": 100
+  },
+  "storage01": {
+    "Nas": 90,
+    "Server": 30
+  },
+  "storage02": {
+    "Nas": 90,
+    "Server": 30
+  },
+  "backupnas": {
+    "Nas": 100
+  },
+  "synologyds": {
+    "Nas": 100
+  },
+  "qnapts": {
+    "Nas": 100
+  },
+  "server01": {
+    "Server": 100
+  },
+  "server02": {
+    "Server": 100
+  },
+  "server03": {
+    "Server": 100
+  },
+  "linuxserver": {
+    "Server": 90
+  },
+  "ubuntu-server": {
+    "Server": 90
+  },
+  "debian-server": {
+    "Server": 90
+  },
+  "centos-server": {
+    "Server": 90
+  },
+  "rockylinux": {
+    "Server": 80
+  },
+  "almalinux": {
+    "Server": 80
+  },
+  "linuxhost": {
+    "Server": 80
+  },
+  "unixserver": {
+    "Server": 90
+  },
+  "networkserver": {
+    "Server": 80
+  },
+  "dhcp": {
+    "Router": 50,
+    "Server": 30
+  },
+  "dns": {
+    "Router": 50,
+    "Server": 30
+  },
+  "vpn": {
+    "Gateway": 60,
+    "Router": 50,
+    "Server": 30
+  },
+  "proxy": {
+    "Gateway": 60,
+    "Router": 40,
+    "Server": 30
+  },
+  "firewall01": {
+    "Gateway": 90,
+    "Router": 50
+  },
+  "router01": {
+    "Router": 100
+  },
+  "router02": {
+    "Router": 100
+  },
+  "router03": {
+    "Router": 100
+  },
+  "gateway01": {
+    "Gateway": 100,
+    "Router": 50
+  },
+  "gateway02": {
+    "Gateway": 100,
+    "Router": 50
+  },
+  "ap01": {
+    "AccessPoint": 90
+  },
+  "ap02": {
+    "AccessPoint": 90
+  },
+  "wifi01": {
+    "AccessPoint": 70
+  },
+  "wifi02": {
+    "AccessPoint": 70
+  },
+  "wireless01": {
+    "AccessPoint": 70
+  },
+  "wireless02": {
+    "AccessPoint": 70
+  },
+  "networkap": {
+    "AccessPoint": 100
+  },
+  "wifiap01": {
+    "AccessPoint": 100
+  },
+  "wifiap02": {
+    "AccessPoint": 100
+  },
+  "switch03": {
+    "Switch": 100
+  },
+  "networkswitch": {
+    "Switch": 100
+  },
+  "switchcore": {
+    "Switch": 100
+  },
+  "camerahub": {
+    "Camera": 70,
+    "Iot": 50
+  },
+  "cameranvr": {
+    "Camera": 80,
+    "Server": 30
+  },
+  "securitynvr": {
+    "Camera": 80,
+    "Server": 40
+  },
+  "doorcamera": {
+    "Camera": 100
+  },
+  "garagecamera": {
+    "Camera": 100
+  },
+  "outdoorcamera": {
+    "Camera": 100
+  },
+  "indoorcamera": {
+    "Camera": 100
+  },
+  "smartdoor": {
+    "Iot": 100
+  },
+  "smartgate": {
+    "Iot": 100
+  },
+  "smartmeter": {
+    "Iot": 100
+  },
+  "energymeter": {
+    "Iot": 90
+  },
+  "powermeter": {
+    "Iot": 90
+  },
+  "watermeter": {
+    "Iot": 90
+  },
+  "smartplug01": {
+    "Iot": 100
+  },
+  "smartplug02": {
+    "Iot": 100
+  },
+  "smartbulb01": {
+    "Iot": 100
+  },
+  "smartbulb02": {
+    "Iot": 100
+  },
+  "lightsensor": {
+    "Iot": 90
+  },
+  "airquality": {
+    "Iot": 90
+  },
+  "airqualitysensor": {
+    "Iot": 100
+  },
+  "motionsensor01": {
+    "Iot": 100
+  },
+  "motionsensor02": {
+    "Iot": 100
+  },
+  "tempsensor": {
+    "Iot": 90
+  },
+  "thermostat01": {
+    "Iot": 100
+  },
+  "thermostat02": {
+    "Iot": 100
+  },
+  "android-phone": {
+    "Phone": 90
+  },
+  "android-tablet": {
+    "Tablet": 90
+  },
+  "iphone-pro": {
+    "Phone": 100
+  },
+  "iphone-max": {
+    "Phone": 100
+  },
+  "iphone-plus": {
+    "Phone": 100
+  },
+  "iphone-se": {
+    "Phone": 100
+  },
+  "pixel-7": {
+    "Phone": 90
+  },
+  "pixel-8": {
+    "Phone": 90
+  },
+  "pixel-9": {
+    "Phone": 90
+  },
+  "pixel-10": {
+    "Phone": 90
+  },
+  "galaxy-s": {
+    "Phone": 90
+  },
+  "galaxy-a": {
+    "Phone": 90
+  },
+  "galaxy-note": {
+    "Phone": 90
+  },
+  "galaxy-z": {
+    "Phone": 90
+  },
+  "galaxy-tab": {
+    "Tablet": 90
+  },
+  "galaxy-watch": {
+    "Iot": 60
+  },
+  "redmi-note": {
+    "Phone": 90
+  },
+  "redmi-pad": {
+    "Tablet": 90
+  },
+  "poco-f": {
+    "Phone": 90
+  },
+  "poco-x": {
+    "Phone": 90
+  },
+  "poco-m": {
+    "Phone": 90
+  },
+  "oneplus-nord": {
+    "Phone": 90
+  },
+  "oneplus-ace": {
+    "Phone": 90
+  },
+  "huawei-mate": {
+    "Phone": 90
+  },
+  "huawei-p": {
+    "Phone": 90
+  },
+  "huawei-mediapad": {
+    "Tablet": 90
+  },
+  "honor-magic": {
+    "Phone": 90
+  },
+  "honor-x": {
+    "Phone": 90
+  },
+  "honor-pad": {
+    "Tablet": 90
+  },
+  "mi-pad": {
+    "Tablet": 90
+  },
+  "mi-tv": {
+    "SmartTV": 90
+  },
+  "redmi-tv": {
+    "SmartTV": 90
+  },
+  "xiaomi-tv": {
+    "SmartTV": 90
+  },
+  "mac-studio": {
+    "Desktop": 100
+  },
+  "mac-pro": {
+    "Desktop": 100
+  },
+  "macbook-m": {
+    "Laptop": 90
+  },
+  "poweredge": {
+    "Server": 100
+  },
+  "proliant": {
+    "Server": 100
+  },
+  "thinksystem": {
+    "Server": 100
+  },
+  "netserver": {
+    "Server": 90
+  },
+
+  "terramaster": {
+    "Nas": 100
+  },
+  "mycloud": {
+    "Nas": 90
+  },
+  "wdmycloud": {
+    "Nas": 100
+  },
+  "door-camera": {
+    "Camera": 90
+  },
+  "security-camera": {
+    "Camera": 100
+  },
+  "smart-camera": {
+    "Camera": 90,
+    "Iot": 20
+  },
+  "ring": {
+    "Camera": 70,
+    "Iot": 30
+  },
+  "arlo": {
+    "Camera": 100
+  },
+  "eufycam": {
+    "Camera": 100
+  },
+  "reolink-camera": {
+    "Camera": 100
+  },
+  "chromecast-ultra": {
+    "StreamingDevice": 100
+  },
+  "chromecast-audio": {
+    "StreamingDevice": 100,
+    "SmartSpeaker": 30
+  },
+  "fire-tv-stick": {
+    "StreamingDevice": 100
+  },
+  "fire-tv-cube": {
+    "StreamingDevice": 100
+  },
+  "roku-tv": {
+    "StreamingDevice": 90,
+    "SmartTV": 40
+  },
+  "apple-tv-4k": {
+    "StreamingDevice": 100
+  },
+  "shield-tv": {
+    "StreamingDevice": 100
+  },
+  "steam-deck": {
+    "GameConsole": 90
+  },
+  "playstation-4": {
+    "GameConsole": 100
+  },
+  "playstation-5": {
+    "GameConsole": 100
+  },
+  "xbox-one": {
+    "GameConsole": 100
+  },
+  "xbox-series": {
+    "GameConsole": 100
+  },
+  "switch-console": {
+    "GameConsole": 100
+  },
+  "android-tv": {
+    "SmartTV": 80,
+    "StreamingDevice": 40
+  },
+  "google-tv": {
+    "SmartTV": 80,
+    "StreamingDevice": 40
+  },
+  "webos-tv": {
+    "SmartTV": 100
+  },
+  "tizen-tv": {
+    "SmartTV": 100
+  },
+  "samsung-tv": {
+    "SmartTV": 100
+  },
+  "lg-tv": {
+    "SmartTV": 100
+  },
+  "sony-tv": {
+    "SmartTV": 100
+  },
+  "philips-tv": {
+    "SmartTV": 100
+  },
+  "panasonic-tv": {
+    "SmartTV": 100
+  },
+  "echo-dot": {
+    "SmartSpeaker": 100
+  },
+  "echo-show": {
+    "SmartSpeaker": 80,
+    "SmartTV": 30
+  },
+  "echo-studio": {
+    "SmartSpeaker": 100
+  },
+  "google-nest": {
+    "SmartSpeaker": 80,
+    "Iot": 30
+  },
+  "nest-audio": {
+    "SmartSpeaker": 100
+  },
+  "nest-mini": {
+    "SmartSpeaker": 100
+  },
+  "sonos-one": {
+    "SmartSpeaker": 100
+  },
+  "sonos-beam": {
+    "SmartSpeaker": 100
+  },
+  "sonos-arc": {
+    "SmartSpeaker": 100
+  },
+  "galaxy-watch-active": {
+    "Iot": 70
+  },
+  "galaxy-watch-classic": {
+    "Iot": 70
+  },
+  "galaxy-buds": {
+    "Iot": 60
+  },
+  "galaxy-home": {
+    "SmartSpeaker": 90
+  },
+  "smartthings": {
+    "Iot": 80
+  },
+  "mi-band": {
+    "Iot": 70
+  },
+  "mi-watch": {
+    "Iot": 70
+  },
+  "xiaomi-band": {
+    "Iot": 70
+  },
+  "redmi-watch": {
+    "Iot": 70
+  },
+  "fitbit": {
+    "Iot": 70
+  },
+  "garmin": {
+    "Iot": 70
+  },
+  "apple-watch": {
+    "Iot": 80
+  },
+  "watchos": {
+    "Iot": 70
+  },
+  "airpods": {
+    "Iot": 70
+  },
+  "homepod-mini": {
+    "SmartSpeaker": 100
+  },
+  "google-nest-hub": {
+    "SmartSpeaker": 80,
+    "SmartTV": 30
+  },
+  "nest-hub": {
+    "SmartSpeaker": 80,
+    "SmartTV": 30
+  },
+  "nest-hub-max": {
+    "SmartSpeaker": 70,
+    "SmartTV": 40
+  },
+  "sonos-five": {
+    "SmartSpeaker": 100
+  },
+  "sonos-move": {
+    "SmartSpeaker": 100
+  },
+  "sonos-roam": {
+    "SmartSpeaker": 100
+  },
+  "sonos-port": {
+    "SmartSpeaker": 80,
+    "StreamingDevice": 30
+  },
+  "sonos-connect": {
+    "SmartSpeaker": 80,
+    "StreamingDevice": 30
+  },
+  "roku-express": {
+    "StreamingDevice": 100
+  },
+  "roku-premiere": {
+    "StreamingDevice": 100
+  },
+  "roku-ultra": {
+    "StreamingDevice": 100
+  },
+  "firestick": {
+    "StreamingDevice": 100
+  },
+  "firetv-stick-4k": {
+    "StreamingDevice": 100
+  },
+  "firetv-stick-4k-max": {
+    "StreamingDevice": 100
+  },
+  "apple-tv-hd": {
+    "StreamingDevice": 100
+  },
+  "nvidia-shield": {
+    "StreamingDevice": 100
+  },
+  "steam-link": {
+    "StreamingDevice": 90
+  },
+  "psvita": {
+    "GameConsole": 100
+  },
+  "psp": {
+    "GameConsole": 100
+  },
+  "wii": {
+    "GameConsole": 100
+  },
+  "wii-u": {
+    "GameConsole": 100
+  },
+  "switch-lite": {
+    "GameConsole": 100
+  },
+  "switch-oled": {
+    "GameConsole": 100
+  },
+  "xbox-series-x": {
+    "GameConsole": 100
+  },
+  "xbox-series-s": {
+    "GameConsole": 100
+  },
+  "xbox-360": {
+    "GameConsole": 100
+  },
+  "lg-webos": {
+    "SmartTV": 100
+  },
+  "samsung-tizen": {
+    "SmartTV": 100
+  },
+  "sony-bravia": {
+    "SmartTV": 100
+  },
+  "philips-androidtv": {
+    "SmartTV": 100
+  },
+  "panasonic-viera": {
+    "SmartTV": 100
+  },
+  "hisense-tv": {
+    "SmartTV": 100
+  },
+  "tcl-tv": {
+    "SmartTV": 100
+  },
+  "vizio-tv": {
+    "SmartTV": 100
+  },
+  "sharp-aquos": {
+    "SmartTV": 100
+  },
+  "toshiba-tv": {
+    "SmartTV": 100
+  },
+  "firetv-edition": {
+    "SmartTV": 70,
+    "StreamingDevice": 50
+  },
+  "androidtv-box": {
+    "StreamingDevice": 80,
+    "SmartTV": 40
+  },
+  "tv-box": {
+    "StreamingDevice": 70,
+    "SmartTV": 30
+  },
+  "media-box": {
+    "StreamingDevice": 70
+  },
+  "media-player": {
+    "StreamingDevice": 70
+  },
+  "plex-server": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "plex-media-server": {
+    "Nas": 80,
+    "Server": 60
+  },
+  "jellyfin": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "emby": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "minidlna": {
+    "Nas": 70,
+    "Server": 50
+  },
+  "openmediavault": {
+    "Nas": 90,
+    "Server": 50
+  },
+  "omv": {
+    "Nas": 80,
+    "Server": 50
+  },
+  "synology-diskstation": {
+    "Nas": 100
+  },
+  "qnap-nas": {
+    "Nas": 100
+  },
+  "asustor-nas": {
+    "Nas": 100
+  },
+  "print-server": {
+    "Printer": 70,
+    "Server": 40
+  },
+  "printserver": {
+    "Printer": 70,
+    "Server": 40
+  },
+  "mfp": {
+    "Printer": 70,
+    "Scanner": 70
+  },
+  "multifunction-printer": {
+    "Printer": 80,
+    "Scanner": 80
+  },
+  "laser-printer": {
+    "Printer": 100
+  },
+  "inkjet": {
+    "Printer": 90
+  },
+  "network-printer": {
+    "Printer": 100
+  },
+  "network-scanner": {
+    "Scanner": 100
+  },
+  "document-scanner": {
+    "Scanner": 100
+  },
+  "ip-camera": {
+    "Camera": 100
+  },
+  "network-camera": {
+    "Camera": 100
+  },
+  "surveillance-camera": {
+    "Camera": 100
+  },
+  "securitycam": {
+    "Camera": 100
+  },
+  "camserver": {
+    "Camera": 80
+  },
+  "nvr-server": {
+    "Camera": 90,
+    "Server": 30
+  },
+  "dvr-server": {
+    "Camera": 80,
+    "Server": 30
+  },
+  "unifi": {
+    "AccessPoint": 70,
+    "Router": 50,
+    "Switch": 40
+  },
+  "ubnt": {
+    "AccessPoint": 70,
+    "Router": 50
+  },
+  "mikrotik-router": {
+    "Router": 100
+  },
+  "mikrotik-switch": {
+    "Switch": 100
+  },
+  "openwrt": {
+    "Router": 90,
+    "Gateway": 50
+  },
+  "dd-wrt": {
+    "Router": 90
+  },
+  "pfsense": {
+    "Gateway": 100,
+    "Router": 70
+  },
+  "opnsense": {
+    "Gateway": 100,
+    "Router": 70
+  },
+  "fortigate": {
+    "Gateway": 100,
+    "Router": 60
+  },
+  "sonicwall": {
+    "Gateway": 100,
+    "Router": 60
+  },
+  "firepower": {
+    "Gateway": 90,
+    "Router": 50
+  },
+  "managed-switch": {
+    "Switch": 100
+  },
+  "network-switch": {
+    "Switch": 100
+  },
+  "ethernet-switch": {
+    "Switch": 100
+  },
+  "wifi-ap": {
+    "AccessPoint": 100
+  },
+  "wireless-ap": {
+    "AccessPoint": 100
+  },
+  "wifi-access-point": {
+    "AccessPoint": 100
+  },
+  "mesh-ap": {
+    "AccessPoint": 100
+  },
+  "mesh-node": {
+    "AccessPoint": 80,
+    "Router": 40
+  },
+  "iphone-15": {
+    "Phone": 100
+  },
+  "iphone-14": {
+    "Phone": 100
+  },
+  "iphone-13": {
+    "Phone": 100
+  },
+  "iphone-12": {
+    "Phone": 100
+  },
+  "iphone-11": {
+    "Phone": 100
+  },
+  "ipad-pro": {
+    "Tablet": 100
+  },
+  "ipad-air": {
+    "Tablet": 100
+  },
+  "ipad-mini": {
+    "Tablet": 100
+  },
+  "surface-pro": {
+    "Tablet": 80,
+    "Laptop": 50
+  },
+  "surface-go": {
+    "Tablet": 80,
+    "Laptop": 40
+  },
+  "surface-laptop": {
+    "Laptop": 100
+  },
+  "surface-book": {
+    "Laptop": 100
+  },
+  "surface-studio": {
+    "Desktop": 100
+  },
+  "zenbook": {
+    "Laptop": 100
+  },
+  "vivobook": {
+    "Laptop": 100
+  },
+  "rog-laptop": {
+    "Laptop": 100
+  },
+  "rog-desktop": {
+    "Desktop": 100
+  },
+  "tuf-gaming": {
+    "Laptop": 90,
+    "Desktop": 50
+  },
+  "predator": {
+    "Laptop": 80,
+    "Desktop": 70
+  },
+  "nitro": {
+    "Laptop": 80
+  },
+  "aspire": {
+    "Laptop": 85
+  },
+  "swift": {
+    "Laptop": 85
+  },
+  "travelmate": {
+    "Laptop": 90
+  },
+  "chromebook": {
+    "Laptop": 80
+  },
+  "chromebox": {
+    "Desktop": 90
+  },
+  "thinkcentre": {
+    "Desktop": 100
+  },
+  "thinkstation": {
+    "Desktop": 100
+  },
+  "ideacentre": {
+    "Desktop": 100
+  },
+  "legion": {
+    "Laptop": 80,
+    "Desktop": 60
+  },
+  "omen": {
+    "Laptop": 80,
+    "Desktop": 60
+  },
+  "prodesk": {
+    "Desktop": 100
+  },
+  "elitedesk": {
+    "Desktop": 100
+  },
+  "zbook": {
+    "Laptop": 90
+  },
+  "workstation": {
+    "Desktop": 70,
+    "Server": 30
+  },
+  "minipc": {
+    "Desktop": 90
+  },
+  "mini-pc": {
+    "Desktop": 90
+  },
+  "nuc": {
+    "Desktop": 90
+  },
+  "intel-nuc": {
+    "Desktop": 100
+  },
+  "raspberrypi": {
+    "Iot": 70,
+    "Server": 40
+  },
+  "raspberry-pi": {
+    "Iot": 70,
+    "Server": 40
+  },
+  "rpi": {
+    "Iot": 70,
+    "Server": 40
+  },
+  "orangepi": {
+    "Iot": 70,
+    "Server": 40
+  },
+  "rockpi": {
+    "Iot": 70,
+    "Server": 40
+  },
+  "beaglebone": {
+    "Iot": 80
+  },
+  "jetson": {
+    "Iot": 70,
+    "Server": 50
+  },
+  "jetson-nano": {
+    "Iot": 70,
+    "Server": 50
+  },
+  "homeassistant": {
+    "Iot": 80,
+    "Server": 50
+  },
+  "home-assistant": {
+    "Iot": 80,
+    "Server": 50
+  },
+  "homeassistant-server": {
+    "Iot": 70,
+    "Server": 60
+  },
+  "esphome": {
+    "Iot": 100
+  },
+  "esp32": {
+    "Iot": 100
+  },
+  "esp8266": {
+    "Iot": 100
+  },
+  "arduino": {
+    "Iot": 90
+  },
+  "tasmota": {
+    "Iot": 100
+  },
+  "shelly-plus": {
+    "Iot": 100
+  },
+  "shelly-pro": {
+    "Iot": 100
+  },
+  "smartplug": {
+    "Iot": 100
+  },
+  "smart-plug": {
+    "Iot": 100
+  },
+  "smartbulb": {
+    "Iot": 100
+  },
+  "smart-bulb": {
+    "Iot": 100
+  },
+  "lightbulb": {
+    "Iot": 90
+  },
+  "thermostat": {
+    "Iot": 90
+  },
+  "smart-thermostat": {
+    "Iot": 100
+  },
+  "doorbell": {
+    "Iot": 70,
+    "Camera": 60
+  },
+  "smart-doorbell": {
+    "Iot": 70,
+    "Camera": 80
+  },
+  "smart-lock": {
+    "Iot": 100
+  },
+  "door-lock": {
+    "Iot": 100
+  },
+  "robot-vacuum": {
+    "Iot": 100
+  },
+  "robotvacuum": {
+    "Iot": 100
+  },
+  "air-purifier": {
+    "Iot": 90
+  },
+  "airpurifier": {
+    "Iot": 90
+  },
+  "smart-fridge": {
+    "Iot": 100
+  },
+  "smart-refrigerator": {
+    "Iot": 100
+  },
+  "smart-tv": {
+    "SmartTV": 100
+  },
+  "living-room-tv": {
+    "SmartTV": 90
+  },
+  "bedroom-tv": {
+    "SmartTV": 90
+  },
+  "livingroom-tv": {
+    "SmartTV": 90
+  },
+  "bedroomtv": {
+    "SmartTV": 90
+  },
+  "media-center": {
+    "StreamingDevice": 80
+  },
+  "mediacenter": {
+    "StreamingDevice": 80
+  },
+  "game-console": {
+    "GameConsole": 100
+  },
+  "gaming-console": {
+    "GameConsole": 100
+  },
+  "playroom-console": {
+    "GameConsole": 90
+  },
+  "nas-server": {
+    "Nas": 90,
+    "Server": 40
+  },
+  "file-server": {
+    "Server": 90,
+    "Nas": 50
+  },
+  "fileserver": {
+    "Server": 90,
+    "Nas": 50
+  },
+  "web-server": {
+    "Server": 90
+  },
+  "webserver": {
+    "Server": 90
+  },
+  "database-server": {
+    "Server": 100
+  },
+  "db-server": {
+    "Server": 100
+  },
+  "mail-server": {
+    "Server": 100
+  },
+  "dns-server": {
+    "Server": 90
+  },
+  "dhcp-server": {
+    "Server": 80,
+    "Gateway": 30
+  },
+  "proxy-server": {
+    "Server": 80,
+    "Gateway": 40
+  },
+  "vpn-server": {
+    "Server": 80,
+    "Gateway": 40
+  },
+  "domain-controller": {
+    "Server": 100
+  },
+  "dc-server": {
+    "Server": 100
+  },
+  "print-server-01": {
+    "Printer": 60,
+    "Server": 50
+  },
+  "camera-server": {
+    "Camera": 80,
+    "Server": 50
+  },
+  "nvr": {
+    "Camera": 100
+  },
+  "dvr": {
+    "Camera": 100
   }
 }

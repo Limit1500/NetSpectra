@@ -2,6 +2,20 @@ import prisma from "../db";
 import { DeviceType } from "../types/device.types";
 
 class DeviceDatabaseService {
+  static async getAllDevices() {
+    return await prisma.devices.findMany({
+      select: {
+        id: true,
+        macAddress: true,
+        vendor: true,
+        deviceType: true,
+        updates: true,
+        lastSeen: true,
+        firstSeen: true,
+      },
+    });
+  }
+
   static async getDeviceByMac(macAddress: string) {
     return await prisma.devices.findUnique({
       where: {
@@ -19,7 +33,7 @@ class DeviceDatabaseService {
     });
   }
 
-  static async getOldScoresAndUpdatesNumber(macAddress: string) {
+  static async getOldScoresAndLastDecay(macAddress: string) {
     const data = await DeviceDatabaseService.getDeviceByMac(macAddress);
     const {
       id,
@@ -29,10 +43,11 @@ class DeviceDatabaseService {
       updates,
       lastSeen,
       firstSeen,
+      lastDecay,
       ...oldScores
     } = data!;
     return {
-      updates,
+      lastDecay,
       oldScores,
     };
   }
@@ -40,7 +55,9 @@ class DeviceDatabaseService {
   static async postUpdatedData(
     macAddress: string,
     updatedScores: Record<DeviceType, number>,
-    deviceType: DeviceType
+    deviceType: DeviceType,
+    lastDecay: Date,
+    confidence: number
   ) {
     await prisma.devices.update({
       where: {
@@ -48,6 +65,8 @@ class DeviceDatabaseService {
       },
       data: {
         deviceType,
+        confidence,
+        lastDecay,
         updates: {
           increment: 1,
         },

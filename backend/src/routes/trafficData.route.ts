@@ -1,5 +1,7 @@
 import { FastifyInstance } from "fastify";
 import processData from "../services/processData.service";
+import trafficDataSchema from "../validation/trafficData.validation";
+import trafficAuth from "../middleware/trafficAuth.middleware";
 
 async function trafficDataRoutes(fastify: FastifyInstance) {
   fastify.post<{
@@ -10,17 +12,20 @@ async function trafficDataRoutes(fastify: FastifyInstance) {
       protocol: string;
       port: string;
     };
-  }>("/", async (req, reply) => {
-    try {
+  }>(
+    "/",
+    {
+      schema: trafficDataSchema,
+      preHandler: trafficAuth,
+    },
+    async (req, reply) => {
       const { macAddress, hostname, service, protocol, port } = req.body;
 
       await processData(macAddress, hostname, service, protocol, port);
 
-      reply.code(200);
-    } catch (error) {
-      reply.code(500).send(error);
+      reply.code(200).send({ message: "Success" });
     }
-  });
+  );
 }
 
 export default trafficDataRoutes;

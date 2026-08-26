@@ -22,5 +22,664 @@
     "Router": 10,
     "AccessPoint": 10,
     "Iot": 10
+  },
+  "icmp": {
+    "Router": 15,
+    "Gateway": 15,
+    "AccessPoint": 10,
+    "Switch": 10,
+    "Server": 5,
+    "Iot": 5
+  },
+  "icmpv6": {
+    "Router": 15,
+    "Gateway": 15,
+    "AccessPoint": 10,
+    "Switch": 10,
+    "Iot": 5
+  },
+  "arp": {
+    "Router": 15,
+    "AccessPoint": 10,
+    "Switch": 10,
+    "Iot": 5,
+    "Printer": 5
+  },
+  "ipv6": {
+    "Phone": 5,
+    "Tablet": 5,
+    "Laptop": 5,
+    "Desktop": 5,
+    "SmartTV": 5,
+    "StreamingDevice": 5,
+    "Router": 10,
+    "AccessPoint": 10,
+    "Iot": 10
+  },
+  "gre": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 10
+  },
+  "esp": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 10
+  },
+  "ah": {
+    "Router": 15,
+    "Gateway": 15,
+    "Server": 10
+  },
+  "sctp": {
+    "Server": 20,
+    "Gateway": 10,
+    "Industrial": 10
+  },
+  "dccp": {
+    "Server": 15,
+    "Desktop": 5,
+    "Laptop": 5
+  },
+  "igmp": {
+    "Router": 20,
+    "Gateway": 15,
+    "SmartTV": 10,
+    "StreamingDevice": 10,
+    "Iot": 5
+  },
+  "mlDpv2": {
+    "Router": 15,
+    "Gateway": 15,
+    "SmartTV": 5,
+    "Iot": 5
+  },
+  "pim": {
+    "Router": 25,
+    "Gateway": 20,
+    "Switch": 10
+  },
+  "ospf": {
+    "Router": 30,
+    "Gateway": 25,
+    "Switch": 10
+  },
+  "eigrp": {
+    "Router": 30,
+    "Gateway": 25
+  },
+  "bgp": {
+    "Router": 30,
+    "Gateway": 25,
+    "Server": 10
+  },
+  "l2tp": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 10
+  },
+  "pptp": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 10
+  },
+  "ipsec": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 10
+  },
+  "wireguard": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 15,
+    "Laptop": 5,
+    "Desktop": 5
+  },
+  "vxlan": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 15,
+    "Switch": 10
+  },
+
+  "geneve": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 15,
+    "Switch": 10
+  },
+
+  "l2tpv3": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 10
+  },
+
+  "lldp": {
+    "Switch": 30,
+    "Router": 20,
+    "AccessPoint": 15,
+    "Gateway": 15
+  },
+
+  "cdp": {
+    "Switch": 30,
+    "Router": 20,
+    "AccessPoint": 10
+  },
+
+  "stp": {
+    "Switch": 35,
+    "Router": 20
+  },
+
+  "rstp": {
+    "Switch": 35,
+    "Router": 20
+  },
+
+  "mstp": {
+    "Switch": 35,
+    "Router": 20
+  },
+
+  "lacp": {
+    "Switch": 30,
+    "Router": 20,
+    "Server": 15
+  },
+
+  "ndp": {
+    "Router": 20,
+    "Gateway": 20,
+    "Switch": 10,
+    "AccessPoint": 10,
+    "Iot": 5
+  },
+
+  "mld": {
+    "Router": 20,
+    "Gateway": 20,
+    "SmartTV": 10,
+    "StreamingDevice": 10,
+    "Iot": 5
+  },
+
+  "dhcp": {
+    "Router": 25,
+    "Gateway": 20,
+    "Server": 15,
+    "Iot": 10,
+    "Printer": 5
+  },
+
+  "dhcpv6": {
+    "Router": 25,
+    "Gateway": 20,
+    "Server": 15,
+    "Iot": 10
+  },
+
+  "dns": {
+    "Router": 20,
+    "Gateway": 20,
+    "Server": 20,
+    "Nas": 10,
+    "Iot": 5
+  },
+
+  "mdns": {
+    "Phone": 10,
+    "Tablet": 10,
+    "Laptop": 10,
+    "Desktop": 10,
+    "SmartTV": 20,
+    "StreamingDevice": 20,
+    "SmartSpeaker": 25,
+    "Printer": 15,
+    "Iot": 15
+  },
+
+  "ssdp": {
+    "SmartTV": 20,
+    "StreamingDevice": 25,
+    "SmartSpeaker": 15,
+    "Iot": 20,
+    "Router": 10
+  },
+
+  "coap": {
+    "Iot": 40,
+    "Industrial": 30,
+    "Gateway": 20,
+    "Server": 10
+  },
+
+  "mqtt": {
+    "Iot": 40,
+    "Industrial": 30,
+    "Gateway": 20,
+    "Server": 15
+  },
+
+  "mqtts": {
+    "Iot": 40,
+    "Industrial": 30,
+    "Gateway": 20,
+    "Server": 15
+  },
+  "is-is": {
+    "Router": 30,
+    "Gateway": 25,
+    "Switch": 15
+  },
+
+  "rip": {
+    "Router": 30,
+    "Gateway": 25
+  },
+
+  "ripng": {
+    "Router": 30,
+    "Gateway": 25
+  },
+
+  "bfd": {
+    "Router": 25,
+    "Gateway": 25,
+    "Switch": 15
+  },
+
+  "hsrp": {
+    "Router": 30,
+    "Gateway": 30
+  },
+
+  "vrrp": {
+    "Router": 30,
+    "Gateway": 30
+  },
+
+  "glbp": {
+    "Router": 30,
+    "Gateway": 30
+  },
+
+  "802.1x": {
+    "Switch": 25,
+    "AccessPoint": 25,
+    "Router": 15
+  },
+
+  "eapol": {
+    "Switch": 25,
+    "AccessPoint": 25,
+    "Router": 15
+  },
+
+  "pppoe": {
+    "Router": 30,
+    "Gateway": 30
+  },
+
+  "pppoa": {
+    "Router": 30,
+    "Gateway": 30
+  },
+
+  "mpls": {
+    "Router": 30,
+    "Gateway": 30,
+    "Switch": 20
+  },
+
+  "rsvp": {
+    "Router": 25,
+    "Gateway": 25
+  },
+
+  "icmpv6-nd": {
+    "Router": 25,
+    "Gateway": 20,
+    "AccessPoint": 10
+  },
+
+  "ipip": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 10
+  },
+
+  "sit": {
+    "Router": 25,
+    "Gateway": 25,
+    "Server": 10
+  },
+
+  "teredo": {
+    "Laptop": 10,
+    "Desktop": 10,
+    "Router": 20,
+    "Gateway": 20
+  },
+
+  "isatap": {
+    "Laptop": 10,
+    "Desktop": 10,
+    "Router": 20,
+    "Gateway": 20
+  },
+
+  "802.11": {
+    "AccessPoint": 35,
+    "Router": 20
+  },
+
+  "802.11r": {
+    "AccessPoint": 35,
+    "Router": 20
+  },
+
+  "802.11k": {
+    "AccessPoint": 35,
+    "Router": 20
+  },
+
+  "802.11v": {
+    "AccessPoint": 35,
+    "Router": 20
+  },
+  "ntp": {
+    "Router": 15,
+    "Gateway": 15,
+    "Server": 15,
+    "Industrial": 10,
+    "Iot": 10
+  },
+
+  "syslog": {
+    "Server": 25,
+    "Router": 20,
+    "Switch": 20,
+    "AccessPoint": 15,
+    "Industrial": 15
+  },
+
+  "snmp": {
+    "Router": 30,
+    "Switch": 30,
+    "AccessPoint": 25,
+    "Printer": 15,
+    "Server": 15,
+    "Industrial": 20,
+    "Iot": 15
+  },
+
+  "netconf": {
+    "Router": 30,
+    "Switch": 25,
+    "Gateway": 25,
+    "Server": 15
+  },
+
+  "restconf": {
+    "Router": 25,
+    "Switch": 20,
+    "Gateway": 20,
+    "Server": 15
+  },
+
+  "tftp": {
+    "Router": 25,
+    "Switch": 25,
+    "AccessPoint": 20,
+    "Server": 15
+  },
+
+  "ftp": {
+    "Server": 25,
+    "Nas": 20,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "ftps": {
+    "Server": 25,
+    "Nas": 20,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "sftp": {
+    "Server": 25,
+    "Nas": 25,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "telnet": {
+    "Router": 25,
+    "Switch": 25,
+    "AccessPoint": 20,
+    "Server": 15,
+    "Iot": 15
+  },
+
+  "ldap": {
+    "Server": 30,
+    "Nas": 15,
+    "Router": 10
+  },
+
+  "ldaps": {
+    "Server": 30,
+    "Nas": 15,
+    "Router": 10
+  },
+
+  "kerberos": {
+    "Server": 30,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+
+  "ntlm": {
+    "Desktop": 20,
+    "Laptop": 20,
+    "Server": 20,
+    "Nas": 15
+  },
+
+  "radius": {
+    "Server": 25,
+    "Router": 25,
+    "AccessPoint": 25,
+    "Switch": 25,
+    "Gateway": 20
+  },
+
+  "tacacs": {
+    "Router": 30,
+    "Switch": 30,
+    "AccessPoint": 20,
+    "Server": 20
+  },
+
+  "diameter": {
+    "Server": 25,
+    "Gateway": 25,
+    "Industrial": 15
+  },
+
+  "modbus": {
+    "Industrial": 50,
+    "Iot": 30,
+    "Gateway": 20,
+    "Server": 15
+  },
+
+  "dnp3": {
+    "Industrial": 50,
+    "Gateway": 25,
+    "Server": 15
+  },
+
+  "bacnet": {
+    "Industrial": 45,
+    "Iot": 35,
+    "Gateway": 20
+  },
+
+  "profinet": {
+    "Industrial": 55,
+    "Gateway": 25,
+    "Switch": 20
+  },
+  "diameter-sctp": {
+    "Server": 25,
+    "Gateway": 25,
+    "Industrial": 10
+  },
+
+  "rtp": {
+    "SmartSpeaker": 25,
+    "Phone": 15,
+    "Tablet": 15,
+    "SmartTV": 20,
+    "Server": 20,
+    "Iot": 15
+  },
+
+  "rtcp": {
+    "SmartSpeaker": 25,
+    "Phone": 15,
+    "Tablet": 15,
+    "SmartTV": 20,
+    "Server": 20
+  },
+
+  "sip": {
+    "Phone": 25,
+    "Server": 25,
+    "Gateway": 30,
+    "Iot": 15
+  },
+
+  "sips": {
+    "Phone": 20,
+    "Server": 25,
+    "Gateway": 30,
+    "Iot": 15
+  },
+
+  "mgcp": {
+    "Gateway": 35,
+    "Server": 25,
+    "Phone": 15
+  },
+
+  "h323": {
+    "Gateway": 30,
+    "Server": 25,
+    "SmartTV": 15
+  },
+
+  "iscsi": {
+    "Nas": 40,
+    "Server": 40,
+    "Desktop": 10
+  },
+
+  "fibre-channel": {
+    "Nas": 45,
+    "Server": 45
+  },
+
+  "fcoe": {
+    "Nas": 40,
+    "Server": 40,
+    "Switch": 25
+  },
+
+  "nvme-tcp": {
+    "Nas": 40,
+    "Server": 40
+  },
+
+  "nvmf": {
+    "Nas": 40,
+    "Server": 40
+  },
+
+  "rlogin": {
+    "Server": 25,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+
+  "whois": {
+    "Server": 15,
+    "Desktop": 5,
+    "Laptop": 5
+  },
+
+  "rpc": {
+    "Server": 25,
+    "Nas": 30,
+    "Desktop": 10,
+    "Laptop": 10
+  },
+
+  "sunrpc": {
+    "Server": 25,
+    "Nas": 30
+  },
+
+  "ncp": {
+    "Server": 25,
+    "Nas": 20,
+    "Desktop": 15
+  },
+
+  "ipx": {
+    "Desktop": 15,
+    "Server": 15,
+    "Printer": 10
+  },
+
+  "llmnr": {
+    "Laptop": 15,
+    "Desktop": 15,
+    "Phone": 10,
+    "Iot": 10
+  },
+
+  "netbios": {
+    "Desktop": 20,
+    "Laptop": 20,
+    "Nas": 20,
+    "Server": 20,
+    "Printer": 10
+  },
+
+  "ws-discovery": {
+    "Desktop": 15,
+    "Laptop": 15,
+    "Printer": 20,
+    "Scanner": 20,
+    "Iot": 15
+  },
+
+  "soap": {
+    "Server": 20,
+    "Printer": 15,
+    "Scanner": 15,
+    "Iot": 15
+  },
+
+  "xml-rpc": {
+    "Server": 20,
+    "Iot": 15,
+    "Printer": 10
   }
 }

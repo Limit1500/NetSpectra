@@ -5,7 +5,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -18,9 +18,12 @@ model devices {
   vendor String @default("Unknown")
   deviceType String @default("Unknown")
 
+  confidence  Decimal @db.Decimal(5, 2) @default(0)
+
   updates Int @default(1)
   lastSeen DateTime @updatedAt
   firstSeen DateTime @default(now())
+  lastDecay DateTime @default(now())
 
   Phone Int @default(0)
   Tablet Int @default(0)

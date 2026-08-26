@@ -1,3 +1,4 @@
+import AppError from "../types/error.types";
 import UserDatabaseService from "./userDatabase.service";
 import argon2 from "argon2";
 
@@ -5,14 +6,8 @@ class AuthService {
   static async login(username: string, password: string) {
     const user = await UserDatabaseService.getUserByUsername(username);
 
-    if (!user) {
-      throw new Error("User not found");
-    }
-
-    const isValid = await argon2.verify(user.password, password);
-
-    if (!isValid) {
-      throw new Error("Invalid credentials");
+    if (!user || !(await argon2.verify(user.password, password))) {
+      throw new AppError(401, "Invalid credentials");
     }
 
     return user;

@@ -160,5 +160,1217 @@
     "Iot": 30,
     "SmartTV": 20,
     "StreamingDevice": 20
+  },
+  "mqtt": {
+    "Iot": 70,
+    "SmartSpeaker": 30,
+    "Camera": 25
+  },
+  "mqtts": {
+    "Iot": 75,
+    "SmartSpeaker": 30,
+    "Camera": 25
+  },
+  "coap": {
+    "Iot": 80,
+    "SmartSpeaker": 25,
+    "Camera": 25
+  },
+  "coaps": {
+    "Iot": 80,
+    "SmartSpeaker": 25,
+    "Camera": 25
+  },
+  "modbus": {
+    "Industrial": 90,
+    "Iot": 30,
+    "Gateway": 25
+  },
+  "bacnet": {
+    "Industrial": 80,
+    "Iot": 35,
+    "Gateway": 30
+  },
+  "knx": {
+    "Industrial": 70,
+    "Iot": 60,
+    "Gateway": 30
+  },
+  "opcua": {
+    "Industrial": 90,
+    "Server": 30,
+    "Gateway": 25
+  },
+  "opc-ua": {
+    "Industrial": 90,
+    "Server": 30,
+    "Gateway": 25
+  },
+  "profinet": {
+    "Industrial": 90,
+    "Iot": 25,
+    "Gateway": 30
+  },
+  "ethernetip": {
+    "Industrial": 90,
+    "Gateway": 30,
+    "Iot": 20
+  },
+  "bacnet-ip": {
+    "Industrial": 80,
+    "Iot": 35,
+    "Gateway": 30
+  },
+  "dhcp": {
+    "Router": 60,
+    "Gateway": 50,
+    "Server": 30,
+    "AccessPoint": 25
+  },
+  "dhcpv6": {
+    "Router": 60,
+    "Gateway": 50,
+    "Server": 30,
+    "AccessPoint": 25
+  },
+  "dns": {
+    "Router": 60,
+    "Gateway": 50,
+    "Server": 40,
+    "Nas": 20
+  },
+  "mdns": {
+    "Iot": 35,
+    "SmartTV": 30,
+    "SmartSpeaker": 30,
+    "Printer": 25,
+    "Camera": 20,
+    "Laptop": 15,
+    "Desktop": 15,
+    "Phone": 15,
+    "Tablet": 15
+  },
+  "ssdp": {
+    "SmartTV": 45,
+    "StreamingDevice": 45,
+    "Iot": 30,
+    "Router": 20,
+    "SmartSpeaker": 25
+  },
+  "ws-discovery": {
+    "Printer": 50,
+    "Scanner": 40,
+    "Camera": 30,
+    "Iot": 20
+  },
+  "lldp": {
+    "Switch": 80,
+    "Router": 55,
+    "AccessPoint": 50,
+    "Gateway": 45,
+    "Industrial": 30
+  },
+  "stp": {
+    "Switch": 90,
+    "Router": 35
+  },
+  "snmp": {
+    "Router": 55,
+    "Switch": 55,
+    "AccessPoint": 50,
+    "Printer": 35,
+    "Server": 35,
+    "Nas": 35,
+    "Camera": 30,
+    "Industrial": 35,
+    "Gateway": 50
+  },
+  "syslog": {
+    "Router": 45,
+    "Switch": 40,
+    "Server": 45,
+    "Gateway": 40,
+    "Industrial": 30
+  },
+  "telnet": {
+    "Router": 35,
+    "AccessPoint": 30,
+    "Switch": 30,
+    "Gateway": 35,
+    "Iot": 20
+  },
+  "tftp": {
+    "Router": 40,
+    "Switch": 35,
+    "AccessPoint": 30,
+    "Industrial": 30,
+    "Iot": 20
+  },
+  "ftp": {
+    "Server": 55,
+    "Nas": 45,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "ftps": {
+    "Server": 60,
+    "Nas": 50,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "sftp": {
+    "Server": 60,
+    "Nas": 55,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "imap": {
+    "Server": 60,
+    "Desktop": 20,
+    "Laptop": 20,
+    "Phone": 15,
+    "Tablet": 15
+  },
+  "imaps": {
+    "Server": 65,
+    "Desktop": 20,
+    "Laptop": 20,
+    "Phone": 15,
+    "Tablet": 15
+  },
+  "pop3": {
+    "Server": 60,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "pop3s": {
+    "Server": 65,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "smtp": {
+    "Server": 60,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+  "smtps": {
+    "Server": 65,
+    "Desktop": 15,
+    "Laptop": 15
+  },
+  "ldap": {
+    "Server": 65,
+    "Gateway": 20
+  },
+  "ldaps": {
+    "Server": 70,
+    "Gateway": 20
+  },
+  "kerberos": {
+    "Server": 70,
+    "Desktop": 25,
+    "Laptop": 25
+  },
+  "ntp": {
+    "Router": 40,
+    "Server": 40,
+    "Gateway": 35,
+    "Switch": 25,
+    "AccessPoint": 25,
+    "Iot": 20,
+    "Industrial": 20
+  },
+  "radius": {
+    "Server": 60,
+    "Router": 40,
+    "AccessPoint": 40,
+    "Switch": 35,
+    "Gateway": 40
+  },
+  "tacacs": {
+    "Server": 55,
+    "Router": 50,
+    "Switch": 45,
+    "Gateway": 45
+  },
+  "iscsi": {
+    "Nas": 75,
+    "Server": 60
+  },
+  "iscsi-target": {
+    "Nas": 80,
+    "Server": 60
+  },
+  "webdav": {
+    "Nas": 55,
+    "Server": 50,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "caldav": {
+    "Server": 45,
+    "Nas": 35,
+    "Phone": 25,
+    "Tablet": 25,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "carddav": {
+    "Server": 45,
+    "Nas": 35,
+    "Phone": 30,
+    "Tablet": 30,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "plex": {
+    "Nas": 65,
+    "Server": 60,
+    "SmartTV": 30,
+    "StreamingDevice": 35
+  },
+  "jellyfin": {
+    "Nas": 65,
+    "Server": 60,
+    "SmartTV": 30,
+    "StreamingDevice": 35
+  },
+  "emby": {
+    "Nas": 65,
+    "Server": 60,
+    "SmartTV": 30,
+    "StreamingDevice": 35
+  },
+  "transmission": {
+    "Nas": 50,
+    "Server": 45,
+    "Desktop": 20
+  },
+  "qbittorrent": {
+    "Nas": 50,
+    "Server": 45,
+    "Desktop": 25,
+    "Laptop": 20
+  },
+  "wireguard": {
+    "Router": 50,
+    "Gateway": 45,
+    "Server": 45,
+    "AccessPoint": 25
+  },
+  "openvpn": {
+    "Router": 50,
+    "Gateway": 45,
+    "Server": 45,
+    "AccessPoint": 25
+  },
+  "ipsec": {
+    "Router": 55,
+    "Gateway": 50,
+    "Server": 35
+  },
+  "ike": {
+    "Router": 55,
+    "Gateway": 50,
+    "Server": 30
+  },
+  "pptp": {
+    "Router": 45,
+    "Gateway": 45,
+    "Server": 35
+  },
+  "l2tp": {
+    "Router": 50,
+    "Gateway": 50,
+    "Server": 30
+  },
+  "pppoe": {
+    "Router": 65,
+    "Gateway": 55
+  },
+  "rip": {
+    "Router": 65,
+    "Gateway": 55
+  },
+  "ospf": {
+    "Router": 80,
+    "Gateway": 65,
+    "Switch": 35
+  },
+  "bgp": {
+    "Router": 80,
+    "Gateway": 70,
+    "Server": 35
+  },
+  "eigrp": {
+    "Router": 80,
+    "Gateway": 65
+  },
+  "mpls": {
+    "Router": 70,
+    "Gateway": 65,
+    "Switch": 40
+  },
+  "vxlan": {
+    "Router": 60,
+    "Gateway": 55,
+    "Switch": 60,
+    "Server": 25
+  },
+  "stun": {
+    "Router": 40,
+    "Gateway": 35,
+    "Server": 25,
+    "GameConsole": 20
+  },
+  "turn": {
+    "Server": 55,
+    "Router": 30,
+    "Gateway": 30
+  },
+  "sip": {
+    "Server": 45,
+    "Iot": 35,
+    "Gateway": 30
+  },
+  "rtp": {
+    "Server": 35,
+    "Iot": 30,
+    "SmartSpeaker": 25
+  },
+  "rtcp": {
+    "Server": 35,
+    "Iot": 30,
+    "SmartSpeaker": 25
+  },
+  "webrtc": {
+    "Server": 40,
+    "Phone": 25,
+    "Tablet": 25,
+    "Laptop": 25,
+    "Desktop": 25
+  },
+  "irc": {
+    "Server": 55,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "xmpp": {
+    "Server": 55,
+    "Phone": 20,
+    "Tablet": 20,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "matrix": {
+    "Server": 55,
+    "Phone": 20,
+    "Tablet": 20,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "docker": {
+    "Server": 55,
+    "Nas": 50,
+    "Desktop": 25,
+    "Laptop": 20
+  },
+  "kubernetes": {
+    "Server": 70,
+    "Desktop": 20,
+    "Nas": 20
+  },
+  "kubelet": {
+    "Server": 75,
+    "Desktop": 15
+  },
+  "proxmox": {
+    "Server": 70,
+    "Desktop": 25
+  },
+  "vmware": {
+    "Server": 65,
+    "Desktop": 25,
+    "Laptop": 15
+  },
+  "virtualbox": {
+    "Desktop": 35,
+    "Laptop": 30,
+    "Server": 40
+  },
+  "hyper-v": {
+    "Server": 55,
+    "Desktop": 35
+  },
+  "mysql": {
+    "Server": 70,
+    "Nas": 40,
+    "Desktop": 20
+  },
+  "postgresql": {
+    "Server": 75,
+    "Nas": 45,
+    "Desktop": 20
+  },
+  "mssql": {
+    "Server": 75,
+    "Nas": 35,
+    "Desktop": 20
+  },
+  "oracle": {
+    "Server": 80,
+    "Desktop": 20
+  },
+  "mongodb": {
+    "Server": 70,
+    "Nas": 45,
+    "Desktop": 20
+  },
+  "redis": {
+    "Server": 65,
+    "Nas": 35
+  },
+  "memcached": {
+    "Server": 65
+  },
+  "cassandra": {
+    "Server": 75,
+    "Nas": 30
+  },
+  "elasticsearch": {
+    "Server": 75,
+    "Nas": 35
+  },
+  "influxdb": {
+    "Server": 65,
+    "Nas": 40,
+    "Iot": 25
+  },
+  "prometheus": {
+    "Server": 65,
+    "Nas": 25
+  },
+  "grafana": {
+    "Server": 50,
+    "Nas": 30,
+    "Desktop": 15
+  },
+  "zabbix": {
+    "Server": 65,
+    "Nas": 25
+  },
+  "nagios": {
+    "Server": 65,
+    "Nas": 20
+  },
+  "git": {
+    "Server": 45,
+    "Desktop": 25,
+    "Laptop": 25
+  },
+  "gitlab": {
+    "Server": 65,
+    "Desktop": 20
+  },
+  "jenkins": {
+    "Server": 70,
+    "Desktop": 20
+  },
+  "ansible": {
+    "Server": 50,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "vnc": {
+    "Desktop": 55,
+    "Laptop": 45,
+    "Server": 35
+  },
+  "x11": {
+    "Desktop": 55,
+    "Laptop": 45,
+    "Server": 30
+  },
+  "wayland": {
+    "Desktop": 55,
+    "Laptop": 45
+  },
+  "cups": {
+    "Printer": 75,
+    "Desktop": 25,
+    "Laptop": 25
+  },
+  "ipp-over-usb": {
+    "Printer": 90
+  },
+  "sane": {
+    "Scanner": 85,
+    "Printer": 20
+  },
+  "airprint": {
+    "Printer": 80,
+    "Phone": 20,
+    "Tablet": 20
+  },
+  "google-print": {
+    "Printer": 75
+  },
+  "twain": {
+    "Scanner": 80,
+    "Printer": 15
+  },
+  "isapi": {
+    "Camera": 45,
+    "Industrial": 30,
+    "Iot": 25
+  },
+  "cgi": {
+    "Camera": 35,
+    "Router": 25,
+    "Iot": 25,
+    "Industrial": 20
+  },
+  "soap": {
+    "Iot": 30,
+    "Industrial": 30,
+    "Printer": 25,
+    "Camera": 25
+  },
+  "rest": {
+    "Server": 30,
+    "Iot": 25,
+    "Router": 20,
+    "Camera": 20
+  },
+  "api": {
+    "Server": 30,
+    "Iot": 25,
+    "Router": 20,
+    "Gateway": 20
+  },
+  "mqtt-broker": {
+    "Server": 65,
+    "Iot": 55,
+    "Gateway": 25
+  },
+  "amqp": {
+    "Server": 65,
+    "Iot": 35,
+    "Gateway": 25
+  },
+  "rabbitmq": {
+    "Server": 70,
+    "Iot": 25
+  },
+  "kafka": {
+    "Server": 75,
+    "Nas": 25
+  },
+  "zeromq": {
+    "Server": 60,
+    "Industrial": 30,
+    "Iot": 25
+  },
+  "nats": {
+    "Server": 65,
+    "Iot": 25
+  },
+  "coherence": {
+    "Server": 50
+  },
+  "avahi": {
+    "Server": 35,
+    "Iot": 25,
+    "SmartSpeaker": 25,
+    "SmartTV": 20
+  },
+  "bonjour": {
+    "Phone": 20,
+    "Tablet": 20,
+    "Laptop": 20,
+    "Desktop": 20,
+    "Printer": 25,
+    "SmartTV": 25,
+    "StreamingDevice": 30,
+    "SmartSpeaker": 30,
+    "Iot": 25
+  },
+  "wsman": {
+    "Desktop": 40,
+    "Laptop": 35,
+    "Server": 45
+  },
+  "winrm": {
+    "Desktop": 45,
+    "Laptop": 40,
+    "Server": 55
+  },
+  "wmi": {
+    "Desktop": 45,
+    "Laptop": 40,
+    "Server": 50
+  },
+  "powershell": {
+    "Desktop": 40,
+    "Laptop": 35,
+    "Server": 50
+  },
+  "rdp-server": {
+    "Desktop": 65,
+    "Laptop": 55,
+    "Server": 50
+  },
+  "ssh-server": {
+    "Server": 65,
+    "Nas": 50,
+    "Router": 35,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "dnsmasq": {
+    "Router": 60,
+    "Gateway": 55,
+    "Iot": 25,
+    "Server": 30
+  },
+  "bind": {
+    "Server": 65,
+    "Router": 35,
+    "Gateway": 35
+  },
+  "unbound": {
+    "Router": 45,
+    "Server": 55,
+    "Gateway": 45
+  },
+  "avahi-daemon": {
+    "Server": 40,
+    "Iot": 25,
+    "SmartSpeaker": 25,
+    "SmartTV": 20
+  },
+  "hostapd": {
+    "AccessPoint": 85,
+    "Router": 45,
+    "Gateway": 30
+  },
+  "wpa_supplicant": {
+    "Phone": 20,
+    "Tablet": 20,
+    "Laptop": 30,
+    "Desktop": 25,
+    "AccessPoint": 20,
+    "Iot": 25
+  },
+  "networkmanager": {
+    "Laptop": 35,
+    "Desktop": 35,
+    "Server": 25
+  },
+  "systemd-resolved": {
+    "Laptop": 30,
+    "Desktop": 30,
+    "Server": 30
+  },
+  "systemd-networkd": {
+    "Server": 35,
+    "Router": 35,
+    "Gateway": 35,
+    "Industrial": 25
+  },
+  "openwrt": {
+    "Router": 85,
+    "Gateway": 55,
+    "AccessPoint": 40
+  },
+  "dd-wrt": {
+    "Router": 85,
+    "Gateway": 50,
+    "AccessPoint": 40
+  },
+  "pfsense": {
+    "Router": 75,
+    "Gateway": 70,
+    "Server": 35
+  },
+  "opnsense": {
+    "Router": 75,
+    "Gateway": 70,
+    "Server": 35
+  },
+  "ntp-server": {
+    "Server": 45,
+    "Router": 40,
+    "Gateway": 35,
+    "Industrial": 25
+  },
+  "dhcp-server": {
+    "Server": 50,
+    "Router": 55,
+    "Gateway": 50
+  },
+  "dhcp-relay": {
+    "Router": 60,
+    "Gateway": 60,
+    "Switch": 35
+  },
+  "dns-server": {
+    "Server": 55,
+    "Router": 55,
+    "Gateway": 45
+  },
+  "dnsmasq-dhcp": {
+    "Router": 65,
+    "Gateway": 55,
+    "Server": 25,
+    "Iot": 20
+  },
+  "samba": {
+    "Nas": 65,
+    "Server": 50,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "netbios": {
+    "Desktop": 40,
+    "Laptop": 35,
+    "Nas": 35,
+    "Server": 30,
+    "Printer": 20
+  },
+  "netbios-ns": {
+    "Desktop": 40,
+    "Laptop": 35,
+    "Nas": 35,
+    "Server": 30
+  },
+  "netbios-ssn": {
+    "Desktop": 45,
+    "Laptop": 40,
+    "Nas": 40,
+    "Server": 35
+  },
+  "wsdd": {
+    "Nas": 55,
+    "Desktop": 30,
+    "Laptop": 30,
+    "Server": 30
+  },
+  "nmbd": {
+    "Nas": 55,
+    "Server": 40,
+    "Desktop": 30,
+    "Laptop": 25
+  },
+  "smbd": {
+    "Nas": 70,
+    "Server": 55,
+    "Desktop": 25,
+    "Laptop": 25
+  },
+  "afpd": {
+    "Nas": 60,
+    "Server": 35,
+    "Desktop": 20
+  },
+  "nfs-server": {
+    "Nas": 80,
+    "Server": 65
+  },
+  "rpcbind": {
+    "Nas": 50,
+    "Server": 55,
+    "Industrial": 20
+  },
+  "portmapper": {
+    "Nas": 45,
+    "Server": 50
+  },
+  "minidlna": {
+    "SmartTV": 55,
+    "StreamingDevice": 50,
+    "Nas": 45,
+    "SmartSpeaker": 25
+  },
+  "upnp-server": {
+    "SmartTV": 40,
+    "StreamingDevice": 45,
+    "Router": 35,
+    "Iot": 30,
+    "SmartSpeaker": 25
+  },
+  "home-assistant": {
+    "Iot": 65,
+    "SmartSpeaker": 35,
+    "SmartTV": 25,
+    "Server": 35,
+    "Nas": 30
+  },
+  "openhab": {
+    "Iot": 65,
+    "Server": 35,
+    "Nas": 30,
+    "SmartSpeaker": 30
+  },
+  "zigbee2mqtt": {
+    "Iot": 75,
+    "Server": 35,
+    "Nas": 25
+  },
+  "zwave": {
+    "Iot": 80,
+    "Gateway": 35
+  },
+  "matter": {
+    "Iot": 70,
+    "SmartSpeaker": 40,
+    "SmartTV": 30,
+    "Gateway": 25
+  },
+  "thread": {
+    "Iot": 70,
+    "Gateway": 40,
+    "SmartSpeaker": 30
+  },
+  "ble": {
+    "Phone": 25,
+    "Tablet": 25,
+    "SmartSpeaker": 35,
+    "Iot": 45,
+    "SmartTV": 20
+  },
+  "bluetooth": {
+    "Phone": 30,
+    "Tablet": 30,
+    "SmartSpeaker": 40,
+    "Iot": 40,
+    "Laptop": 20
+  },
+  "ir": {
+    "SmartTV": 40,
+    "Iot": 45,
+    "SmartSpeaker": 25
+  },
+  "homebridge": {
+    "Iot": 60,
+    "SmartSpeaker": 35,
+    "SmartTV": 25,
+    "Server": 35,
+    "Nas": 25
+  },
+  "node-red": {
+    "Iot": 55,
+    "Server": 45,
+    "Gateway": 25,
+    "Industrial": 30
+  },
+  "grafana-agent": {
+    "Server": 45,
+    "Nas": 30,
+    "Industrial": 25
+  },
+  "telegraf": {
+    "Server": 45,
+    "Nas": 35,
+    "Industrial": 30,
+    "Iot": 25
+  },
+  "tailscale": {
+    "Laptop": 30,
+    "Desktop": 30,
+    "Server": 45,
+    "Nas": 40,
+    "Router": 30
+  },
+  "zerotier": {
+    "Laptop": 30,
+    "Desktop": 30,
+    "Server": 45,
+    "Nas": 40,
+    "Router": 30
+  },
+  "wireguard-go": {
+    "Server": 50,
+    "Router": 40,
+    "Gateway": 40,
+    "Laptop": 20,
+    "Desktop": 20
+  },
+  "strongswan": {
+    "Router": 55,
+    "Gateway": 50,
+    "Server": 40
+  },
+  "freeradius": {
+    "Server": 65,
+    "Router": 45,
+    "AccessPoint": 45,
+    "Switch": 40
+  },
+  "isc-dhcp-server": {
+    "Server": 55,
+    "Router": 45,
+    "Gateway": 45
+  },
+  "kea-dhcp": {
+    "Server": 60,
+    "Router": 45,
+    "Gateway": 45
+  },
+  "chrony": {
+    "Server": 40,
+    "Router": 30,
+    "Desktop": 20,
+    "Laptop": 20,
+    "Industrial": 25
+  },
+  "ntpd": {
+    "Server": 45,
+    "Router": 35,
+    "Gateway": 30,
+    "Industrial": 25
+  },
+  "postfix": {
+    "Server": 70,
+    "Nas": 25
+  },
+  "exim": {
+    "Server": 70,
+    "Nas": 25
+  },
+  "dovecot": {
+    "Server": 70,
+    "Nas": 30
+  },
+  "squid": {
+    "Server": 55,
+    "Router": 45,
+    "Gateway": 40
+  },
+  "haproxy": {
+    "Server": 65,
+    "Gateway": 35,
+    "Router": 30
+  },
+  "nginx": {
+    "Server": 55,
+    "Nas": 30,
+    "Router": 20,
+    "Gateway": 25
+  },
+  "apache": {
+    "Server": 55,
+    "Nas": 30,
+    "Desktop": 20
+  },
+  "caddy": {
+    "Server": 55,
+    "Nas": 30
+  },
+  "traefik": {
+    "Server": 60,
+    "Nas": 30,
+    "Gateway": 25
+  },
+  "lighttpd": {
+    "Server": 50,
+    "Nas": 30,
+    "Router": 20
+  },
+  "tomcat": {
+    "Server": 65,
+    "Desktop": 20
+  },
+  "nodejs": {
+    "Server": 45,
+    "Desktop": 25,
+    "Laptop": 25
+  },
+  "express": {
+    "Server": 40,
+    "Desktop": 20,
+    "Laptop": 20
+  },
+  "php-fpm": {
+    "Server": 55,
+    "Nas": 25
+  },
+  "uwsgi": {
+    "Server": 60,
+    "Nas": 20
+  },
+  "gunicorn": {
+    "Server": 60,
+    "Nas": 20
+  },
+  "fastcgi": {
+    "Server": 50,
+    "Nas": 20
+  },
+  "vault": {
+    "Server": 65,
+    "Nas": 20
+  },
+  "consul": {
+    "Server": 60,
+    "Gateway": 25,
+    "Iot": 20
+  },
+  "etcd": {
+    "Server": 70
+  },
+  "minio": {
+    "Nas": 65,
+    "Server": 60
+  },
+  "ceph": {
+    "Nas": 75,
+    "Server": 70
+  },
+  "glusterfs": {
+    "Nas": 70,
+    "Server": 60
+  },
+  "cupsd": {
+    "Printer": 80,
+    "Server": 30,
+    "Desktop": 20
+  },
+  "print-server": {
+    "Printer": 70,
+    "Server": 45
+  },
+  "lpd": {
+    "Printer": 75,
+    "Server": 30
+  },
+  "jetdirect": {
+    "Printer": 80
+  },
+  "scanserver": {
+    "Scanner": 80,
+    "Server": 30
+  },
+  "saned": {
+    "Scanner": 85,
+    "Server": 35
+  },
+  "sane-airscan": {
+    "Scanner": 80
+  },
+  "escl": {
+    "Scanner": 80,
+    "Printer": 25
+  },
+  "wsd": {
+    "Printer": 45,
+    "Scanner": 45,
+    "Camera": 25
+  },
+  "onvif-events": {
+    "Camera": 85,
+    "Iot": 25
+  },
+  "onvif-device": {
+    "Camera": 90
+  },
+  "onvif-media": {
+    "Camera": 90
+  },
+  "rtsp-server": {
+    "Camera": 80,
+    "SmartTV": 25,
+    "StreamingDevice": 20
+  },
+  "rtmp": {
+    "Server": 45,
+    "Camera": 35,
+    "SmartTV": 25,
+    "StreamingDevice": 25
+  },
+  "rtmps": {
+    "Server": 50,
+    "Camera": 35,
+    "SmartTV": 25,
+    "StreamingDevice": 25
+  },
+  "srt": {
+    "Server": 45,
+    "Camera": 35,
+    "StreamingDevice": 30,
+    "SmartTV": 20
+  },
+  "srtp": {
+    "Camera": 40,
+    "SmartSpeaker": 30,
+    "Iot": 25,
+    "Server": 30
+  },
+  "mjpeg": {
+    "Camera": 65,
+    "SmartTV": 20
+  },
+  "hls": {
+    "Server": 40,
+    "SmartTV": 30,
+    "StreamingDevice": 35,
+    "Phone": 15,
+    "Tablet": 15
+  },
+  "dash": {
+    "Server": 40,
+    "SmartTV": 30,
+    "StreamingDevice": 35,
+    "Phone": 15,
+    "Tablet": 15
+  },
+  "chromecast-api": {
+    "StreamingDevice": 75,
+    "SmartTV": 25
+  },
+  "airplay-server": {
+    "SmartTV": 45,
+    "StreamingDevice": 50,
+    "SmartSpeaker": 45
+  },
+  "sonos-api": {
+    "SmartSpeaker": 90
+  },
+  "spotify-connect-api": {
+    "SmartSpeaker": 65,
+    "StreamingDevice": 45,
+    "SmartTV": 30
+  },
+  "homekit-bridge": {
+    "Iot": 60,
+    "SmartSpeaker": 40,
+    "SmartTV": 25
+  },
+  "matter-server": {
+    "Iot": 70,
+    "SmartSpeaker": 35,
+    "SmartTV": 25,
+    "Gateway": 30
+  },
+  "thread-border-router": {
+    "Gateway": 70,
+    "Iot": 55,
+    "Router": 35
+  },
+  "zigbee": {
+    "Iot": 75,
+    "Gateway": 45
+  },
+  "zigbee-coordinator": {
+    "Gateway": 70,
+    "Iot": 55
+  },
+  "z-wave": {
+    "Iot": 80,
+    "Gateway": 50
+  },
+  "z-wave-controller": {
+    "Gateway": 75,
+    "Iot": 55
   }
 }
