@@ -1,3 +1,4 @@
+import { env } from "process";
 import { normalizeHostname } from "../utils/normalizations.utils";
 import DeviceDatabaseService from "./deviceDatabase.service";
 import ScoreService from "./score.service";
@@ -30,10 +31,7 @@ async function processData(
     await DeviceDatabaseService.getOldScoresAndLastDecay(macAddress);
 
   const now = new Date();
-  if (
-    now.getTime() - lastDecay.getTime() >=
-    Number(process.env.DECAY_INTERVAL)
-  ) {
+  if (now.getTime() - lastDecay.getTime() >= Number(env.DECAY_INTERVAL)) {
     ScoreService.decayScores(oldScores);
     lastDecay = now;
   }

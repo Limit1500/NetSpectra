@@ -1,3 +1,4 @@
+import { env } from "process";
 import { app } from "../app";
 
 export class JwtService {
@@ -8,7 +9,7 @@ export class JwtService {
         username,
       },
       {
-        expiresIn: process.env.JWT_EXPIRES_IN || "1h",
+        expiresIn: env.JWT_EXPIRES_IN || "1h",
       }
     );
   }

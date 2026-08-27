@@ -5,6 +5,7 @@ import protocolRules from "../scoringRules/protocol.rules.json";
 import portRules from "../scoringRules/port.rules.json";
 import { matchString } from "../utils/string.utils";
 import { DeviceType, MatchOperator } from "../types/device.types";
+import { env } from "process";
 
 class ScoreService {
   private static applyRules(
@@ -82,7 +83,7 @@ class ScoreService {
     scores: Record<DeviceType, number>
   ): Record<DeviceType, number> {
     for (const key of Object.values(DeviceType)) {
-      scores[key] *= Number(process.env.DECAY_MULTIPLIER);
+      scores[key] *= Number(env.DECAY_MULTIPLIER);
     }
     return scores;
   }
