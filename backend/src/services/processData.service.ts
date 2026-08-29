@@ -3,52 +3,58 @@ import { normalizeHostname } from "../utils/normalizations.utils";
 import DeviceDatabaseService from "./deviceDatabase.service";
 import ScoreService from "./score.service";
 import VendorService from "./vendor.service";
+import { getConfidence } from "../utils/confidence.utils";
 
 async function processData(
   macAddress: string,
   hostname: string,
   service: string,
   protocol: string,
-  port: string
+  port: string,
 ) {
-  hostname = normalizeHostname(hostname);
+  const normalizedHostname = normalizeHostname(hostname);
+  const normalizedVendor = VendorService.getNormalizedVendorByMac(macAddress);
 
-  const vendor = VendorService.getVendorByMac(macAddress);
+  const deviceIsRegistered: boolean =
+    (await DeviceDatabaseService.getDeviceByMac(macAddress)) ? true : false;
 
-  if (!(await DeviceDatabaseService.getDeviceByMac(macAddress))) {
-    await DeviceDatabaseService.createDevice(macAddress, vendor);
+  if (deviceIsRegistered === false) {
+    await DeviceDatabaseService.createDevice(macAddress, normalizedVendor);
   }
 
-  const newScores = ScoreService.getScores(
-    vendor,
-    hostname,
+  const requestScores = ScoreService.applyRulesByDataAndGetScores(
+    normalizedVendor,
+    normalizedHostname,
     service,
     protocol,
-    port
+    port,
   );
 
-  let { oldScores, lastDecay } =
-    await DeviceDatabaseService.getOldScoresAndLastDecay(macAddress);
+  let { dbSavedScores, lastDecay } =
+    await DeviceDatabaseService.getDbSavedScoresAndLastDecay(macAddress);
 
   const now = new Date();
   if (now.getTime() - lastDecay.getTime() >= Number(env.DECAY_INTERVAL)) {
-    ScoreService.decayScores(oldScores);
+    ScoreService.decayScores(dbSavedScores);
     lastDecay = now;
   }
 
-  const updatedScores = ScoreService.sumScoresSets(newScores, oldScores);
+  const updatedScores = ScoreService.sumScoresSets(
+    requestScores,
+    dbSavedScores,
+  );
 
   const { device, maxScore } = ScoreService.getDeviceByScore(updatedScores);
   const scoresSum = ScoreService.getScoresSum(updatedScores);
 
-  const confidence = scoresSum > 0 ? maxScore / scoresSum : 0;
+  const confidence = getConfidence(maxScore, scoresSum);
 
   await DeviceDatabaseService.postUpdatedData(
     macAddress,
     updatedScores,
     device,
     lastDecay,
-    confidence
+    confidence,
   );
 }
 

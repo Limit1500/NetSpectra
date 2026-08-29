@@ -33,7 +33,7 @@ class DeviceDatabaseService {
     });
   }
 
-  static async getOldScoresAndLastDecay(macAddress: string) {
+  static async getDbSavedScoresAndLastDecay(macAddress: string) {
     const data = await DeviceDatabaseService.getDeviceByMac(macAddress);
     const {
       id,
@@ -44,11 +44,11 @@ class DeviceDatabaseService {
       lastSeen,
       firstSeen,
       lastDecay,
-      ...oldScores
+      ...dbSavedScores
     } = data!;
     return {
       lastDecay,
-      oldScores,
+      dbSavedScores,
     };
   }
 
@@ -57,7 +57,7 @@ class DeviceDatabaseService {
     updatedScores: Record<DeviceType, number>,
     deviceType: DeviceType,
     lastDecay: Date,
-    confidence: number
+    confidence: number,
   ) {
     await prisma.devices.update({
       where: {

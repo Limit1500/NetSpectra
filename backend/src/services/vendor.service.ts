@@ -14,9 +14,9 @@ class VendorService {
     return allVendors[prefix] !== undefined ? allVendors[prefix] : "Unknown";
   }
 
-  public getVendorByMac(macAddress: string) {
+  public getNormalizedVendorByMac(macAddress: string) {
     return normalizeVendor(
-      this.getVendorByPrefix(this.getPrefixByMac(macAddress))
+      this.getVendorByPrefix(this.getPrefixByMac(macAddress)),
     );
   }
 }

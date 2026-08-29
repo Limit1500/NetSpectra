@@ -9,20 +9,23 @@ import { env } from "process";
 
 class ScoreService {
   private static applyRules(
-    savedScores: Record<string, Partial<Record<DeviceType, number>>>,
+    rules: Record<string, Partial<Record<DeviceType, number>>>,
     operator: MatchOperator,
-    reqData: string,
-    scores: Record<DeviceType, number>
+    data: string,
+    scores: Record<DeviceType, number>,
   ): Record<DeviceType, number> {
-    for (const [key, value] of Object.entries(savedScores)) {
-      if (matchString(reqData, operator, key)) {
+    const updatedScores = {} as Record<DeviceType, number>;
+
+    for (const [key, value] of Object.entries(rules)) {
+      if (matchString(data, operator, key)) {
         for (const [deviceType, score] of Object.entries(value)) {
-          scores[deviceType as DeviceType] += score;
+          updatedScores[deviceType as DeviceType] +=
+            score + scores[deviceType as DeviceType];
         }
       }
     }
 
-    return scores;
+    return updatedScores;
   }
 
   static getScoresSum(scores: Record<DeviceType, number>): number {
@@ -33,15 +36,15 @@ class ScoreService {
     return sum;
   }
 
-  static getScores(
+  static applyRulesByDataAndGetScores(
     vendor: string,
     hostname: string,
     service: string,
     protocol: string,
-    port: string
+    port: string,
   ): Record<DeviceType, number> {
     const scores = Object.fromEntries(
-      Object.values(DeviceType).map((deviceType) => [deviceType, 0])
+      Object.values(DeviceType).map((deviceType) => [deviceType, 0]),
     ) as Record<DeviceType, number>;
 
     this.applyRules(vendorRules, "CONTAINS", vendor, scores);
@@ -70,7 +73,7 @@ class ScoreService {
 
   static sumScoresSets(
     newScores: Record<DeviceType, number>,
-    oldScores: Record<DeviceType, number>
+    oldScores: Record<DeviceType, number>,
   ): Record<DeviceType, number> {
     const updatedScores = {} as Record<DeviceType, number>;
     for (const key of Object.values(DeviceType)) {
@@ -80,12 +83,14 @@ class ScoreService {
   }
 
   static decayScores(
-    scores: Record<DeviceType, number>
+    scores: Record<DeviceType, number>,
   ): Record<DeviceType, number> {
+    const decayedScores = {} as Record<DeviceType, number>;
+
     for (const key of Object.values(DeviceType)) {
-      scores[key] *= Number(env.DECAY_MULTIPLIER);
+      decayedScores[key] = scores[key] * Number(env.DECAY_MULTIPLIER);
     }
-    return scores;
+    return decayedScores;
   }
 }
 
