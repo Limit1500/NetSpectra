@@ -17,6 +17,7 @@ export const signinSchema = {
         type: "string",
         format: "email",
         maxLength: 254,
+        minLength: 3,
       },
     },
   },

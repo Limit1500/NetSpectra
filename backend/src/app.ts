@@ -16,11 +16,16 @@ export const app = Fastify({
 
 app.register(jwt, {
   secret: env.JWT_SECRET!,
+  cookie: {
+    cookieName: "token",
+    signed: false,
+  },
 });
 app.register(cors, {
   origin: env.FRONTEND_URL,
   credentials: true,
 });
+
 app.register(rateLimit, {
   max: Number(env.RATE_LIMIT),
   timeWindow: "1 minute",
@@ -28,6 +33,10 @@ app.register(rateLimit, {
 
 app.register(cookie);
 app.setErrorHandler(errorHandler);
+
+app.post("/", async () => {
+  return { message: "POST works" };
+});
 
 app.register(authRoutes, { prefix: "/auth" });
 app.register(trafficDataRoutes, { prefix: "/traffic" });

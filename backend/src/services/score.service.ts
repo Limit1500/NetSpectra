@@ -12,20 +12,15 @@ class ScoreService {
     rules: Record<string, Partial<Record<DeviceType, number>>>,
     operator: MatchOperator,
     data: string,
-    scores: Record<DeviceType, number>,
-  ): Record<DeviceType, number> {
-    const updatedScores = {} as Record<DeviceType, number>;
-
+    scores: Record<DeviceType, number>
+  ) {
     for (const [key, value] of Object.entries(rules)) {
       if (matchString(data, operator, key)) {
         for (const [deviceType, score] of Object.entries(value)) {
-          updatedScores[deviceType as DeviceType] +=
-            score + scores[deviceType as DeviceType];
+          scores[deviceType as DeviceType] += score;
         }
       }
     }
-
-    return updatedScores;
   }
 
   static getScoresSum(scores: Record<DeviceType, number>): number {
@@ -41,10 +36,10 @@ class ScoreService {
     hostname: string,
     service: string,
     protocol: string,
-    port: string,
+    port: string
   ): Record<DeviceType, number> {
     const scores = Object.fromEntries(
-      Object.values(DeviceType).map((deviceType) => [deviceType, 0]),
+      Object.values(DeviceType).map((deviceType) => [deviceType, 0])
     ) as Record<DeviceType, number>;
 
     this.applyRules(vendorRules, "CONTAINS", vendor, scores);
@@ -73,7 +68,7 @@ class ScoreService {
 
   static sumScoresSets(
     newScores: Record<DeviceType, number>,
-    oldScores: Record<DeviceType, number>,
+    oldScores: Record<DeviceType, number>
   ): Record<DeviceType, number> {
     const updatedScores = {} as Record<DeviceType, number>;
     for (const key of Object.values(DeviceType)) {
@@ -83,7 +78,7 @@ class ScoreService {
   }
 
   static decayScores(
-    scores: Record<DeviceType, number>,
+    scores: Record<DeviceType, number>
   ): Record<DeviceType, number> {
     const decayedScores = {} as Record<DeviceType, number>;
 

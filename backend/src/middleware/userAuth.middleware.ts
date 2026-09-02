@@ -4,7 +4,7 @@ import AppError from "../types/error.types";
 async function userAuth(req: FastifyRequest, reply: FastifyReply) {
   try {
     await req.jwtVerify();
-  } catch {
+  } catch (error) {
     throw new AppError(401, "Unauthorized");
   }
 }

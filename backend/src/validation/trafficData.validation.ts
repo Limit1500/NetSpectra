@@ -22,7 +22,6 @@ const trafficDataSchema = {
 
       protocol: {
         type: "string",
-        enum: ["TCP", "UDP"],
       },
 
       port: {

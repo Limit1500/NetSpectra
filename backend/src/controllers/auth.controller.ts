@@ -23,12 +23,12 @@ class AuthController {
     )) as DbUserType;
 
     const token = JwtService.generateToken(user.id, password);
-
     reply
       .setCookie("token", token, {
+        path: "/",
         httpOnly: true,
-        secure: true,
-        sameSite: "strict",
+        secure: false,
+        sameSite: "lax",
         maxAge: 60 * 60,
       })
       .send({
@@ -39,6 +39,9 @@ class AuthController {
   static logout(req: FastifyRequest, reply: FastifyReply) {
     reply
       .clearCookie("token", {
+        httpOnly: true,
+        secure: false,
+        sameSite: "lax",
         path: "/",
       })
       .code(200)
