@@ -29,6 +29,33 @@ class UserDatabaseService {
       },
     });
   }
+
+  static async deleteUser(id: number) {
+    return await prisma.users.delete({
+      where: {
+        id,
+      },
+    });
+  }
+
+  static async patchUser(
+    id: number,
+    username: string,
+    hashedPassword: string,
+    email: string
+  ) {
+    return await prisma.users.update({
+      where: {
+        id,
+      },
+      data: {
+        username,
+        password: hashedPassword,
+        email,
+        updatedAt: new Date(),
+      },
+    });
+  }
 }
 
 export default UserDatabaseService;

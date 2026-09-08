@@ -67,6 +67,7 @@ describe("POST /auth/login", () => {
       payload: {
         username: "username",
         password: "password",
+        rememberUser: false,
       },
     });
 
@@ -80,6 +81,7 @@ describe("POST /auth/login", () => {
       payload: {
         username: "username",
         password: "wrong-password",
+        rememberUser: false,
       },
     });
 

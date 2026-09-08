@@ -49,3 +49,8 @@ export type devices = Prisma.devicesModel
  * 
  */
 export type users = Prisma.usersModel
+/**
+ * Model email_tokens
+ * 
+ */
+export type email_tokens = Prisma.email_tokensModel

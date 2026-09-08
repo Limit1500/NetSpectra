@@ -1,4 +1,4 @@
-import { InputTypes } from "../types";
+import { InputTypes } from "../features/auth/types";
 
 export function Input({
   type,
@@ -8,7 +8,7 @@ export function Input({
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }) {
   const inputStyle =
-    "rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-blue-500";
+    "rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-blue-500 w-full";
 
   let minLength;
   let maxLength;

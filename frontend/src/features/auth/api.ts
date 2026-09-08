@@ -5,9 +5,10 @@ export async function authentificate(
   type: AuthType,
   username: string,
   password: string,
-  email: string
+  email: string,
+  rememberUser: boolean
 ) {
-  const response = await fetch(`${API_URL + "/auth/"}${type}`, {
+  const response = await fetch(`${API_URL}/auth/${type}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,6 +17,7 @@ export async function authentificate(
     body: JSON.stringify({
       username,
       password,
+      rememberUser,
       ...(type === "signin" && { email }),
     }),
   });

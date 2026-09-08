@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   devices: 'devices',
-  users: 'users'
+  users: 'users',
+  email_tokens: 'email_tokens'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -117,6 +118,17 @@ export const UsersScalarFieldEnum = {
 } as const
 
 export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
+
+
+export const Email_tokensScalarFieldEnum = {
+  id: 'id',
+  tokenHash: 'tokenHash',
+  userId: 'userId',
+  purpose: 'purpose',
+  expiresAt: 'expiresAt'
+} as const
+
+export type Email_tokensScalarFieldEnum = (typeof Email_tokensScalarFieldEnum)[keyof typeof Email_tokensScalarFieldEnum]
 
 
 export const SortOrder = {

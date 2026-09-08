@@ -1,32 +1,47 @@
 "use client";
 
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useDevices } from "../../features/devices/useDevices";
 import { Navigation } from "../../features/devices/components/Navigation";
 import { DevicesTable } from "@/src/features/devices/components/DevicesTable";
 import { SearchContainer } from "@/src/features/devices/components/SearchContainer";
+import { AppContext } from "@/src/context/AppContext";
+import Loading from "../../components/Loading";
 
 export default function Devices() {
   const {
-    handleLogout,
     loadDevices,
     devices,
     apply,
-    username,
     sortBy,
     inputValue,
+    isBuffering,
     toggleApply,
     handleSortChange,
     handleInputChange,
+    handleApplyKey,
   } = useDevices();
+
+  const { username, setUsername } = useContext(AppContext);
 
   useEffect(() => {
     loadDevices();
   }, [apply]);
 
-  return (
+  useEffect(() => {
+    document.addEventListener("keydown", handleApplyKey);
+
+    return () => {
+      document.removeEventListener("keydown", handleApplyKey);
+    };
+  });
+
+  return isBuffering ? (
+    <Loading />
+  ) : (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <Navigation username={username} handleLogout={handleLogout} />
+      <Navigation />
+
       <main className="mx-auto max-w-6xl px-6 pb-12 pt-24">
         <SearchContainer
           sortBy={sortBy}
@@ -35,6 +50,7 @@ export default function Devices() {
           handleSortChange={handleSortChange}
           handleInputChange={handleInputChange}
         />
+
         <DevicesTable devices={devices} />
       </main>
     </div>

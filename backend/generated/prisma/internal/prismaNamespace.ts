@@ -398,7 +398,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   devices: 'devices',
-  users: 'users'
+  users: 'users',
+  email_tokens: 'email_tokens'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -414,7 +415,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "devices" | "users"
+    modelProps: "devices" | "users" | "email_tokens"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -566,6 +567,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    email_tokens: {
+      payload: Prisma.$email_tokensPayload<ExtArgs>
+      fields: Prisma.email_tokensFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.email_tokensFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.email_tokensFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        findFirst: {
+          args: Prisma.email_tokensFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.email_tokensFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        findMany: {
+          args: Prisma.email_tokensFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>[]
+        }
+        create: {
+          args: Prisma.email_tokensCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        createMany: {
+          args: Prisma.email_tokensCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.email_tokensCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>[]
+        }
+        delete: {
+          args: Prisma.email_tokensDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        update: {
+          args: Prisma.email_tokensUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        deleteMany: {
+          args: Prisma.email_tokensDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.email_tokensUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.email_tokensUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>[]
+        }
+        upsert: {
+          args: Prisma.email_tokensUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$email_tokensPayload>
+        }
+        aggregate: {
+          args: Prisma.Email_tokensAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEmail_tokens>
+        }
+        groupBy: {
+          args: Prisma.email_tokensGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Email_tokensGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.email_tokensCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Email_tokensCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -653,6 +728,17 @@ export const UsersScalarFieldEnum = {
 export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
 
 
+export const Email_tokensScalarFieldEnum = {
+  id: 'id',
+  tokenHash: 'tokenHash',
+  userId: 'userId',
+  purpose: 'purpose',
+  expiresAt: 'expiresAt'
+} as const
+
+export type Email_tokensScalarFieldEnum = (typeof Email_tokensScalarFieldEnum)[keyof typeof Email_tokensScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -735,6 +821,20 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
  * Reference to a field of type 'Boolean'
  */
 export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+/**
+ * Reference to a field of type 'EmailTokenPurpose'
+ */
+export type EnumEmailTokenPurposeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailTokenPurpose'>
+    
+
+
+/**
+ * Reference to a field of type 'EmailTokenPurpose[]'
+ */
+export type ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailTokenPurpose[]'>
     
 
 
@@ -904,6 +1004,7 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   devices?: Prisma.devicesOmit
   users?: Prisma.usersOmit
+  email_tokens?: Prisma.email_tokensOmit
 }
 
 /* Types for Logging */

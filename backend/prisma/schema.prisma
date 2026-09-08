@@ -57,5 +57,24 @@ model users {
   updatedAt DateTime @updatedAt
 
   isActive Boolean @default(true)
+
+  emailTokens email_tokens[]
 }
 
+enum EmailTokenPurpose {
+  PATCH
+  DELETE
+}
+
+model email_tokens {
+  id        Int               @id @default(autoincrement())
+  tokenHash String            @unique
+  userId    Int
+  purpose   EmailTokenPurpose
+  expiresAt DateTime
+
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}

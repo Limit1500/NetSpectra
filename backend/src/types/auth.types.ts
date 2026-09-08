@@ -14,6 +14,7 @@ export interface DbUserType {
 export interface LoginBody {
   username: string;
   password: string;
+  rememberUser: boolean;
 }
 
 export interface SigninBody {

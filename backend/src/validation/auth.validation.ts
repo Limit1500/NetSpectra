@@ -26,7 +26,7 @@ export const signinSchema = {
 export const loginSchema = {
   body: {
     type: "object",
-    required: ["username", "password"],
+    required: ["username", "password", "rememberUser"],
     properties: {
       username: {
         type: "string",
@@ -37,6 +37,9 @@ export const loginSchema = {
         type: "string",
         minLength: 8,
         maxLength: 128,
+      },
+      rememberUser: {
+        type: "boolean",
       },
     },
   },

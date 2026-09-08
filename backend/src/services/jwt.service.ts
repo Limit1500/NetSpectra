@@ -2,10 +2,10 @@ import { env } from "process";
 import { app } from "../app";
 
 export class JwtService {
-  static generateToken(userId: number, username: string) {
+  static generateToken(id: number, username: string) {
     return app.jwt.sign(
       {
-        userId,
+        id,
         username,
       },
       {

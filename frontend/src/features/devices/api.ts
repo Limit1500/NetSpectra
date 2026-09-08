@@ -1,3 +1,4 @@
+import { API_URL } from "@/src/lib/config";
 import { DeviceProps } from "./types";
 
 type FetchDevicesResponse = {
@@ -6,7 +7,7 @@ type FetchDevicesResponse = {
 };
 
 export async function fetchDevices(): Promise<FetchDevicesResponse> {
-  const response = await fetch("http://localhost:3456/devices", {
+  const response = await fetch(`${API_URL}/devices`, {
     credentials: "include",
   });
 
@@ -16,11 +17,4 @@ export async function fetchDevices(): Promise<FetchDevicesResponse> {
     data,
     status: response.status,
   };
-}
-
-export async function logout() {
-  fetch("http://localhost:3456/auth/logout", {
-    method: "POST",
-    credentials: "include",
-  });
 }

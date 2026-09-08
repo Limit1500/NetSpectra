@@ -29,7 +29,9 @@ class AuthController {
         httpOnly: true,
         secure: false,
         sameSite: "lax",
-        maxAge: 60 * 60,
+        ...(req.body.rememberUser && {
+          maxAge: 60 * 60 * 24 * 30,
+        }),
       })
       .send({
         message: "Login successful",

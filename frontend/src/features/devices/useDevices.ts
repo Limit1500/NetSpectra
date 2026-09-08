@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { fetchDevices, logout } from "./api";
+import { useContext, useState } from "react";
+import { fetchDevices } from "./api";
 import sortDevices from "./sortDevices";
 import { DeviceProps, SortMethods } from "./types";
-import { User } from "@/src/features/auth/authLogic";
+import { AppContext } from "@/src/context/AppContext";
 
 export function useDevices() {
   const [devices, setDevices] = useState<DeviceProps[]>([]);
   const [sortBy, setSortBy] = useState<SortMethods>(SortMethods.byLastSeen);
   const [inputValue, setInputValue] = useState<string>("highest");
   const [apply, setApply] = useState(false);
-  const [username, setUsername] = useState(`${User}`);
+  const [isBuffering, setIsBuffering] = useState<boolean>(true);
+  const { username, setUsername } = useContext(AppContext);
 
   const loadDevices = async () => {
     const { data, status } = await fetchDevices();
@@ -28,19 +29,15 @@ export function useDevices() {
     const sortedDevices = sortDevices(devicesWithDates, sortBy, inputValue);
 
     setDevices(sortedDevices);
+    setIsBuffering(false);
   };
-
-  function handleLogout() {
-    logout();
-    window.location.href = "/auth";
-    return;
-  }
 
   function toggleApply() {
     setApply((current) => !current);
   }
   function handleSortChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setSortBy(event.target.value as SortMethods);
+    setInputValue("");
   }
 
   function handleInputChange(
@@ -49,11 +46,18 @@ export function useDevices() {
     setInputValue(event.target.value);
   }
 
+  function handleApplyKey(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      toggleApply();
+    }
+  }
+
   return {
+    handleApplyKey,
+    isBuffering,
     handleSortChange,
     handleInputChange,
     toggleApply,
-    handleLogout,
     loadDevices,
     devices,
     sortBy,

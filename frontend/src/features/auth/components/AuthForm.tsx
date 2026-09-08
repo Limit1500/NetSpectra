@@ -1,9 +1,14 @@
-import { useAuth } from "../authLogic";
+import { useAuth } from "../useAuth";
 import { InputTypes } from "../types";
-import { Input } from "./Input";
+import Loading from "@/src/components/Loading";
+import { Input } from "@/src/components/Input";
 
 export function AuthForm() {
   const {
+    toggleRememberUser,
+    handleUsername,
+    handlePassword,
+    handleEmail,
     handleAuthentification,
     toggleAuthType,
     authType,
@@ -11,9 +16,12 @@ export function AuthForm() {
     setPassword,
     setEmail,
     serverMessage,
+    isBuffering,
   } = useAuth();
 
-  return (
+  return isBuffering === true ? (
+    <Loading />
+  ) : (
     <div className="min-h-screen flex items-center justify-center bg-slate-950">
       <div className="w-full max-w-md rounded-2xl bg-slate-900 p-8 shadow-xl">
         <div className="mb-8">
@@ -27,23 +35,25 @@ export function AuthForm() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <Input
-            type={InputTypes.username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <Input type={InputTypes.username} onChange={handleUsername} />
 
-          <Input
-            type={InputTypes.password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <Input type={InputTypes.password} onChange={handlePassword} />
 
           {authType === "signin" ? (
-            <Input
-              type={InputTypes.email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <Input type={InputTypes.email} onChange={handleEmail} />
           ) : (
-            <></>
+            <div className="flex items-center gap-2 mt-3">
+              <input
+                onChange={toggleRememberUser}
+                type="checkbox"
+                id="rememberMe"
+                name="rememberMe"
+                className="h-4 w-4"
+              />
+              <label htmlFor="rememberMe" className="text-sm text-slate-400">
+                Remember me
+              </label>
+            </div>
           )}
 
           <p

@@ -10,4 +10,5 @@
  */
 export type * from './models/devices'
 export type * from './models/users'
+export type * from './models/email_tokens'
 export type * from './commonInputTypes'

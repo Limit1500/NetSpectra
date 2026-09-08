@@ -9,7 +9,9 @@
 * 🟢 You can import this file directly.
 */
 
+export const EmailTokenPurpose = {
+  PATCH: 'PATCH',
+  DELETE: 'DELETE'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type EmailTokenPurpose = (typeof EmailTokenPurpose)[keyof typeof EmailTokenPurpose]
