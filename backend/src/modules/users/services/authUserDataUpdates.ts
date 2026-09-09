@@ -1,10 +1,10 @@
-import { EmailTokenPurpose } from "../../generated/prisma/enums";
-import UserDatabaseService from "./userDatabase.service";
-import EmailTokenDatabaseService from "./emailTokenDatabase.service";
+import { EmailTokenPurpose } from "../../../../generated/prisma/enums";
+import EmailTokenDatabaseService from "../../../services/database/tokens";
 import argon2 from "argon2";
-import { env } from "../config/env.config";
-import EmailService from "./email.service";
-import AppError from "../types/error.types";
+import { env } from "../../../config/env.config";
+import AppError from "../../../common/types/error.types";
+import UserDatabaseService from "../../../services/database/user";
+import { sendUserEmail } from "../../../services/email/user";
 
 class AuthUserDataUpdatesService {
   static async processAndSendEmail(
@@ -17,14 +17,14 @@ class AuthUserDataUpdatesService {
 
     await EmailTokenDatabaseService.postToken(id, hashedToken, purpose);
 
-    const user = await UserDatabaseService.getUserByUsername(username);
+    const user = await UserDatabaseService.getOtherUserByEmail(username);
     const email = user!.email;
 
     const confirmationUrl = `${
       env.FRONTEND_URL
     }/confirm/?purpose=${purpose.toLowerCase()}&token=${token}`;
 
-    await EmailService.formatAndSendEmail(email, confirmationUrl, purpose);
+    await sendUserEmail(email, confirmationUrl, purpose);
   }
 
   static async checkUniqueCredentials(
@@ -32,14 +32,17 @@ class AuthUserDataUpdatesService {
     email: string,
     id: number
   ) {
-    const usernameExists = (await UserDatabaseService.getUserByUsername(
+    const usernameExists = (await UserDatabaseService.getOtherUserByUsername(
       username,
       id
     ))
       ? true
       : false;
 
-    const emailExists = (await UserDatabaseService.getUserByEmail(email, id))
+    const emailExists = (await UserDatabaseService.getOtherUserByEmail(
+      email,
+      id
+    ))
       ? true
       : false;
 

@@ -1,13 +1,20 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import JwtService from "../services/jwt.service";
-import AuthService from "../services/auth.service";
-import { DbUserType, LoginBody, SigninBody } from "../types/auth.types";
+import { LoginBody, SigninBody } from "../../common/types/auth.types";
+import JwtService from "../../services/jwt";
+import AuthService from "./service";
 
 class AuthController {
-  static async signin(req: FastifyRequest, reply: FastifyReply) {
-    const { username, password, email } = req.body as SigninBody;
+  static async signin(
+    req: FastifyRequest<{
+      Body: SigninBody;
+    }>,
+    reply: FastifyReply
+  ) {
+    const { username, password, email } = req.body;
+
     await AuthService.signin(username, password, email);
-    reply.code(200).send({ message: "Signin successful" });
+
+    return reply.code(200).send({ message: "Signin successful" });
   }
 
   static async login(
@@ -16,14 +23,12 @@ class AuthController {
     }>,
     reply: FastifyReply
   ) {
-    const { password } = req.body as LoginBody;
-    const user = (await AuthService.login(
-      req.body.username,
-      req.body.password
-    )) as DbUserType;
+    const { password, username } = req.body;
 
-    const token = JwtService.generateToken(user.id, password);
-    reply
+    const user = await AuthService.login(username, password);
+
+    const token = JwtService.generateToken(user.id, username);
+    return reply
       .setCookie("token", token, {
         path: "/",
         httpOnly: true,
@@ -38,8 +43,8 @@ class AuthController {
       });
   }
 
-  static logout(req: FastifyRequest, reply: FastifyReply) {
-    reply
+  static logout(_req: FastifyRequest, reply: FastifyReply) {
+    return reply
       .clearCookie("token", {
         httpOnly: true,
         secure: false,

@@ -1,16 +1,16 @@
 import cookie from "@fastify/cookie";
 import "dotenv/config";
 import Fastify from "fastify";
-import authRoutes from "./routes/auth.routes";
-import trafficDataRoutes from "./routes/trafficData.route";
 import jwt from "@fastify/jwt";
-import errorHandler from "./errors/app.error";
-import deviceRoute from "./routes/devices.route";
 import rateLimit from "@fastify/rate-limit";
 import cors from "@fastify/cors";
 import { env } from "./config/env.config";
-import userRoutes from "./routes/user.routes";
-import CleanupService from "./services/cleanup.service";
+import CleanupService from "./services/cleanup";
+import errorHandler from "./common/errors/app.error";
+import authRoutes from "./modules/auth/routes";
+import trafficDataRoutes from "./modules/traffic/routes";
+import deviceRoute from "./modules/devices/routes";
+import userRoutes from "./modules/users/routes";
 
 export const app = Fastify({
   logger: true,

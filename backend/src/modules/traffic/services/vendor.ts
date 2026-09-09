@@ -1,5 +1,4 @@
-import vendorsJson from "../normalized-vendors.json";
-import { normalizeVendor } from "../utils/normalizations.utils";
+import vendorsJson from "../../../../vendors/normalized-vendors.json";
 
 class VendorService {
   private getPrefixByMac(macAddress: string) {
@@ -14,10 +13,8 @@ class VendorService {
     return allVendors[prefix] !== undefined ? allVendors[prefix] : "Unknown";
   }
 
-  public getNormalizedVendorByMac(macAddress: string) {
-    return normalizeVendor(
-      this.getVendorByPrefix(this.getPrefixByMac(macAddress)),
-    );
+  public getVendorByMac(macAddress: string) {
+    return this.getVendorByPrefix(this.getPrefixByMac(macAddress));
   }
 }
 

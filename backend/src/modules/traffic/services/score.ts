@@ -1,11 +1,11 @@
-import vendorRules from "../scoringRules/vendor.rules.json";
-import hostnameRules from "../scoringRules/hostname.rules.json";
-import serviceRules from "../scoringRules/service.rules.json";
-import protocolRules from "../scoringRules/protocol.rules.json";
-import portRules from "../scoringRules/port.rules.json";
-import { matchString } from "../utils/string.utils";
-import { DeviceType, MatchOperator } from "../types/device.types";
+import vendorRules from "../../../../rules/vendor.rules.json";
+import hostnameRules from "../../../../rules/hostname.rules.json";
+import serviceRules from "../../../../rules/service.rules.json";
+import protocolRules from "../../../../rules/protocol.rules.json";
+import portRules from "../../../../rules/port.rules.json";
+import { DeviceType, MatchOperator } from "../../../common/types/device.types";
 import { env } from "process";
+import { matchString } from "../../../common/utils/string.utils";
 
 class ScoreService {
   private static applyRules(
@@ -31,7 +31,7 @@ class ScoreService {
     return sum;
   }
 
-  static applyRulesByDataAndGetScores(
+  static applyRulesAndGetScores(
     vendor: string,
     hostname: string,
     service: string,

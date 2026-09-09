@@ -1,30 +1,17 @@
-import { Resend } from "resend";
-import { env } from "../config/env.config";
-import { EmailTokenPurpose } from "../../generated/prisma/enums";
+import { EmailTokenPurpose } from "../../../generated/prisma/enums";
+import EmailService from "./service";
 
-class EmailService {
-  private static async sendEmail(to: string, subject: string, html: string) {
-    const resend = new Resend(env.EMAILER_API_KEY);
+export async function sendUserEmail(
+  email: string,
+  confirmationUrl: string,
+  purpose: EmailTokenPurpose
+) {
+  let subject;
+  let html;
 
-    await resend.emails.send({
-      from: env.EMAILER_ADDRESS!,
-      to,
-      subject,
-      html,
-    });
-  }
-
-  static async formatAndSendEmail(
-    email: string,
-    confirmationUrl: string,
-    purpose: EmailTokenPurpose
-  ) {
-    let subject;
-    let html;
-
-    if (purpose === "DELETE") {
-      subject = "Confirm account deletion";
-      html = `<h2>Confirm account deletion</h2>
+  if (purpose === "DELETE") {
+    subject = "Confirm account deletion";
+    html = `<h2>Confirm account deletion</h2>
 
               <p>Hello,</p>
 
@@ -45,9 +32,9 @@ class EmailService {
 							<p>
   							If you did not request this, you can safely ignore this email.
 							</p>`;
-    } else {
-      subject = "Confirm account changes";
-      html = `<h2>Confirm account changes</h2>
+  } else {
+    subject = "Confirm account changes";
+    html = `<h2>Confirm account changes</h2>
 
 							<p>Hello,</p>
 
@@ -68,9 +55,6 @@ class EmailService {
 							<p>
   							If you did not request this, you can safely ignore this email.
 							</p>`;
-    }
-    await EmailService.sendEmail(email, subject, html);
   }
+  await EmailService.sendEmail(email, subject, html);
 }
-
-export default EmailService;

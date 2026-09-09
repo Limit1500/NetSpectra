@@ -51,6 +51,7 @@ export default function useUser() {
     setStatusMessage(message);
 
     setTimeout(async () => {
+      router.push("/auth");
       setStatusMessage("");
     }, 3000);
     return;

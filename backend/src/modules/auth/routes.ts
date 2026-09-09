@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import AuthController from "../controllers/auth.controller";
-import { loginSchema, signinSchema } from "../validation/auth.validation";
+import AuthController from "./controller";
+import { loginSchema, signinSchema } from "./validation";
 
 async function authRoutes(fastify: FastifyInstance) {
   fastify.post("/signin", {

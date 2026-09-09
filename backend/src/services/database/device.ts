@@ -1,5 +1,5 @@
-import prisma from "../db";
-import { DeviceType } from "../types/device.types";
+import { DeviceType } from "../../common/types/device.types";
+import prisma from "../../db";
 
 class DeviceDatabaseService {
   static async getAllDevices() {
@@ -33,7 +33,7 @@ class DeviceDatabaseService {
     });
   }
 
-  static async getDbSavedScoresAndLastDecay(macAddress: string) {
+  static async getSavedScoresAndLastDecay(macAddress: string) {
     const data = await DeviceDatabaseService.getDeviceByMac(macAddress);
     const {
       id,
@@ -57,7 +57,7 @@ class DeviceDatabaseService {
     updatedScores: Record<DeviceType, number>,
     deviceType: DeviceType,
     lastDecay: Date,
-    confidence: number,
+    confidence: number
   ) {
     await prisma.devices.update({
       where: {

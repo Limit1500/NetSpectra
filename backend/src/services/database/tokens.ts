@@ -1,6 +1,6 @@
 import crypto from "crypto";
-import { EmailTokenPurpose } from "../../generated/prisma/enums";
-import prisma from "../db";
+import { EmailTokenPurpose } from "../../../generated/prisma/enums";
+import prisma from "../../db";
 
 class EmailTokenService {
   static generateToken() {
