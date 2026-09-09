@@ -6,6 +6,9 @@ import { EmailTokenPurpose } from "./types";
 
 export default function UpdateUserForm() {
   const {
+    username,
+    email,
+    password,
     handleUsername,
     handleEmail,
     handlePassword,
@@ -14,6 +17,7 @@ export default function UpdateUserForm() {
     handleDelete,
     handlePatch,
     token,
+    apiMessage,
   } = useConfirm();
 
   useEffect(() => {
@@ -67,6 +71,15 @@ export default function UpdateUserForm() {
             >
               Confirm account deletion
             </button>
+            <p
+              className={` mt-5 text-sm ${
+                apiMessage === "User deleted successfully"
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              {apiMessage}
+            </p>
           </div>
         </div>
       </div>
@@ -119,11 +132,23 @@ export default function UpdateUserForm() {
               </p>
 
               <div className="space-y-4">
-                <Input type={InputTypes.username} onChange={handleUsername} />
+                <Input
+                  type={InputTypes.username}
+                  onChange={handleUsername}
+                  value={username}
+                />
 
-                <Input type={InputTypes.password} onChange={handlePassword} />
+                <Input
+                  type={InputTypes.password}
+                  onChange={handlePassword}
+                  value={password}
+                />
 
-                <Input type={InputTypes.email} onChange={handleEmail} />
+                <Input
+                  type={InputTypes.email}
+                  onChange={handleEmail}
+                  value={email}
+                />
               </div>
             </div>
 
@@ -136,6 +161,15 @@ export default function UpdateUserForm() {
                 Save changes
               </button>
             </div>
+            <p
+              className={` mt-5 text-sm ${
+                apiMessage === "User patched successfully"
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              {apiMessage}
+            </p>
           </div>
         </div>
       </div>

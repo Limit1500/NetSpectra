@@ -1,17 +1,22 @@
 import { useSearchParams } from "next/navigation";
-import { EmailTokenPurpose, UserData } from "./types";
+import { EmailTokenPurpose } from "./types";
 import { useState } from "react";
 import { deleteUser, getUser, patchUser } from "../../features/confirm/api";
+import { useRouter } from "next/navigation";
 
 export default function useConfirm() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const purpose = searchParams.get("purpose") as EmailTokenPurpose;
   const token = searchParams.get("token");
 
+  console.log(purpose);
+
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [apiMessage, setApiMessage] = useState<string>("");
 
   function handleUsername(event: React.ChangeEvent<HTMLInputElement>) {
     setUsername(event.target.value);
@@ -24,20 +29,55 @@ export default function useConfirm() {
   }
 
   async function getSavedCredentials() {
-    const { username, email } = (await getUser()) as UserData;
+    const { user, status } = await getUser();
+
+    if (status === 401) {
+      router.push("/auth");
+      return;
+    }
+
+    const { username, email } = user;
+
     setUsername(username);
     setEmail(email);
+
+    console.log(username);
+    console.log(email);
   }
 
   async function handlePatch() {
-    await patchUser(token as string, username, password, email);
+    const { message } = await patchUser(
+      token as string,
+      username,
+      password,
+      email,
+    );
+
+    setApiMessage(message);
+
+    setTimeout(() => {
+      setApiMessage("");
+      if (message === "User patched successfully") {
+        router.push("/user");
+      }
+    }, 3000);
   }
 
   async function handleDelete() {
-    await deleteUser(token as string);
+    const { message } = await deleteUser(token as string);
+
+    setApiMessage(message);
+
+    setTimeout(() => {
+      setApiMessage("");
+      if (message === "User deleted successfully") {
+        router.push("/auth");
+      }
+    }, 3000);
   }
 
   return {
+    apiMessage,
     token,
     handleDelete,
     handlePatch,
@@ -46,5 +86,8 @@ export default function useConfirm() {
     handleEmail,
     handlePassword,
     handleUsername,
+    username,
+    password,
+    email,
   };
 }

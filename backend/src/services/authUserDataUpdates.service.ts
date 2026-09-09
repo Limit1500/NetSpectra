@@ -27,6 +27,29 @@ class AuthUserDataUpdatesService {
     await EmailService.formatAndSendEmail(email, confirmationUrl, purpose);
   }
 
+  static async checkUniqueCredentials(
+    username: string,
+    email: string,
+    id: number
+  ) {
+    const usernameExists = (await UserDatabaseService.getUserByUsername(
+      username,
+      id
+    ))
+      ? true
+      : false;
+
+    const emailExists = (await UserDatabaseService.getUserByEmail(email, id))
+      ? true
+      : false;
+
+    if (usernameExists) {
+      throw new AppError(409, "Username already exists");
+    } else if (emailExists) {
+      throw new AppError(409, "Email already exists");
+    }
+  }
+
   static async checkDatabaseToken(
     userId: number,
     token: string,

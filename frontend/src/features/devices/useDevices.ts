@@ -3,6 +3,7 @@ import { fetchDevices } from "./api";
 import sortDevices from "./sortDevices";
 import { DeviceProps, SortMethods } from "./types";
 import { AppContext } from "@/src/context/AppContext";
+import { useRouter } from "next/navigation";
 
 export function useDevices() {
   const [devices, setDevices] = useState<DeviceProps[]>([]);
@@ -12,11 +13,13 @@ export function useDevices() {
   const [isBuffering, setIsBuffering] = useState<boolean>(true);
   const { username, setUsername } = useContext(AppContext);
 
+  const router = useRouter();
+
   const loadDevices = async () => {
     const { data, status } = await fetchDevices();
 
     if (status === 401) {
-      window.location.href = "/auth";
+      router.push("/auth");
       return;
     }
 
@@ -41,7 +44,7 @@ export function useDevices() {
   }
 
   function handleInputChange(
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) {
     setInputValue(event.target.value);
   }

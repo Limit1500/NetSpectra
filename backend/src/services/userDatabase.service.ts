@@ -22,10 +22,36 @@ class UserDatabaseService {
     }
   }
 
-  static async getUserByUsername(username: string) {
-    return await prisma.users.findUnique({
+  static async getUserByUsername(username: string, id?: number) {
+    return await prisma.users.findFirst({
       where: {
         username,
+        ...(id !== undefined && {
+          NOT: {
+            id,
+          },
+        }),
+      },
+    });
+  }
+
+  static async getUserByEmail(email: string, id?: number) {
+    return await prisma.users.findFirst({
+      where: {
+        email,
+        ...(id !== undefined && {
+          NOT: {
+            id,
+          },
+        }),
+      },
+    });
+  }
+
+  static async getUserById(id: number) {
+    return await prisma.users.findUnique({
+      where: {
+        id,
       },
     });
   }

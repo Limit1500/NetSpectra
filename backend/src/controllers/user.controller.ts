@@ -4,11 +4,16 @@ import { EmailTokenPurpose } from "../../generated/prisma/enums";
 import { SigninBody } from "../types/auth.types";
 import AuthUserDataUpdatesService from "../services/authUserDataUpdates.service";
 import argon2 from "argon2";
+import AppError from "../types/error.types";
 
 class UserController {
   static async getUserData(req: FastifyRequest, reply: FastifyReply) {
-    const { username } = req.user as { username: string };
-    const data = await UserDatabaseService.getUserByUsername(username);
+    const { id } = req.user as { id: number };
+    const data = await UserDatabaseService.getUserById(id);
+
+    if (!data) {
+      throw new AppError(404, "User not found");
+    }
 
     return reply.status(200).send(data);
   }
@@ -49,10 +54,18 @@ class UserController {
     const { id } = req.user as { id: number };
     const { token } = req.params as { token: string };
 
+    const { username, password, email } = req.body as SigninBody;
+
+    await AuthUserDataUpdatesService.checkUniqueCredentials(
+      username,
+      email,
+      id
+    );
+
     await AuthUserDataUpdatesService.checkDatabaseToken(id, token, "PATCH");
 
-    const { username, password, email } = req.body as SigninBody;
     const hashedPassword = await argon2.hash(password);
+
     await UserDatabaseService.patchUser(id, username, hashedPassword, email);
 
     return reply.status(200).send({ message: "User patched successfully" });

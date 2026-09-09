@@ -1,41 +1,76 @@
 import { getUser } from "@/src/features/confirm/api";
 import { useEffect, useState } from "react";
 import { askUpdateUser, logout } from "./api";
-import { EmailTokenPurpose, UserData } from "@/src/features/confirm/types";
+import { EmailTokenPurpose } from "@/src/features/confirm/types";
+import { useRouter } from "next/navigation";
 
 export default function useUser() {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [createdAt, setCreatedAt] = useState<Date | null>(null);
   const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
+  const [statusMessage, setStatusMessage] = useState<string>("");
+
+  const router = useRouter();
 
   async function loadUser() {
-    const user = (await getUser()) as UserData;
+    const { user, status } = await getUser();
+
+    if (status === 401 || status === 404) {
+      router.push("/auth");
+      return;
+    }
+
     setUsername(user.username);
     setEmail(user.email);
     setCreatedAt(user.createdAt);
     setUpdatedAt(user.updatedAt);
   }
 
-  function handlePatch() {
-    askUpdateUser(EmailTokenPurpose.patch);
+  async function handlePatch() {
+    const { message } = await askUpdateUser(EmailTokenPurpose.patch);
+    setStatusMessage(message);
+
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 3000);
   }
 
-  function handleDelete() {
-    askUpdateUser(EmailTokenPurpose.delete);
+  async function handleDelete() {
+    const { message } = await askUpdateUser(EmailTokenPurpose.delete);
+    setStatusMessage(message);
+
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 3000);
   }
 
-  function handleLogout() {
-    logout();
-    window.location.href = "/auth";
+  async function handleLogout() {
+    const { message } = await logout();
+
+    setStatusMessage(message);
+
+    setTimeout(async () => {
+      setStatusMessage("");
+    }, 3000);
     return;
   }
 
+  function goToDevices() {
+    router.push("/devices");
+  }
+
   useEffect(() => {
-    loadUser();
+    const load = async () => {
+      await loadUser();
+    };
+
+    load();
   }, []);
 
   return {
+    statusMessage,
+    goToDevices,
     handleLogout,
     loadUser,
     username,

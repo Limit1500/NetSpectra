@@ -22,18 +22,20 @@ export function useAuth() {
       username,
       password,
       email,
-      rememberUser
+      rememberUser,
     );
     setServerMessage(data.message);
 
     if (data.message === "Signin successful") {
       setTimeout(() => {
         setAuthType(AuthType.login);
+        setServerMessage("");
       }, 1000);
     } else if (data.message === "Login successful") {
       setTimeout(() => {
         setUsername(data.username);
         router.push("/devices");
+        setServerMessage("");
       }, 1000);
     }
     setIsBuffering(false);
@@ -41,7 +43,7 @@ export function useAuth() {
 
   function toggleAuthType() {
     setAuthType(
-      authType === AuthType.signin ? AuthType.login : AuthType.signin
+      authType === AuthType.signin ? AuthType.login : AuthType.signin,
     );
   }
 

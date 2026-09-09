@@ -1,28 +1,33 @@
 import { API_URL } from "@/src/lib/config";
 
 export async function getUser() {
-  const data = await fetch(`${API_URL}/user/me`, {
+  const response = await fetch(`${API_URL}/user/me`, {
     method: "GET",
     credentials: "include",
   });
+  const user = await response.json();
 
-  return data.json();
+  return { user, status: response.status };
 }
 
 export async function deleteUser(token: string) {
-  return await fetch(`${API_URL}/user/verify/${token}`, {
+  const response = await fetch(`${API_URL}/user/verify/${token}`, {
     method: "DELETE",
     credentials: "include",
   });
+
+  const data = await response.json();
+
+  return data;
 }
 
 export async function patchUser(
   token: string,
   username: string,
   password: string,
-  email: string
+  email: string,
 ) {
-  return await fetch(`${API_URL}/user/verify/${token}`, {
+  const response = await fetch(`${API_URL}/user/verify/${token}`, {
     method: "PATCH",
     credentials: "include",
     headers: {
@@ -34,4 +39,8 @@ export async function patchUser(
       email,
     }),
   });
+
+  const data = response.json();
+
+  return data;
 }

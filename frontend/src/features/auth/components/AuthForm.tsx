@@ -12,9 +12,6 @@ export function AuthForm() {
     handleAuthentification,
     toggleAuthType,
     authType,
-    setUsername,
-    setPassword,
-    setEmail,
     serverMessage,
     isBuffering,
   } = useAuth();
@@ -35,25 +32,35 @@ export function AuthForm() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <Input type={InputTypes.username} onChange={handleUsername} />
-
-          <Input type={InputTypes.password} onChange={handlePassword} />
-
-          {authType === "signin" ? (
-            <Input type={InputTypes.email} onChange={handleEmail} />
+          {serverMessage === "Signin successful" ||
+          serverMessage === "Login successful" ? (
+            <></>
           ) : (
-            <div className="flex items-center gap-2 mt-3">
-              <input
-                onChange={toggleRememberUser}
-                type="checkbox"
-                id="rememberMe"
-                name="rememberMe"
-                className="h-4 w-4"
-              />
-              <label htmlFor="rememberMe" className="text-sm text-slate-400">
-                Remember me
-              </label>
-            </div>
+            <>
+              <Input type={InputTypes.username} onChange={handleUsername} />
+
+              <Input type={InputTypes.password} onChange={handlePassword} />
+
+              {authType === "signin" ? (
+                <Input type={InputTypes.email} onChange={handleEmail} />
+              ) : (
+                <div className="flex items-center gap-2 mt-3">
+                  <input
+                    onChange={toggleRememberUser}
+                    type="checkbox"
+                    id="rememberMe"
+                    name="rememberMe"
+                    className="h-4 w-4"
+                  />
+                  <label
+                    htmlFor="rememberMe"
+                    className="text-sm text-slate-400"
+                  >
+                    Remember me
+                  </label>
+                </div>
+              )}
+            </>
           )}
 
           <p

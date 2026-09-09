@@ -11,6 +11,8 @@ export default function User() {
     createdAt,
     updatedAt,
     handleLogout,
+    goToDevices,
+    statusMessage,
   } = useUser();
 
   return (
@@ -50,7 +52,7 @@ export default function User() {
             </div>
 
             <button
-              onClick={() => (window.location.href = "/devices")}
+              onClick={goToDevices}
               className="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-slate-600 hover:bg-slate-800"
             >
               Devices
@@ -248,6 +250,21 @@ export default function User() {
             </button>{" "}
           </div>{" "}
         </section>{" "}
+        {statusMessage === "" ? (
+          <></>
+        ) : (
+          <div
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50
+            flex items-center gap-3 rounded-lg border
+            bg-slate-900 px-5 py-3 shadow-xl"
+          >
+            <span className="text-lg">✉️</span>
+
+            <div>
+              <p className="text-sm text-slate-400">{statusMessage}</p>
+            </div>
+          </div>
+        )}
       </div>{" "}
     </div>
   );
