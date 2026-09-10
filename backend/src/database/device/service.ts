@@ -1,4 +1,4 @@
-import { DeviceType } from "../../common/types/device.types";
+import { DeviceType } from "../../modules/devices/types";
 import prisma from "../../db";
 
 class DeviceDatabaseService {

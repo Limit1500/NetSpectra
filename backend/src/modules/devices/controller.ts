@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import DeviceDatabaseService from "../../services/database/device";
+import DeviceDatabaseService from "../../database/device/service";
 
 class DevicesController {
   static async getDevices(_req: FastifyRequest, reply: FastifyReply) {

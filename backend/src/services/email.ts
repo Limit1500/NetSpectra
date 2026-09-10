@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { env } from "../../config/env.config";
+import { env } from "../config/env";
 
 class EmailService {
   static async sendEmail(to: string, subject: string, html: string) {

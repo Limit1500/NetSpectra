@@ -1,4 +1,4 @@
-import { MatchOperator } from "../common/types/device.types";
+import { MatchOperator } from "../../modules/traffic/types";
 
 export function matchString(
   sourceText: string,

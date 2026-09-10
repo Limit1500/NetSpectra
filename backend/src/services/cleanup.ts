@@ -1,4 +1,4 @@
-import EmailTokenService from "./database/tokens";
+import EmailTokenService from "../database/token/service";
 
 class CleanupService {
   static start() {

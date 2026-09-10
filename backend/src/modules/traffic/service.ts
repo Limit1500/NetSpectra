@@ -1,12 +1,9 @@
 import { env } from "process";
 import vendorService from "./services/vendor";
-import DeviceDatabaseService from "../../services/database/device";
+import DeviceDatabaseService from "../../database/device/service";
 import ScoreService from "./services/score";
-import { getConfidence } from "../../common/utils/confidence.utils";
-import {
-  normalizeHostname,
-  normalizeVendor,
-} from "../../common/normalization/traffic";
+import { getConfidence } from "./services/confidence";
+import { normalizeHostname, normalizeVendor } from "./services/normalization";
 
 class TrafficService {
   static async processData(
@@ -50,7 +47,7 @@ class TrafficService {
       dbSavedScores
     );
 
-    const { device, maxScore } = ScoreService.getDeviceByScore(updatedScores);
+    const { device, maxScore } = ScoreService.getDeviceByScores(updatedScores);
     const scoresSum = ScoreService.getScoresSum(updatedScores);
 
     const confidence = getConfidence(maxScore, scoresSum);

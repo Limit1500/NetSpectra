@@ -1,32 +1,10 @@
 import { EmailTokenPurpose } from "../../../../generated/prisma/enums";
-import EmailTokenDatabaseService from "../../../services/database/tokens";
+import EmailTokenDatabaseService from "../../../database/token/service";
 import argon2 from "argon2";
-import { env } from "../../../config/env.config";
-import AppError from "../../../common/types/error.types";
-import UserDatabaseService from "../../../services/database/user";
-import { sendUserEmail } from "../../../services/email/user";
+import AppError from "../../../common/errors/types";
+import UserDatabaseService from "../../../database/user/service";
 
 class AuthUserDataUpdatesService {
-  static async processAndSendEmail(
-    username: string,
-    id: number,
-    purpose: EmailTokenPurpose
-  ) {
-    const token = EmailTokenDatabaseService.generateToken();
-    const hashedToken = await argon2.hash(token);
-
-    await EmailTokenDatabaseService.postToken(id, hashedToken, purpose);
-
-    const user = await UserDatabaseService.getOtherUserByEmail(username);
-    const email = user!.email;
-
-    const confirmationUrl = `${
-      env.FRONTEND_URL
-    }/confirm/?purpose=${purpose.toLowerCase()}&token=${token}`;
-
-    await sendUserEmail(email, confirmationUrl, purpose);
-  }
-
   static async checkUniqueCredentials(
     username: string,
     email: string,

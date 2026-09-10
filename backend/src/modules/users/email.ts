@@ -1,5 +1,5 @@
 import { EmailTokenPurpose } from "../../../generated/prisma/enums";
-import EmailService from "./service";
+import EmailService from "../../services/email";
 
 export async function sendUserEmail(
   email: string,

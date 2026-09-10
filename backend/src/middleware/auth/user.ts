@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import AppError from "../../common/types/error.types";
+import AppError from "../../common/errors/types";
 
-async function userAuth(req: FastifyRequest, reply: FastifyReply) {
+async function userAuth(req: FastifyRequest, _reply: FastifyReply) {
   try {
     await req.jwtVerify();
   } catch (error) {

@@ -3,29 +3,29 @@ import hostnameRules from "../../../../rules/hostname.rules.json";
 import serviceRules from "../../../../rules/service.rules.json";
 import protocolRules from "../../../../rules/protocol.rules.json";
 import portRules from "../../../../rules/port.rules.json";
-import { DeviceType, MatchOperator } from "../../../common/types/device.types";
+import { MatchOperator, DeviceTypes } from "../../traffic/types";
 import { env } from "process";
-import { matchString } from "../../../common/utils/string.utils";
+import { matchString } from "../../../common/utils/string";
 
 class ScoreService {
   private static applyRules(
-    rules: Record<string, Partial<Record<DeviceType, number>>>,
+    rules: Record<string, Partial<Record<DeviceTypes, number>>>,
     operator: MatchOperator,
     data: string,
-    scores: Record<DeviceType, number>
+    scores: Record<DeviceTypes, number>
   ) {
     for (const [key, value] of Object.entries(rules)) {
       if (matchString(data, operator, key)) {
         for (const [deviceType, score] of Object.entries(value)) {
-          scores[deviceType as DeviceType] += score;
+          scores[deviceType as DeviceTypes] += score;
         }
       }
     }
   }
 
-  static getScoresSum(scores: Record<DeviceType, number>): number {
+  static getScoresSum(scores: Record<DeviceTypes, number>): number {
     let sum = 0;
-    for (const key of Object.values(DeviceType)) {
+    for (const key of Object.values(DeviceTypes)) {
       sum += scores[key];
     }
     return sum;
@@ -37,10 +37,10 @@ class ScoreService {
     service: string,
     protocol: string,
     port: string
-  ): Record<DeviceType, number> {
+  ): Record<DeviceTypes, number> {
     const scores = Object.fromEntries(
-      Object.values(DeviceType).map((deviceType) => [deviceType, 0])
-    ) as Record<DeviceType, number>;
+      Object.values(DeviceTypes).map((deviceType) => [deviceType, 0])
+    ) as Record<DeviceTypes, number>;
 
     this.applyRules(vendorRules, "CONTAINS", vendor, scores);
     this.applyRules(hostnameRules, "CONTAINS", hostname, scores);
@@ -51,11 +51,11 @@ class ScoreService {
     return scores;
   }
 
-  static getDeviceByScore(scores: Record<DeviceType, number>) {
-    let device = DeviceType.Unknown;
+  static getDeviceByScores(scores: Record<DeviceTypes, number>) {
+    let device = DeviceTypes.Unknown;
     let maxScore = 0;
     for (const [key, score] of Object.entries(scores)) {
-      const deviceType = key as DeviceType;
+      const deviceType = key as DeviceTypes;
 
       if (maxScore < score) {
         device = deviceType;
@@ -67,22 +67,22 @@ class ScoreService {
   }
 
   static sumScoresSets(
-    newScores: Record<DeviceType, number>,
-    oldScores: Record<DeviceType, number>
-  ): Record<DeviceType, number> {
-    const updatedScores = {} as Record<DeviceType, number>;
-    for (const key of Object.values(DeviceType)) {
+    newScores: Record<DeviceTypes, number>,
+    oldScores: Record<DeviceTypes, number>
+  ): Record<DeviceTypes, number> {
+    const updatedScores = {} as Record<DeviceTypes, number>;
+    for (const key of Object.values(DeviceTypes)) {
       updatedScores[key] = newScores[key] + oldScores[key];
     }
     return updatedScores;
   }
 
   static decayScores(
-    scores: Record<DeviceType, number>
-  ): Record<DeviceType, number> {
-    const decayedScores = {} as Record<DeviceType, number>;
+    scores: Record<DeviceTypes, number>
+  ): Record<DeviceTypes, number> {
+    const decayedScores = {} as Record<DeviceTypes, number>;
 
-    for (const key of Object.values(DeviceType)) {
+    for (const key of Object.values(DeviceTypes)) {
       decayedScores[key] = scores[key] * Number(env.DECAY_MULTIPLIER);
     }
     return decayedScores;

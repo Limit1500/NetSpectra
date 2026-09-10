@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import AppError from "../types/error.types";
+import AppError from "./types";
 
 function errorHandler(error: any, req: FastifyRequest, reply: FastifyReply) {
   req.log.error(error);

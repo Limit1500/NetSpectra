@@ -1,9 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import UsersService from "./service";
-import AuthUserDataUpdatesService from "./services/authUserDataUpdates";
 import { EmailTokenPurpose } from "../../../generated/prisma/enums";
-import UserDatabaseService from "../../services/database/user";
-import { SigninBody } from "../../common/types/auth.types";
+import { SigninBody } from "../auth/types";
 
 class UserController {
   static async getUserData(req: FastifyRequest, reply: FastifyReply) {
@@ -18,7 +16,7 @@ class UserController {
     const { username, id } = req.user as { username: string; id: number };
     const purpose = req.method as EmailTokenPurpose;
 
-    await AuthUserDataUpdatesService.processAndSendEmail(username, id, purpose);
+    await UsersService.createTokenAndSendEmail(username, id, purpose);
 
     return reply
       .status(200)
@@ -29,8 +27,7 @@ class UserController {
     const { id } = req.user as { id: number };
     const { token } = req.params as { token: string };
 
-    await AuthUserDataUpdatesService.checkDatabaseToken(id, token, "DELETE");
-    await UserDatabaseService.deleteUser(id);
+    await UsersService.tryDelete(id, token, "DELETE");
 
     return reply.status(200).send({ message: "User deleted successfully" });
   }
@@ -44,7 +41,7 @@ class UserController {
 
     const { username, password, email } = req.body;
 
-    UsersService.verifyPatch(username, password, email, id, token);
+    UsersService.tryPatch(username, password, email, id, token);
 
     return reply.status(200).send({ message: "User patched successfully" });
   }

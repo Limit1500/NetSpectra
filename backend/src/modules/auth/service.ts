@@ -1,10 +1,13 @@
 import argon2 from "argon2";
-import { DbUserType } from "../../common/types/auth.types";
-import AppError from "../../common/types/error.types";
-import UserDatabaseService from "../../services/database/user";
+import AppError from "../../common/errors/types";
+import UserDatabaseService from "../../database/user/service";
+import { DatabaseUserType } from "../../database/user/type";
 
 class AuthService {
-  static async login(username: string, password: string): Promise<DbUserType> {
+  static async login(
+    username: string,
+    password: string
+  ): Promise<DatabaseUserType> {
     const user = await UserDatabaseService.getOtherUserByUsername(username);
 
     if (!user) {

@@ -14,7 +14,10 @@ class VendorService {
   }
 
   public getVendorByMac(macAddress: string) {
-    return this.getVendorByPrefix(this.getPrefixByMac(macAddress));
+    const prefix = this.getPrefixByMac(macAddress);
+    const vendor = this.getVendorByPrefix(prefix);
+
+    return vendor;
   }
 }
 

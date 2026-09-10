@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { LoginBody, SigninBody } from "../../common/types/auth.types";
-import JwtService from "../../services/jwt";
+import { LoginBody, SigninBody } from "./types";
 import AuthService from "./service";
+import JwtService from "../../services/jwt";
 
 class AuthController {
   static async signin(
