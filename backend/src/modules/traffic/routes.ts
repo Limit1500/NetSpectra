@@ -1,11 +1,11 @@
 import { FastifyInstance } from "fastify";
 import trafficAuth from "../../middleware/auth/traffic";
 import TrafficController from "./controller";
-import trafficDataSchema from "./validation";
+import trafficSchema from "./validation";
 
 async function trafficDataRoutes(fastify: FastifyInstance) {
   fastify.post("/", {
-    schema: trafficDataSchema,
+    schema: trafficSchema,
     preHandler: trafficAuth,
     handler: TrafficController.postTrafficData,
   });

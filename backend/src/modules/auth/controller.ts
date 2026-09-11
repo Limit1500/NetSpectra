@@ -32,7 +32,7 @@ class AuthController {
       .setCookie("token", token, {
         path: "/",
         httpOnly: true,
-        secure: false,
+        secure: false, // needed for local deploy
         sameSite: "lax",
         ...(req.body.rememberUser && {
           maxAge: 60 * 60 * 24 * 30,
@@ -47,7 +47,7 @@ class AuthController {
     return reply
       .clearCookie("token", {
         httpOnly: true,
-        secure: false,
+        secure: false, // needed for local deploy
         sameSite: "lax",
         path: "/",
       })

@@ -1,7 +1,7 @@
-import { DeviceType } from "../../modules/devices/types";
-import prisma from "../../db";
+import prisma from "../database";
+import { DeviceTypes } from "./type";
 
-class DeviceDatabaseService {
+class DatabaseDeviceService {
   static async getAllDevices() {
     return await prisma.devices.findMany({
       select: {
@@ -25,7 +25,7 @@ class DeviceDatabaseService {
   }
 
   static async createDevice(macAddress: string, vendor: string) {
-    await prisma.devices.create({
+    return await prisma.devices.create({
       data: {
         macAddress: macAddress,
         vendor: vendor,
@@ -34,7 +34,7 @@ class DeviceDatabaseService {
   }
 
   static async getSavedScoresAndLastDecay(macAddress: string) {
-    const data = await DeviceDatabaseService.getDeviceByMac(macAddress);
+    const data = await DatabaseDeviceService.getDeviceByMac(macAddress);
     const {
       id,
       macAddress: _macAddress,
@@ -44,22 +44,23 @@ class DeviceDatabaseService {
       lastSeen,
       firstSeen,
       lastDecay,
-      ...dbSavedScores
+      confidence,
+      ...databaseDeviceScores
     } = data!;
     return {
       lastDecay,
-      dbSavedScores,
+      databaseDeviceScores,
     };
   }
 
   static async postUpdatedData(
     macAddress: string,
-    updatedScores: Record<DeviceType, number>,
-    deviceType: DeviceType,
+    updatedScores: Record<DeviceTypes, number>,
+    deviceType: DeviceTypes,
     lastDecay: Date,
     confidence: number
   ) {
-    await prisma.devices.update({
+    return await prisma.devices.update({
       where: {
         macAddress,
       },
@@ -76,4 +77,4 @@ class DeviceDatabaseService {
   }
 }
 
-export default DeviceDatabaseService;
+export default DatabaseDeviceService;

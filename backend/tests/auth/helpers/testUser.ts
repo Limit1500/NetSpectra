@@ -1,5 +1,5 @@
-import prisma from "../../src/db";
 import argon2 from "argon2";
+import prisma from "../../../src/database/database";
 
 export async function createTestUser() {
   const hashedPassword = await argon2.hash("password");

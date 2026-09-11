@@ -3,9 +3,10 @@ import hostnameRules from "../../../../rules/hostname.rules.json";
 import serviceRules from "../../../../rules/service.rules.json";
 import protocolRules from "../../../../rules/protocol.rules.json";
 import portRules from "../../../../rules/port.rules.json";
-import { MatchOperator, DeviceTypes } from "../../traffic/types";
-import { env } from "process";
-import { matchString } from "../../../common/utils/string";
+import { MatchOperator } from "../../traffic/types";
+import { DeviceTypes } from "../../../database/device/type";
+import { env } from "../../../config/env";
+import { matchString } from "./helpers";
 
 class ScoreService {
   private static applyRules(

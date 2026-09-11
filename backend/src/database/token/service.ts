@@ -1,8 +1,8 @@
 import crypto from "crypto";
-import { EmailTokenPurpose } from "../../../generated/prisma/enums";
-import prisma from "../../db";
+import prisma from "../database";
+import { DatabaseTokenPurpose } from "./type";
 
-class EmailTokenService {
+class DatabaseTokenService {
   static generateToken() {
     return crypto.randomBytes(32).toString("hex");
   }
@@ -26,7 +26,7 @@ class EmailTokenService {
   static async postToken(
     userId: number,
     tokenHash: string,
-    purpose: EmailTokenPurpose
+    purpose: DatabaseTokenPurpose
   ) {
     return await prisma.email_tokens.create({
       data: {
@@ -49,4 +49,4 @@ class EmailTokenService {
   }
 }
 
-export default EmailTokenService;
+export default DatabaseTokenService;

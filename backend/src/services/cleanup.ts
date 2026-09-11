@@ -1,10 +1,10 @@
-import EmailTokenService from "../database/token/service";
+import DatabaseTokenService from "../database/token/service";
 
 class CleanupService {
   static start() {
     setInterval(async () => {
       try {
-        const deleted = await EmailTokenService.deleteExpiredTokens();
+        const deleted = await DatabaseTokenService.deleteExpiredTokens();
 
         console.log(`Deleted ${deleted.count} expired tokens`);
       } catch (error) {

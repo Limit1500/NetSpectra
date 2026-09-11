@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import UsersService from "./service";
-import { EmailTokenPurpose } from "../../../generated/prisma/enums";
 import { SigninBody } from "../auth/types";
+import { DatabaseTokenPurpose } from "../../database/token/type";
 
 class UserController {
   static async getUserData(req: FastifyRequest, reply: FastifyReply) {
@@ -14,7 +14,7 @@ class UserController {
 
   static async requestUserDataUpdate(req: FastifyRequest, reply: FastifyReply) {
     const { username, id } = req.user as { username: string; id: number };
-    const purpose = req.method as EmailTokenPurpose;
+    const purpose = req.method as DatabaseTokenPurpose;
 
     await UsersService.createTokenAndSendEmail(username, id, purpose);
 
@@ -38,7 +38,6 @@ class UserController {
   ) {
     const { id } = req.user as { id: number };
     const { token } = req.params as { token: string };
-
     const { username, password, email } = req.body;
 
     UsersService.tryPatch(username, password, email, id, token);

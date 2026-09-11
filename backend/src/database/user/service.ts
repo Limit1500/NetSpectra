@@ -1,6 +1,6 @@
-import prisma from "../../db";
+import prisma from "../database";
 
-class UserDatabaseService {
+class DatabaseUserService {
   static async createUser(username: string, password: string, email: string) {
     return await prisma.users.create({
       data: {
@@ -73,4 +73,4 @@ class UserDatabaseService {
   }
 }
 
-export default UserDatabaseService;
+export default DatabaseUserService;

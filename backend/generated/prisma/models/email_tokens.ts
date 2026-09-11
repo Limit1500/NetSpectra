@@ -40,7 +40,7 @@ export type Email_tokensMinAggregateOutputType = {
   id: number | null
   tokenHash: string | null
   userId: number | null
-  purpose: $Enums.EmailTokenPurpose | null
+  purpose: string | null
   expiresAt: Date | null
 }
 
@@ -48,7 +48,7 @@ export type Email_tokensMaxAggregateOutputType = {
   id: number | null
   tokenHash: string | null
   userId: number | null
-  purpose: $Enums.EmailTokenPurpose | null
+  purpose: string | null
   expiresAt: Date | null
 }
 
@@ -187,7 +187,7 @@ export type Email_tokensGroupByOutputType = {
   id: number
   tokenHash: string
   userId: number
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date
   _count: Email_tokensCountAggregateOutputType | null
   _avg: Email_tokensAvgAggregateOutputType | null
@@ -218,7 +218,7 @@ export type email_tokensWhereInput = {
   id?: Prisma.IntFilter<"email_tokens"> | number
   tokenHash?: Prisma.StringFilter<"email_tokens"> | string
   userId?: Prisma.IntFilter<"email_tokens"> | number
-  purpose?: Prisma.EnumEmailTokenPurposeFilter<"email_tokens"> | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFilter<"email_tokens"> | string
   expiresAt?: Prisma.DateTimeFilter<"email_tokens"> | Date | string
   user?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
 }
@@ -239,7 +239,7 @@ export type email_tokensWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.email_tokensWhereInput[]
   NOT?: Prisma.email_tokensWhereInput | Prisma.email_tokensWhereInput[]
   userId?: Prisma.IntFilter<"email_tokens"> | number
-  purpose?: Prisma.EnumEmailTokenPurposeFilter<"email_tokens"> | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFilter<"email_tokens"> | string
   expiresAt?: Prisma.DateTimeFilter<"email_tokens"> | Date | string
   user?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
 }, "id" | "tokenHash">
@@ -264,13 +264,13 @@ export type email_tokensScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"email_tokens"> | number
   tokenHash?: Prisma.StringWithAggregatesFilter<"email_tokens"> | string
   userId?: Prisma.IntWithAggregatesFilter<"email_tokens"> | number
-  purpose?: Prisma.EnumEmailTokenPurposeWithAggregatesFilter<"email_tokens"> | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringWithAggregatesFilter<"email_tokens"> | string
   expiresAt?: Prisma.DateTimeWithAggregatesFilter<"email_tokens"> | Date | string
 }
 
 export type email_tokensCreateInput = {
   tokenHash: string
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
   user: Prisma.usersCreateNestedOneWithoutEmailTokensInput
 }
@@ -279,13 +279,13 @@ export type email_tokensUncheckedCreateInput = {
   id?: number
   tokenHash: string
   userId: number
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
 }
 
 export type email_tokensUpdateInput = {
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.usersUpdateOneRequiredWithoutEmailTokensNestedInput
 }
@@ -294,7 +294,7 @@ export type email_tokensUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.IntFieldUpdateOperationsInput | number
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -302,13 +302,13 @@ export type email_tokensCreateManyInput = {
   id?: number
   tokenHash: string
   userId: number
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
 }
 
 export type email_tokensUpdateManyMutationInput = {
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -316,7 +316,7 @@ export type email_tokensUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.IntFieldUpdateOperationsInput | number
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -406,20 +406,16 @@ export type email_tokensUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.email_tokensScalarWhereInput | Prisma.email_tokensScalarWhereInput[]
 }
 
-export type EnumEmailTokenPurposeFieldUpdateOperationsInput = {
-  set?: $Enums.EmailTokenPurpose
-}
-
 export type email_tokensCreateWithoutUserInput = {
   tokenHash: string
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
 }
 
 export type email_tokensUncheckedCreateWithoutUserInput = {
   id?: number
   tokenHash: string
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
 }
 
@@ -456,34 +452,34 @@ export type email_tokensScalarWhereInput = {
   id?: Prisma.IntFilter<"email_tokens"> | number
   tokenHash?: Prisma.StringFilter<"email_tokens"> | string
   userId?: Prisma.IntFilter<"email_tokens"> | number
-  purpose?: Prisma.EnumEmailTokenPurposeFilter<"email_tokens"> | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFilter<"email_tokens"> | string
   expiresAt?: Prisma.DateTimeFilter<"email_tokens"> | Date | string
 }
 
 export type email_tokensCreateManyUserInput = {
   id?: number
   tokenHash: string
-  purpose: $Enums.EmailTokenPurpose
+  purpose: string
   expiresAt: Date | string
 }
 
 export type email_tokensUpdateWithoutUserInput = {
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type email_tokensUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type email_tokensUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   tokenHash?: Prisma.StringFieldUpdateOperationsInput | string
-  purpose?: Prisma.EnumEmailTokenPurposeFieldUpdateOperationsInput | $Enums.EmailTokenPurpose
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
   expiresAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -544,7 +540,7 @@ export type $email_tokensPayload<ExtArgs extends runtime.Types.Extensions.Intern
     id: number
     tokenHash: string
     userId: number
-    purpose: $Enums.EmailTokenPurpose
+    purpose: string
     expiresAt: Date
   }, ExtArgs["result"]["email_tokens"]>
   composites: {}
@@ -973,7 +969,7 @@ export interface email_tokensFieldRefs {
   readonly id: Prisma.FieldRef<"email_tokens", 'Int'>
   readonly tokenHash: Prisma.FieldRef<"email_tokens", 'String'>
   readonly userId: Prisma.FieldRef<"email_tokens", 'Int'>
-  readonly purpose: Prisma.FieldRef<"email_tokens", 'EmailTokenPurpose'>
+  readonly purpose: Prisma.FieldRef<"email_tokens", 'String'>
   readonly expiresAt: Prisma.FieldRef<"email_tokens", 'DateTime'>
 }
     

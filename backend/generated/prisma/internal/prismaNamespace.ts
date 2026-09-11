@@ -825,20 +825,6 @@ export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
- * Reference to a field of type 'EmailTokenPurpose'
- */
-export type EnumEmailTokenPurposeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailTokenPurpose'>
-    
-
-
-/**
- * Reference to a field of type 'EmailTokenPurpose[]'
- */
-export type ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailTokenPurpose[]'>
-    
-
-
-/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>

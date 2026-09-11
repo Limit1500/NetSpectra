@@ -9,7 +9,7 @@ export class JwtService {
         username,
       },
       {
-        expiresIn: env.JWT_EXPIRES_IN || "1h",
+        expiresIn: env.JWT_EXPIRES_IN,
       }
     );
   }

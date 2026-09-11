@@ -1,15 +1,15 @@
-import { EmailTokenPurpose } from "../../../generated/prisma/enums";
-import AppError from "../../common/errors/types";
+import AppError from "../../errors/types";
 import { env } from "../../config/env";
-import EmailTokenService from "../../database/token/service";
-import UserDatabaseService from "../../database/user/service";
+import DatabaseTokenService from "../../database/token/service";
+import DatabaseUserService from "../../database/user/service";
 import { sendUserEmail } from "./email";
-import AuthUserDataUpdatesService from "./services/check";
+import UsersCheckService from "./services/check";
 import argon2 from "argon2";
+import { DatabaseTokenPurpose } from "../../database/token/type";
 
 class UsersService {
   static async getUser(id: number) {
-    const user = await UserDatabaseService.getUserById(id);
+    const user = await DatabaseUserService.getUserById(id);
 
     if (!user) {
       throw new AppError(404, "User not found");
@@ -21,14 +21,14 @@ class UsersService {
   static async createTokenAndSendEmail(
     username: string,
     id: number,
-    purpose: EmailTokenPurpose
+    purpose: DatabaseTokenPurpose
   ) {
-    const token = EmailTokenService.generateToken();
+    const token = DatabaseTokenService.generateToken();
     const hashedToken = await argon2.hash(token);
 
-    await EmailTokenService.postToken(id, hashedToken, purpose);
+    await DatabaseTokenService.postToken(id, hashedToken, purpose);
 
-    const user = await UserDatabaseService.getOtherUserByEmail(username);
+    const user = await DatabaseUserService.getOtherUserByEmail(username);
     const email = user!.email;
 
     const confirmationUrl = `${
@@ -45,26 +45,22 @@ class UsersService {
     id: number,
     token: string
   ) {
-    await AuthUserDataUpdatesService.checkUniqueCredentials(
-      username,
-      email,
-      id
-    );
+    await UsersCheckService.checkUniqueCredentials(username, email, id);
 
-    await AuthUserDataUpdatesService.checkDatabaseToken(id, token, "PATCH");
+    await UsersCheckService.checkDatabaseToken(id, token, "PATCH");
 
     const hashedPassword = await argon2.hash(password);
 
-    await UserDatabaseService.patchUser(id, username, hashedPassword, email);
+    await DatabaseUserService.patchUser(id, username, hashedPassword, email);
   }
 
   static async tryDelete(
     id: number,
     token: string,
-    purpose: EmailTokenPurpose
+    purpose: DatabaseTokenPurpose
   ) {
-    await AuthUserDataUpdatesService.checkDatabaseToken(id, token, purpose);
-    await UserDatabaseService.deleteUser(id);
+    await UsersCheckService.checkDatabaseToken(id, token, purpose);
+    await DatabaseUserService.deleteUser(id);
   }
 }
 

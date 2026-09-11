@@ -1,9 +1,9 @@
-import { EmailTokenPurpose } from "../../../generated/prisma/enums";
-
 export interface DatabaseTokenType {
   id: number;
   tokenHash: string;
   userId: number;
-  purpose: EmailTokenPurpose;
+  purpose: DatabaseTokenPurpose;
   expiresAt: Date;
 }
+
+export type DatabaseTokenPurpose = "PATCH" | "DELETE";

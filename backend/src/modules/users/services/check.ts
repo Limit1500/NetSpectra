@@ -1,23 +1,23 @@
-import { EmailTokenPurpose } from "../../../../generated/prisma/enums";
-import EmailTokenDatabaseService from "../../../database/token/service";
+import DatabaseTokenService from "../../../database/token/service";
 import argon2 from "argon2";
-import AppError from "../../../common/errors/types";
-import UserDatabaseService from "../../../database/user/service";
+import AppError from "../../../errors/types";
+import DatabaseUserService from "../../../database/user/service";
+import { DatabaseTokenPurpose } from "../../../database/token/type";
 
-class AuthUserDataUpdatesService {
+class UsersCheckService {
   static async checkUniqueCredentials(
     username: string,
     email: string,
     id: number
   ) {
-    const usernameExists = (await UserDatabaseService.getOtherUserByUsername(
+    const usernameExists = (await DatabaseUserService.getOtherUserByUsername(
       username,
       id
     ))
       ? true
       : false;
 
-    const emailExists = (await UserDatabaseService.getOtherUserByEmail(
+    const emailExists = (await DatabaseUserService.getOtherUserByEmail(
       email,
       id
     ))
@@ -34,18 +34,16 @@ class AuthUserDataUpdatesService {
   static async checkDatabaseToken(
     userId: number,
     token: string,
-    purpose: EmailTokenPurpose
+    purpose: DatabaseTokenPurpose
   ) {
-    const userSavedTokens = await EmailTokenDatabaseService.getUserTokens(
-      userId
-    );
+    const userSavedTokens = await DatabaseTokenService.getUserTokens(userId);
 
     for (const tokenInstance of userSavedTokens) {
       if (
         tokenInstance.purpose === purpose &&
         (await argon2.verify(tokenInstance.tokenHash, token))
       ) {
-        await EmailTokenDatabaseService.deleteToken(tokenInstance.id);
+        await DatabaseTokenService.deleteToken(tokenInstance.id);
         return;
       }
     }
@@ -53,4 +51,4 @@ class AuthUserDataUpdatesService {
   }
 }
 
-export default AuthUserDataUpdatesService;
+export default UsersCheckService;

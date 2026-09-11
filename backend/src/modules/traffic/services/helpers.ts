@@ -1,4 +1,8 @@
-import { MatchOperator } from "../../modules/traffic/types";
+export function getConfidence(maxScore: number, scoresSum: number) {
+  return scoresSum > 0 ? maxScore / scoresSum : 0;
+}
+
+import { MatchOperator } from "../types";
 
 export function matchString(
   sourceText: string,
@@ -11,7 +15,7 @@ export function matchString(
     return sourceText.includes(target);
   } else if (operator === "STARTS_WITH") {
     return sourceText.startsWith(target);
-  } else if (operator === "ENDS_WITH") {
+  } else {
     return sourceText.endsWith(target);
   }
 }

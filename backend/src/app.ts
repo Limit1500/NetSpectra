@@ -6,7 +6,7 @@ import rateLimit from "@fastify/rate-limit";
 import cors from "@fastify/cors";
 import { env } from "./config/env";
 import CleanupService from "./services/cleanup";
-import errorHandler from "./common/errors/handler";
+import errorHandler from "./errors/handler";
 import authRoutes from "./modules/auth/routes";
 import trafficDataRoutes from "./modules/traffic/routes";
 import deviceRoute from "./modules/devices/routes";

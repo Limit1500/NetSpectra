@@ -1,4 +1,4 @@
-const trafficDataSchema = {
+const trafficSchema = {
   body: {
     type: "object",
     additionalProperties: false,
@@ -32,4 +32,4 @@ const trafficDataSchema = {
   },
 };
 
-export default trafficDataSchema;
+export default trafficSchema;

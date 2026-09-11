@@ -1,9 +1,9 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import DeviceDatabaseService from "../../database/device/service";
+import DatabaseDeviceService from "../../database/device/service";
 
 class DevicesController {
   static async getDevices(_req: FastifyRequest, reply: FastifyReply) {
-    const devices = await DeviceDatabaseService.getAllDevices();
+    const devices = await DatabaseDeviceService.getAllDevices();
 
     return reply.code(200).send(devices);
   }

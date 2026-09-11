@@ -139,23 +139,6 @@ export type BoolWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
 }
 
-export type EnumEmailTokenPurposeFilter<$PrismaModel = never> = {
-  equals?: $Enums.EmailTokenPurpose | Prisma.EnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  in?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel> | $Enums.EmailTokenPurpose
-}
-
-export type EnumEmailTokenPurposeWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.EmailTokenPurpose | Prisma.EnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  in?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumEmailTokenPurposeWithAggregatesFilter<$PrismaModel> | $Enums.EmailTokenPurpose
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel>
-}
-
 export type NestedIntFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -288,23 +271,6 @@ export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedBoolFilter<$PrismaModel>
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
-}
-
-export type NestedEnumEmailTokenPurposeFilter<$PrismaModel = never> = {
-  equals?: $Enums.EmailTokenPurpose | Prisma.EnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  in?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel> | $Enums.EmailTokenPurpose
-}
-
-export type NestedEnumEmailTokenPurposeWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.EmailTokenPurpose | Prisma.EnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  in?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.EmailTokenPurpose[] | Prisma.ListEnumEmailTokenPurposeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumEmailTokenPurposeWithAggregatesFilter<$PrismaModel> | $Enums.EmailTokenPurpose
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumEmailTokenPurposeFilter<$PrismaModel>
 }
 
 

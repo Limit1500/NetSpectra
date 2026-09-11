@@ -61,16 +61,11 @@ model users {
   emailTokens email_tokens[]
 }
 
-enum EmailTokenPurpose {
-  PATCH
-  DELETE
-}
-
 model email_tokens {
   id        Int               @id @default(autoincrement())
   tokenHash String            @unique
   userId    Int
-  purpose   EmailTokenPurpose
+  purpose   String
   expiresAt DateTime
 
   user users @relation(fields: [userId], references: [id], onDelete: Cascade)

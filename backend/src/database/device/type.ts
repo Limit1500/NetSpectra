@@ -1,5 +1,3 @@
-import { DeviceTypes } from "../../common/types/database";
-
 export interface DatabaseDeviceType {
   id: number;
   macAddress: string;
@@ -33,4 +31,34 @@ export interface DatabaseDeviceType {
   Industrial: number;
   Gateway: number;
   Unknown: number;
+}
+
+export enum DeviceTypes {
+  Phone = "Phone",
+  Tablet = "Tablet",
+  Laptop = "Laptop",
+  Desktop = "Desktop",
+
+  SmartTV = "SmartTV",
+  StreamingDevice = "StreamingDevice",
+  GameConsole = "GameConsole",
+
+  Router = "Router",
+  AccessPoint = "AccessPoint",
+  Switch = "Switch",
+
+  Printer = "Printer",
+  Scanner = "Scanner",
+
+  Camera = "Camera",
+  SmartSpeaker = "SmartSpeaker",
+
+  Iot = "Iot",
+  Nas = "Nas",
+  Server = "Server",
+
+  Industrial = "Industrial",
+  Gateway = "Gateway",
+
+  Unknown = "Unknown",
 }

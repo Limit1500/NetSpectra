@@ -1,9 +1,9 @@
-import { env } from "process";
-import vendorService from "./services/vendor";
-import DeviceDatabaseService from "../../database/device/service";
+import VendorService from "./services/vendor";
+import DatabaseDeviceService from "../../database/device/service";
 import ScoreService from "./services/score";
-import { getConfidence } from "./services/confidence";
 import { normalizeHostname, normalizeVendor } from "./services/normalization";
+import { env } from "../../config/env";
+import { getConfidence } from "./services/helpers";
 
 class TrafficService {
   static async processData(
@@ -13,19 +13,19 @@ class TrafficService {
     protocol: string,
     port: string
   ) {
-    const vendor = vendorService.getVendorByMac(macAddress);
+    const vendor = VendorService.getVendorByMac(macAddress);
 
     const normalizedHostname = normalizeHostname(hostname);
     const normalizedVendor = normalizeVendor(vendor);
 
     const deviceIsRegistered: boolean =
-      (await DeviceDatabaseService.getDeviceByMac(macAddress)) ? true : false;
+      (await DatabaseDeviceService.getDeviceByMac(macAddress)) ? true : false;
 
     if (deviceIsRegistered === false) {
-      await DeviceDatabaseService.createDevice(macAddress, normalizedVendor);
+      await DatabaseDeviceService.createDevice(macAddress, normalizedVendor);
     }
 
-    const requestScores = ScoreService.applyRulesAndGetScores(
+    const trafficScores = ScoreService.applyRulesAndGetScores(
       normalizedVendor,
       normalizedHostname,
       service,
@@ -33,18 +33,18 @@ class TrafficService {
       port
     );
 
-    let { dbSavedScores, lastDecay } =
-      await DeviceDatabaseService.getSavedScoresAndLastDecay(macAddress);
+    let { databaseDeviceScores, lastDecay } =
+      await DatabaseDeviceService.getSavedScoresAndLastDecay(macAddress);
 
     const now = new Date();
     if (now.getTime() - lastDecay.getTime() >= Number(env.DECAY_INTERVAL)) {
-      ScoreService.decayScores(dbSavedScores);
+      ScoreService.decayScores(databaseDeviceScores);
       lastDecay = now;
     }
 
     const updatedScores = ScoreService.sumScoresSets(
-      requestScores,
-      dbSavedScores
+      trafficScores,
+      databaseDeviceScores
     );
 
     const { device, maxScore } = ScoreService.getDeviceByScores(updatedScores);
@@ -52,7 +52,7 @@ class TrafficService {
 
     const confidence = getConfidence(maxScore, scoresSum);
 
-    await DeviceDatabaseService.postUpdatedData(
+    await DatabaseDeviceService.postUpdatedData(
       macAddress,
       updatedScores,
       device,
